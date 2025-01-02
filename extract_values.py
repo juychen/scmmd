@@ -75,6 +75,8 @@ bw_files_mseq = glob.glob("/data2st1/junyi/methlyatlas/mCseq/data.nemoarchive.or
 cell_groups = []
 methtypes =  []
 
+
+
 for bw_file in bw_files_mseq:
     cell_group = os.path.basename(bw_file).split('.')[0]
     cell_groups.append(cell_group)
