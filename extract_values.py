@@ -71,6 +71,7 @@ df_meta_integrateion
 
 
 bw_files_mseq = glob.glob("/data2st1/junyi/methlyatlas/mCseq/data.nemoarchive.org/biccn/grant/u19_cemba/ecker/epigenome/cellgroup/mCseq3/mouse/processed/other/*CGN*bw")
+bw_files_atac = glob.glob("/data2st1/junyi/methlyatlas/atac/catlas.org/renlab_downloads/wholemousebrain/bigwig_macs2/*bw")
 
 cell_groups = []
 methtypes =  []
@@ -122,7 +123,6 @@ for bw_file in bw_files_mseq:
 
 
 
-bw_files_atac = glob.glob("/data2st1/junyi/methlyatlas/atac/catlas.org/renlab_downloads/wholemousebrain/bigwig_macs2/*bw")
 
 cell_groups = []
 methtypes =  []
