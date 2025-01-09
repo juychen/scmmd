@@ -1,5 +1,5 @@
 wmb
 output/
 data/
-.vscode/
+.vscode/*
 .vscode/settings.json
