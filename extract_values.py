@@ -10,6 +10,8 @@ import glob as glob
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+from Bio import SeqIO
+
 
 # %%
 black_list_path = mm10.ENCODE_BLACKLIST_PATH
@@ -76,6 +78,7 @@ bw_files_atac = glob.glob("/data2st1/junyi/methlyatlas/atac/catlas.org/renlab_do
 cell_groups = []
 methtypes =  []
 
+genome = SeqIO.index("/data2st1/junyi/ref/GRCm38.p6.genome.fa", "fasta")
 
 
 for bw_file in bw_files_mseq:
@@ -100,6 +103,9 @@ for bw_file in bw_files_mseq:
         end = use_gene_meta.loc[gene, 'end']
         
         values = bw.values(chrom, start-2000, start)
+        chromosome = genome[chrom]
+        sequence = chromosome.seq[start-2000:start]
+
         arr_values = np.array(values)
         arr_values = np.nan_to_num(arr_values)
         stats.append(arr_values.mean())
