@@ -2,7 +2,6 @@
 import pandas as pd
 import pyBigWig
 import pandas as pd# %%
-from wmb import cemba, mm10
 import glob as glob
 import numpy as np
 import os
@@ -17,7 +16,7 @@ parser.add_argument("--input", type=str, required=False, help="Input path of the
                     default="/data2st1/junyi/methlyatlas/mCseq/data.nemoarchive.org/biccn/grant/u19_cemba/ecker/epigenome/cellgroup/mCseq3/mouse/processed/other/")
 parser.add_argument("--output", type=str, required=False, help="Output path of the methylation level",
                     default="/data2st1/junyi/output/")
-parser.add_argument("--meth_type", type=str, required=False, help="Genome path",default="CGN")
+parser.add_argument("--meth_type", type=str, required=False, help="Methlylation type, can be CGN,CHN, based on your definetion of bw file",default="CGN")
 parser.add_argument("--genome", type=str, required=False, help="Genome path",default="/data2st1/junyi/ref/GRCm38.p6.genome.fa")
 
 args = parser.parse_args()
@@ -54,10 +53,15 @@ for bw_file in bw_files_mseq:
         chrom = row[0]
         start = row[1]
         end = row[2]
+
+        try:
         
-        values = bw.values(chrom, start, end)
-        chromosome = genome[chrom]
-        sequence = chromosome.seq[start:end]
+            values = bw.values(chrom, start, end)
+            chromosome = genome[chrom]
+            sequence = chromosome.seq[start:end]
+        except:
+            print(f"Error in {chrom} {start} {end}")
+            continue
 
         arr_values = np.array(values)
         arr_values = np.nan_to_num(arr_values)
