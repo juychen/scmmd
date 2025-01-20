@@ -8,7 +8,7 @@ from harmonypy import run_harmony
 import pandas as pd
 import os
 import scanpy.external as sce
-adata_concat = anndata.read_h5ad('output/merged-concat-clustering.h5ad')
+adata_concat = anndata.read_h5ad('output/merged-PFC-concat-clustering.h5ad')
 
 default_n_threads = 1
 os.environ['OPENBLAS_NUM_THREADS'] = f"{default_n_threads}"
@@ -31,7 +31,7 @@ sc.pp.neighbors(adata_concat, n_neighbors=20,use_rep='X_pca_harmony')
 sc.tl.leiden(adata_concat, resolution=1.5)
 sc.tl.umap(adata_concat)
 
-adata_concat.write_h5ad('output/merged-harmony-clustering.h5ad')
+adata_concat.write_h5ad('output/merged-PFC-harmony-clustering.h5ad')
 ax = axes[0]
 categorical_scatter(ax=ax,
                     data=adata_concat,
@@ -48,4 +48,4 @@ categorical_scatter(ax=ax,
                     max_points=None,
                     s=1)
 
-plt.savefig('output/merged-concat-clustering.pdf')
+plt.savefig('output/merged-PFC-concat-clustering.pdf')
