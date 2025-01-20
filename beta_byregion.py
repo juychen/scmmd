@@ -11,7 +11,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description="Calculate the methlyation level for a given region")
 parser.add_argument("--region", type=str, required=False, help="Input path of the region bed file",
-                    default="/data2st1/junyi/generegion_vM33/promoter.bed")
+                    default="/data2st1/junyi/generegion_vM23/promoter.bed")
 parser.add_argument("--input", type=str, required=False, help="Input path of the bw file folder",
                     default="/data2st1/junyi/methlyatlas/mCseq/data.nemoarchive.org/biccn/grant/u19_cemba/ecker/epigenome/cellgroup/mCseq3/mouse/processed/other/")
 parser.add_argument("--output", type=str, required=False, help="Output path of the methylation level",
@@ -20,6 +20,10 @@ parser.add_argument("--meth_type", type=str, required=False, help="Methlylation 
 parser.add_argument("--genome", type=str, required=False, help="Genome path",default="/data2st1/junyi/ref/GRCm38.p6.genome.fa")
 
 args = parser.parse_args()
+
+def reverse_complement(seq):
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    return "".join(complement[base] for base in reversed(seq))
 
 bw_file_path = args.input
 methtype = args.meth_type
@@ -58,9 +62,17 @@ for bw_file in bw_files_mseq:
         
             values = bw.values(chrom, start, end)
             chromosome = genome[chrom]
-            sequence = chromosome.seq[start:end]
+            if row[4] == '-':
+                sequence = chromosome.seq[start:end]
+                sequence = reverse_complement(sequence)
+            else:
+                sequence = chromosome.seq[start:end]
+
         except:
             print(f"Error in {chrom} {start} {end}")
+            arr_values = np.zeros(end-start)
+            stats.append(0)
+            CGN_values.append(arr_values)
             continue
 
         arr_values = np.array(values)
