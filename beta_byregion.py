@@ -134,7 +134,7 @@ for bw_file in bw_files_mseq:
                     print(f"Error in {chrom} {start} {end}")
                     arr_values = np.zeros(end-start)
                     stats.append(0)
-                    CGN_values.append(arr_values)
+                    #CGN_values.append(arr_values)
                     meta_entries.append(row)
                     continue
 
@@ -146,7 +146,7 @@ for bw_file in bw_files_mseq:
                 else:
                     beta_vale = 0
                 stats.append(beta_vale)
-                CGN_values.append(values)
+                #CGN_values.append(values)
 
                 meta_entries.append(meta_row)
 
