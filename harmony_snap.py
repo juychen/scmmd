@@ -20,30 +20,6 @@ os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
 #                  nclust=100,
 #                  max_iter_harmony=20)
 snap.pp.mnc_correct(adata_concat, batch="sample")
-#adata_concat.obsm['X_pca'] = ho.Z_corr.T
-adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
-adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
-fig, axes = plt.subplots(figsize=(8, 3), dpi=250, ncols=2)
+snap.pp.harmony(adata_concat, batch="sample", max_iter_harmony=20)
 
-sc.pp.neighbors(adata_concat, n_neighbors=20,use_rep='X_pca_harmony')
-sc.tl.leiden(adata_concat, resolution=1.5)
-sc.tl.umap(adata_concat)
-
-adata_concat.write_h5ad('output/merged-PFC-harmony-clustering.h5ad')
-ax = axes[0]
-categorical_scatter(ax=ax,
-                    data=adata_concat,
-                    hue='batch',
-                    show_legend=True,
-                    max_points=None,
-                    s=1)
-
-ax = axes[1]
-categorical_scatter(ax=ax,
-                    data=adata_concat,
-                    hue='pred_Class',
-                    show_legend=True,
-                    max_points=None,
-                    s=1)
-
-plt.savefig('output/merged-PFC-concat-clustering.pdf')
+adata_concat.close()
