@@ -10,6 +10,7 @@ from Bio import SeqIO
 import argparse
 import copy
 import h5py
+import concurrent.futures
 
 parser = argparse.ArgumentParser(description="Calculate the methlyation level for a given region")
 parser.add_argument("--region", type=str, required=False, help="Input path of the region bed file",
@@ -23,7 +24,8 @@ parser.add_argument("--genome", type=str, required=False, help="Genome path",def
 parser.add_argument("--tile_length", type=int, required=False, help="Size of each tile",default=500)
 parser.add_argument("--flanking", type=int, required=False, help="Flanking base base",default=250000)
 parser.add_argument("--chunks", type=int, required=False, help="Write to disk every records",default=300000)
-
+parser.add_argument("--threads", type=int, required=False, help="Number of threads",default=10)
+parser.add_argument("--skipexist", type=True, required=False, help="Skip existing files",default=True)
 
 args = parser.parse_args()
 
@@ -61,12 +63,15 @@ annotation = use_gene_meta.iloc[:,-1].mode()[0]
 
 record_counts = 0
 
-for bw_file in bw_files_mseq:
+def process_file(bw_file):
     #os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy')
     cell_group = os.path.basename(bw_file).split('.')[0]
     cell_groups.append(cell_group)
     methtype = os.path.basename(bw_file).split('.')[1]
     methtypes.append(methtype)
+
+    if os.path.exists(f'output/beta_values/{cell_group}/') and args.skipexist:
+        return
 
     if os.path.exists(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv'):
         os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv')
@@ -211,3 +216,16 @@ for bw_file in bw_files_mseq:
     #np.save(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy',stats,allow_pickle=True, fix_imports=True, mmap_mode='a')
     df_meta = pd.DataFrame(meta_entries)
     df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv', mode='a',index=False,header=False)
+
+
+# Create a ThreadPoolExecutor
+with concurrent.futures.ThreadPoolExecutor(max_workers=args.threads) as executor:
+    # Submit each file for processing
+    futures = [executor.submit(process_file, bw_file) for bw_file in bw_files_mseq]
+
+    # Wait for all tasks to complete
+    for future in concurrent.futures.as_completed(futures):
+        try:
+            future.result()
+        except Exception as e:
+            print(f"Error processing file: {e}")
