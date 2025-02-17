@@ -57,12 +57,12 @@ bw_files_mseq = glob.glob(bw_file_path+"*"+methtype+"*bw")
 # cell_groups = []
 # methtypes =  []
 
+genome = SeqIO.index(args.genome, "fasta")
+use_gene_meta = pd.read_csv(args.region,sep='\t',header=None)
+annotation = use_gene_meta.iloc[:,-1].mode()[0]
+
 
 def process_file(bw_file):
-
-    genome = SeqIO.index(args.genome, "fasta")
-    use_gene_meta = pd.read_csv(args.region,sep='\t',header=None)
-    annotation = use_gene_meta.iloc[:,-1].mode()[0]
 
     record_counts = 0
     #os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy')
@@ -220,7 +220,7 @@ def process_file(bw_file):
 
 
 # Create a ThreadPoolExecutor
-with concurrent.futures.ThreadPoolExecutor(max_workers=args.threads) as executor:
+with concurrent.futures.ProcessPoolExecutor(max_workers=args.threads) as executor:
     # Submit each file for processing
     futures = [executor.submit(process_file, bw_file) for bw_file in bw_files_mseq]
 
