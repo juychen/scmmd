@@ -23,9 +23,9 @@ parser.add_argument("--meth_type", type=str, required=False, help="Methlylation 
 parser.add_argument("--genome", type=str, required=False, help="Genome path",default="/data2st1/junyi/ref/GRCm38.p6.genome.fa")
 parser.add_argument("--tile_length", type=int, required=False, help="Size of each tile",default=500)
 parser.add_argument("--flanking", type=int, required=False, help="Flanking base base",default=250000)
-parser.add_argument("--chunks", type=int, required=False, help="Write to disk every records",default=300000)
-parser.add_argument("--threads", type=int, required=False, help="Number of threads",default=10)
-parser.add_argument("--skipexist", type=True, required=False, help="Skip existing files",default=True)
+parser.add_argument("--chunks", type=int, required=False, help="Write to disk every records",default=500000)
+parser.add_argument("--threads", type=int, required=False, help="Number of threads",default=16)
+parser.add_argument("--skipexist", type=bool, required=False, help="Skip existing files",default=True)
 
 args = parser.parse_args()
 
@@ -54,27 +54,28 @@ flanking = args.flanking
 
 bw_files_mseq = glob.glob(bw_file_path+"*"+methtype+"*bw")
 
-cell_groups = []
-methtypes =  []
+# cell_groups = []
+# methtypes =  []
 
-genome = SeqIO.index(args.genome, "fasta")
-use_gene_meta = pd.read_csv(args.region,sep='\t',header=None)
-annotation = use_gene_meta.iloc[:,-1].mode()[0]
-
-record_counts = 0
 
 def process_file(bw_file):
+
+    genome = SeqIO.index(args.genome, "fasta")
+    use_gene_meta = pd.read_csv(args.region,sep='\t',header=None)
+    annotation = use_gene_meta.iloc[:,-1].mode()[0]
+
+    record_counts = 0
     #os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy')
     cell_group = os.path.basename(bw_file).split('.')[0]
-    cell_groups.append(cell_group)
+    #cell_groups.append(cell_group)
     methtype = os.path.basename(bw_file).split('.')[1]
-    methtypes.append(methtype)
+    #methtypes.append(methtype)
 
     if os.path.exists(f'output/beta_values/{cell_group}/') and args.skipexist:
         return
 
-    if os.path.exists(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv'):
-        os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv')
+    if os.path.exists(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv.gz'):
+        os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv.gz')
     if os.path.exists(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.h5'):
         os.remove(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.h5')
 
@@ -129,7 +130,7 @@ def process_file(bw_file):
             append_to_hdf5(stats, f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.h5')
             #np.save(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy',stats,allow_pickle=True, fix_imports=True, mmap_mode='a')
             df_meta = pd.DataFrame(meta_entries)
-            df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv', mode='a',index=False,header=False)
+            df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv.gz', mode='a',index=False,header=False,compression='gzip')
             stats =[]
             CGN_values = []
             meta_entries = []
@@ -202,7 +203,7 @@ def process_file(bw_file):
                     append_to_hdf5(stats, f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.h5')
                     #np.save(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy',stats,allow_pickle=True, fix_imports=True, mmap_mode='a')
                     df_meta = pd.DataFrame(meta_entries)
-                    df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv', mode='a',index=False,header=False)
+                    df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv.gz', mode='a',index=False,header=False,compression='gzip')
                     stats =[]
                     CGN_values = []
                     meta_entries = []
@@ -215,7 +216,7 @@ def process_file(bw_file):
     append_to_hdf5(stats, f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.h5')   
     #np.save(f'output/beta_values/{cell_group}/{methtype}_{annotation}_beta.npy',stats,allow_pickle=True, fix_imports=True, mmap_mode='a')
     df_meta = pd.DataFrame(meta_entries)
-    df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv', mode='a',index=False,header=False)
+    df_meta.to_csv(f'output/beta_values/{cell_group}/{methtype}_{annotation}_meta.csv.gz', mode='a',index=False,header=False,compression='gzip')
 
 
 # Create a ThreadPoolExecutor
