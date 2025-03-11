@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore")
 import anndata as ad
 import pandas as pd
 import scanpy as sc
-import scvi as sv
+import scvi
 import numpy as np
 import os
 from matplotlib import pyplot as plt
@@ -27,8 +27,8 @@ os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
 # sce.pp.harmony_integrate(adata_concat, 'batch',
 #                          **{'nclust':8,'lamb':0.5,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
 
-sv.model.SCVI.setup_anndata(adata_concat, batch_key="batch")
-vae = sv.model.SCVI(
+scvi.model.SCVI.setup_anndata(adata_concat, batch_key="batch")
+vae = scvi.model.SCVI(
     adata_concat,
     n_layers=2,
     n_latent=30,
@@ -49,7 +49,7 @@ adata_concat.obs["celltype_scanvi"] = 'Unknown'
 ref_idx = adata_concat.obs['batch'] == "sc"
 adata_concat.obs["celltype_scanvi"][ref_idx] = adata_concat.obs['celltype.L1'][ref_idx]
 
-lvae = sv.model.SCANVI.from_scvi_model(
+lvae = scvi.model.SCANVI.from_scvi_model(
     vae,
     adata=adata_concat,
     labels_key="celltype_scanvi",
