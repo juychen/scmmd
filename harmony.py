@@ -9,7 +9,7 @@ import pandas as pd
 import os
 import scanpy.external as sce
 
-input_file = 'atacsc-3region-pseudo-clustering.h5ad'
+input_file = 'atacsc-3region-clustering.h5ad'
 
 adata_concat = anndata.read_h5ad(f'output/{input_file}')
 
@@ -25,7 +25,7 @@ os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
 #                  nclust=100,
 #                  max_iter_harmony=20)
 sce.pp.harmony_integrate(adata_concat, 'batch',
-                         **{'nclust':9,'lamb':1,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
+                         **{'nclust':10,'lamb':0.2,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
 #adata_concat.obsm['X_pca'] = ho.Z_corr.T
 # adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
 # adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
