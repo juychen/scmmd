@@ -36,7 +36,7 @@ vae = scvi.model.SCVI(
     dispersion="gene-batch",
 )
 
-vae.train(max_epochs=1000, early_stopping=True)
+vae.train(max_epochs=500, early_stopping=True)
 ax = vae.history['elbo_train'][1:].plot()
 vae.history['elbo_validation'].plot(ax=ax)
 plt.savefig(f'output/{input_file}.scvi_training.pdf')
@@ -46,7 +46,7 @@ plt.savefig(f'output/{input_file}.scvi_training.pdf')
 # adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
 # 
 adata_concat.obs["celltype_scanvi"] = 'Unknown'
-ref_idx = adata_concat.obs['batch'] == "sc"
+ref_idx = adata_concat.obs['batch'] == "atac"
 adata_concat.obs["celltype_scanvi"][ref_idx] = adata_concat.obs['celltype.L1'][ref_idx]
 
 lvae = scvi.model.SCANVI.from_scvi_model(
@@ -55,12 +55,12 @@ lvae = scvi.model.SCANVI.from_scvi_model(
     labels_key="celltype_scanvi",
     unlabeled_category="Unknown",
 )
-lvae.train(max_epochs=1000, n_samples_per_label=100)
+lvae.train(max_epochs=500, n_samples_per_label=100)
 
 adata_concat.obs["C_scANVI"] = lvae.predict(adata_concat)
 adata_concat.obsm["X_scANVI"] = lvae.get_latent_representation(adata_concat)
 sc.pp.neighbors(adata_concat, n_neighbors=20,use_rep='X_scANVI')
-sc.tl.leiden(adata_concat, resolution=1.5)
+sc.tl.leiden(adata_concat, resolution=1.5) 
 sc.tl.umap(adata_concat)
 
 input_name = input_file.split('.h5ad')[0]
