@@ -1,15 +1,25 @@
 import matplotlib.pyplot as plt
 import anndata
 import scanpy as sc
+import scanpy.external as sce
 
 from ALLCools.clustering import significant_pc_test
 from ALLCools.plot import *
 from harmonypy import run_harmony
 import pandas as pd
 import os
-import scanpy.external as sce
+import argparse
 
-input_file = 'atacsc-3region-clustering.h5ad'
+parser = argparse.ArgumentParser(description="Calculate the methlyation level for a given region")
+parser.add_argument("--input", type=str, required=False, help="Input path of the bw file folder",
+                    default="atacsc-3region-pseudo-clustering.h5ad")
+parser.add_argument("--lamb", type=float, required=False, help="Lambda of harmony",default=0.3)
+parser.add_argument("--nclust", type=int, required=False, help="Number of clusters",default=11)
+
+args = parser.parse_args()
+input_file = args.input
+
+paramname = f"lamb{args.lamb}_nclust{args.nclust}"
 
 adata_concat = anndata.read_h5ad(f'output/{input_file}')
 
@@ -25,7 +35,8 @@ os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
 #                  nclust=100,
 #                  max_iter_harmony=20)
 sce.pp.harmony_integrate(adata_concat, 'batch',
-                         **{'nclust':10,'lamb':0.2,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
+                         **{'nclust':11,'lamb':0.1,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
+## lamb 11-12,lamb:0.3 is good
 #adata_concat.obsm['X_pca'] = ho.Z_corr.T
 # adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
 # adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
@@ -37,7 +48,7 @@ sc.tl.umap(adata_concat)
 
 input_name = input_file.split('.h5ad')[0]
 
-adata_concat.write_h5ad(f'output/{input_name}.harmony.h5ad')
+adata_concat.write_h5ad(f'output/{input_name}{paramname}.harmony.h5ad')
 
 adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
 adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
@@ -59,4 +70,4 @@ categorical_scatter(ax=ax,
                     max_points=None,
                     s=1)
 
-plt.savefig(f'output/{input_name}.pdf')
+plt.savefig(f'output/{input_name}{paramname}.pdf')
