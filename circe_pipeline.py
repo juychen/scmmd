@@ -4,6 +4,7 @@ import circe as ci
 import scanpy as sc
 import scipy as sp
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
 # %%
@@ -16,6 +17,10 @@ for region in regions:
         # region = 'AMY'
         # celltype = 'Vascular'
         base_name = f"{region}_{celltype}"
+
+        if os.path.exists(f"/data2st1/junyi/output/cicre/{base_name}_circe.h5ad"):
+            continue
+
 
 
         adata = sc.read_h5ad(f"/data2st1/junyi/output/motif/{base_name}.h5ads")
@@ -80,6 +85,13 @@ for region in regions:
 
         # %%
         adata = ci.add_ccans(adata)
-        adata.write(f"/data2st1/junyi/output/cicre/{base_name}_circe.h5ad")
+        
+        try:
+            adata.var['CCAN'] = adata.var['CCAN'].astype(str)
+            adata.write(f"/data2st1/junyi/output/cicre/{base_name}_circe.h5ad")
+        except:
+            print(f"Error in wirting h5ad {base_name}")
+            continue
+
 
 
