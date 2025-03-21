@@ -43,7 +43,8 @@ for bw_file in "$input_folder"/*CGN*.bedGraph; do
     echo "Converting $bw_file to $bedgraph_file..."
     # macs2 bdgpeakcall -i "$bw_file" -o "$bedgraph_file" --cutoff 1.301 -l 150
 
-    bedtools merge -i $bw_file -d 150 -c 4,4,4 -o sum,mean,count > "$bedgraph_file.bedGraph"
+    #bedtools merge -i $bw_file -d 150 -c 4,4,4 -o sum,mean,count > "$bedgraph_file.bedGraph"
+    bedtools merge -i $bw_file -d 150 -c 4 -o sum > "$bedgraph_file.bedGraph"
 
     #macs2 bdgpeakcall -i "$bw_file" -o "$bedgraph_file" --cutoff 5
 
