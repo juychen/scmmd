@@ -8,8 +8,12 @@ import os
 warnings.filterwarnings('ignore')
 
 # %%
-regions = ['AMY','HIP','PFC']
-celltypes = ['OPC-Oligo', 'Immune','Astro-Epen','Vascular','Neuron']
+# regions = ['AMY','HIP','PFC']
+# celltypes = ['OPC-Oligo', 'Immune','Astro-Epen','Vascular','Neuron']
+
+regions = ['ALL']
+celltypes = ['Sampled']
+
 
 for region in regions:
     for celltype in celltypes:
