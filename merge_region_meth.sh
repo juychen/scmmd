@@ -8,7 +8,7 @@
 
 # Assign input and output folders
 input_folder="/data2st1/junyi/snmc_bedgraph/"
-output_folder="/data2st1/junyi/snmc_bedgraph/peaks"
+output_folder="/data2st1/junyi/snmc_bedgraph/mean"
 source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 
 conda activate allcools
@@ -44,7 +44,7 @@ for bw_file in "$input_folder"/*CGN*.bedGraph; do
     # macs2 bdgpeakcall -i "$bw_file" -o "$bedgraph_file" --cutoff 1.301 -l 150
 
     #bedtools merge -i $bw_file -d 150 -c 4,4,4 -o sum,mean,count > "$bedgraph_file.bedGraph"
-    bedtools merge -i $bw_file -d 150 -c 4 -o sum > "$bedgraph_file.bedGraph"
+    bedtools merge -i $bw_file -d 150 -c 4 -o mean > "$bedgraph_file.bedGraph"
 
     #macs2 bdgpeakcall -i "$bw_file" -o "$bedgraph_file" --cutoff 5
 
