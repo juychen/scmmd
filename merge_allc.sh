@@ -18,9 +18,10 @@ export NUMEXPR_MAX_THREADS=40
 # allcools merge-allc --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/OPC-Oligo/*gz --output_path /data2st1/junyi/merged_allcs/HIP/OPC-Oligo.tsv.gz
 # allcools merge-allc --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/Astro-Epen/*gz --output_path /data2st1/junyi/merged_allcs/HIP/Astro-Epen.tsv.gz
 # cd /data2st1/junyi/single_allcs/HIP/Neuron
-# allcools merge-allc --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/Neuron/hip_neuron.txt --output_path /data2st1/junyi/merged_allcs/HIP/Neuron.tsv.gz
+allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/Neu.txt --output_path /data2st1/junyi/merged_allcs/HIP/Neuron.tsv.gz
 # allcools merge-allc --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/Immune/*gz --output_path /data2st1/junyi/merged_allcs/HIP/Immune.tsv.gz
 
 # allcools merge-allc --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/HIP/HIP.txt --output_path /data2st1/junyi/merged_allcs/HIP/Immune.tsv.gz
-allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/AMY/AMY.txt --output_path /data2st1/junyi/merged_allcs/AMY.tsv.gz
-allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/PFC/PFC.txt --output_path /data2st1/junyi/merged_allcs/PFC.tsv.gz
+# allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/AMY/AMY.txt --output_path /data2st1/junyi/merged_allcs/AMY.tsv.gz
+# allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/PFC/PFC.txt --output_path /data2st1/junyi/merged_allcs/PFC.tsv.gz
+# allcools merge-allc --cpu 32 --chrom_size_path /home/junyichen/code/whole_mouse_brain/wmb/files/mm10.main.chrom.sizes --allc_paths /data2st1/junyi/single_allcs/PFC/PFC.txt --output_path /data2st1/junyi/merged_allcs/PFC.tsv.gz
