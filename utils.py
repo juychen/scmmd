@@ -7,6 +7,10 @@ import matplotlib.pyplot as plt
 import subprocess
 import h5py
 import shutil
+import pysam
+from multiprocessing import Pool
+import concurrent.futures
+
 
 def conclude_pycistargets(file_paths:list):
 
@@ -134,3 +138,43 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     # df_closest.loc[(df_closest.distance>0) & (df_closest.strand=='-'),'annotation'] = 'downstream'
     shutil.rmtree(temp_dir)
     return df_closest
+
+def process_celltype(allcfile,regions):
+    tabix_file = pysam.TabixFile(allcfile)
+    list_mc_covs = []
+    for region in regions:
+        mc = 0
+        cov = 0
+        chr = region[0]
+        start = region[1]
+        end = region[2]
+        for row in tabix_file.fetch(chr, start, end):
+            columns = row.split('\t')
+            mc += int(columns[4])
+            cov += int(columns[5])
+        list_mc_covs.append([mc, cov])
+
+    return list_mc_covs
+
+def mc_coverage_by_region(allcfiles:list,regions:list,ncpus=4):
+
+    # Create a pool of workers
+    with Pool(processes=ncpus) as pool:
+        results = pool.starmap(process_celltype, [(allcfile, regions) for allcfile in allcfiles])
+    return dict(zip(allcfiles, results))
+
+# test_region = [['chr1', 6526617, 6526633],
+#  ['chr1', 6527054, 6527089],
+#  ['chr1', 12577161, 12577177],
+#  ['chr1', 16878736, 16878786],
+#  ['chr1', 18098940, 18099022]]
+
+# allcs=['/data2st1/junyi/merged_allcs/PFC/Neuron.tsv.gz',
+#  '/data2st1/junyi/merged_allcs/PFC/Astro-Epen.tsv.gz',
+#  '/data2st1/junyi/merged_allcs/PFC/Vascular.tsv.gz',
+#  '/data2st1/junyi/merged_allcs/PFC/Immune.tsv.gz',
+#  '/data2st1/junyi/merged_allcs/PFC/OPC-Oligo.tsv.gz']
+
+# results = mc_coverage_by_region(allcs,test_region,ncpus=4)
+
+# print(results)
