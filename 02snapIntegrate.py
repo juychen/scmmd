@@ -23,3 +23,7 @@ snap.pp.mnc_correct(adata_concat, batch="sample")
 snap.pp.harmony(adata_concat, batch="sample", max_iter_harmony=20)
 
 adata_concat.close()
+
+# adata = adata_concat.to_adata()
+# adata.obsm['fragment_paired'] = adata_concat.adatas.obsm['fragment_paired']
+# adata.write('output/mouse_brain.h5ad')
