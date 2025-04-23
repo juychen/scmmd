@@ -6,9 +6,9 @@ import numpy as np
 import pandas as pd
 import os
 import scanpy.external as sce
-adata_concat = snap.read_dataset('output/mouse_brain.h5ads')
+adata_concat = snap.read_dataset('output/atac0416/mouse_brain.h5ads')
 
-default_n_threads = 10
+default_n_threads = 32
 os.environ['OPENBLAS_NUM_THREADS'] = f"{default_n_threads}"
 os.environ['MKL_NUM_THREADS'] = f"{default_n_threads}"
 os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
