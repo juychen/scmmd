@@ -15,13 +15,14 @@ parser.add_argument("--input", type=str, required=False, help="Input path of the
                     default="atacsc-3region-pseudo-clustering.h5ad")
 parser.add_argument("--lamb", type=float, required=False, help="Lambda of harmony",default=0.3)
 parser.add_argument("--nclust", type=int, required=False, help="Number of clusters",default=11)
-
+parser.add_argument("--output", type=str, required=False, help="Output path of the bw file folder",
+                    default="output/")
 args = parser.parse_args()
 input_file = args.input
 
 paramname = f"lamb{args.lamb}_nclust{args.nclust}"
 
-adata_concat = anndata.read_h5ad(f'output/{input_file}')
+adata_concat = anndata.read_h5ad(f'{input_file}')
 
 default_n_threads = 1
 os.environ['OPENBLAS_NUM_THREADS'] = f"{default_n_threads}"
@@ -35,7 +36,7 @@ os.environ['OMP_NUM_THREADS'] = f"{default_n_threads}"
 #                  nclust=100,
 #                  max_iter_harmony=20)
 sce.pp.harmony_integrate(adata_concat, 'batch',
-                         **{'nclust':11,'lamb':0.1,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
+                         **{'nclust':args.nclust,'lamb':args.lamb,'epsilon_harmony':0,'epsilon_cluster':0,'max_iter_harmony':10})
 ## lamb 11-12,lamb:0.3 is good
 #adata_concat.obsm['X_pca'] = ho.Z_corr.T
 # adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
@@ -46,7 +47,7 @@ sc.pp.neighbors(adata_concat, n_neighbors=20,use_rep='X_pca_harmony')
 sc.tl.leiden(adata_concat, resolution=1.5)
 sc.tl.umap(adata_concat)
 
-input_name = input_file.split('.h5ad')[0]
+input_name = os.path.basename(input_file).split('.h5ad')[0]
 
 adata_concat.write_h5ad(f'output/{input_name}{paramname}.harmony.h5ad')
 
@@ -65,9 +66,9 @@ categorical_scatter(ax=ax,
 ax = axes[1]
 categorical_scatter(ax=ax,
                     data=adata_concat,
-                    hue='celltype.L1',
+                    hue='celltype.L2',
                     show_legend=True,
                     max_points=None,
                     s=1)
 
-plt.savefig(f'output/{input_name}{paramname}.pdf')
+plt.savefig(f'{args.output}/{input_name}{paramname}.pdf')
