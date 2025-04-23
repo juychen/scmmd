@@ -9,7 +9,7 @@ import numpy as np
 import os
 from matplotlib import pyplot as plt
 
-input_file = 'atacsc-3region-pseudo-clustering.h5ad'
+input_file = 'atac0416/HIP_atacsc_neuron.h5ad'
 
 adata_concat = sc.read_h5ad(f'output/{input_file}')
 
@@ -31,7 +31,7 @@ scvi.model.SCVI.setup_anndata(adata_concat, batch_key="batch")
 vae = scvi.model.SCVI(
     adata_concat,
     n_layers=2,
-    n_latent=30,
+    n_latent=15,
     gene_likelihood="nb",
     dispersion="gene-batch",
 )
