@@ -10,7 +10,8 @@ import shutil
 import pysam
 from multiprocessing import Pool
 import concurrent.futures
-
+from sklearn.svm import SVC
+from sklearn.preprocessing import LabelEncoder
 
 def conclude_pycistargets(file_paths:list):
 
@@ -178,3 +179,19 @@ def mc_coverage_by_region(allcfiles:list,regions:list,ncpus=4):
 # results = mc_coverage_by_region(allcs,test_region,ncpus=4)
 
 # print(results)
+
+def label_transfer_svc(adata_sc_train, adata_sc_test,label_col='celltype.L1',embedding_col='X_pca',svc_kwargs={'kernel': 'linear', 'C': 1}):
+    """
+    Transfer labels using SVC
+    """
+    y_train = adata_sc_train.obs[label_col]
+    le = LabelEncoder()
+    y_train = le.fit_transform(y_train)
+    X_train = adata_sc_train.obsm[embedding_col]
+    clf = SVC(**svc_kwargs)
+    clf.fit(X_train, y_train)
+    X_test = adata_sc_test.obsm[embedding_col]
+    y_test = clf.predict(X_test)
+    y_test = le.inverse_transform(y_test)
+    adata_sc_test.obs[label_col] = y_test
+    return adata_sc_test
