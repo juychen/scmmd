@@ -49,7 +49,7 @@ sc.tl.umap(adata_concat)
 
 input_name = os.path.basename(input_file).split('.h5ad')[0]
 
-adata_concat.write_h5ad(f'output/{input_name}{paramname}.harmony.h5ad')
+adata_concat.write_h5ad(f'{args.output}/{input_name}{paramname}.harmony.h5ad')
 
 adata_concat.obs['umap_0'] = adata_concat.obsm['X_umap'][:, 0]
 adata_concat.obs['umap_1'] = adata_concat.obsm['X_umap'][:, 1]
