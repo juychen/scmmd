@@ -39,8 +39,8 @@ for l2type in df_meta_all["celltype.L2"].unique():
     st1 = df_meta_all[df_meta_all["celltype.L2"]==l2type]
     l2name = l2type.replace(' ','_')
 
-    if os.path.exists(f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}_l3.csv'):
-        continue
+    # if os.path.exists(f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}_l3.csv'):
+    #     continue
     
     try:
         # Subset the data
@@ -95,10 +95,15 @@ for l2type in df_meta_all["celltype.L2"].unique():
             col_wrap=5,linewidth=0,
             height=3, aspect=1.3
         )
-        plt.savefig(f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}_umap.png', dpi=300, bbox_inches='tight')
+
+        celltype = l2name
+        celltype_save = celltype.replace(" ","_")
+        celltype_save = celltype_save.replace("/","-")
+
+        plt.savefig(f'/data2st1/junyi/output/atac0416/iterative/l3/{celltype_save}_umap.png', dpi=300, bbox_inches='tight')
         df_meta_subtypes = pd.DataFrame({"celltype.L3":datasubset.obs['leiden'].to_numpy()},index=datasubset.obs_names)
         df_meta_subtypes["celltype.L3"] = l2type+"-"+df_meta_subtypes["celltype.L3"].astype(str)
-        df_meta_subtypes.to_csv(f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}_l3.csv')
+        df_meta_subtypes.to_csv(f'/data2st1/junyi/output/atac0416/iterative/l3/{celltype_save}_l3.csv')
 
         best_ress.append(best_res)
         n_clusters.append(len(datasubset.obs['leiden'].unique()))
