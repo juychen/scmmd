@@ -137,8 +137,16 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     # df_closest.loc[(df_closest.distance<-2000) & (df_closest.strand=='-'),'annotation']= 'distal'
     # df_closest.loc[(df_closest.distance<0) & (df_closest.distance>-2000) & (df_closest.strand=='-'),'annotation']= 'promoter'
     # df_closest.loc[(df_closest.distance>0) & (df_closest.strand=='-'),'annotation'] = 'downstream'
+
+    
     shutil.rmtree(temp_dir)
-    return df_closest
+    df_closest[region_col]= df_closest['chr'] + ':' + df_closest['start'].astype(str) + '-' + df_closest['end'].astype(str)
+    # Only keep cloest
+    df_sorted = df_closest.sort_values(by='distance', key=lambda x: abs(x))
+    df_sorted = df_sorted.drop_duplicates(subset=[region_col], keep='first')
+
+    df_result = df_input.merge(df_sorted[[region_col, 'gene_name','gene_id', 'distance','gstart','gend']], on=region_col, how='left')
+    return df_result
 
 def process_celltype(allcfile,regions):
     tabix_file = pysam.TabixFile(allcfile)
