@@ -29,13 +29,17 @@ region = args.region
 celltype_column = args.celltype_column
 adata = anndata.read_h5ad(file)
 for celltype in adata.obs[celltype_column].unique():
-    adata_AMY_neuron = adata[(adata.obs['sample'].str.contains(region)) & (adata.obs['celltype_column'].str.contains(celltype))].copy()
-    peak_mat=adata_AMY_neuron
-    sc.tl.rank_genes_groups(peak_mat, groupby='expriment', method='wilcoxon',pts=True)
-    df = sc.get.rank_genes_groups_df(peak_mat, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
-    base_name = f"{region}_{celltype}"
-    base_name = base_name.replace(" ","_")
-    base_name = base_name.replace("/","-")
-    df.to_csv(f"{args.output}/{base_name}_MC_wilcoxon.csv")
-    df_mw = sc.get.rank_genes_groups_df(peak_mat, group='MW', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
-    df_mw.to_csv(f"{args.output}/{base_name}_MW_wilcoxon.csv")
+    try:
+        adata_AMY_neuron = adata[(adata.obs['sample'].str.contains(region)) & (adata.obs[celltype_column].str.contains(celltype))].copy()
+        peak_mat=adata_AMY_neuron
+        sc.tl.rank_genes_groups(peak_mat, groupby='expriment', method='wilcoxon',pts=True)
+        df = sc.get.rank_genes_groups_df(peak_mat, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+        base_name = f"{region}_{celltype}"
+        base_name = base_name.replace(" ","_")
+        base_name = base_name.replace("/","-")
+        df.to_csv(f"{args.output}/{base_name}_MC_wilcoxon.csv")
+        df_mw = sc.get.rank_genes_groups_df(peak_mat, group='MW', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+        df_mw.to_csv(f"{args.output}/{base_name}_MW_wilcoxon.csv")
+    except Exception as e:
+        print(f"Error processing {celltype}: {e}")
+        continue
