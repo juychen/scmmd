@@ -222,3 +222,7 @@ def cis_bp_mouse(unique: bool = True , path="data/motifdb/Mus_musculus.meme") ->
                unique_motifs[name] = motif
         motifs = list(unique_motifs.values())
     return motifs
+
+
+flist = glob.glob('/data2st1/junyi/output/atac0416/dar/motif/region_nt/*AMY*_MC_inner.hdf5')
+df_report = conclude_pycistargets(flist)

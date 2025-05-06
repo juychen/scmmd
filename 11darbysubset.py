@@ -64,7 +64,37 @@ for celltype in adata.obs[celltype_column].unique():
             df_mc = result_1d.query('de_coef > 0 & de_pval < 0.05').sort_values('de_pval')
             df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementob.csv")
             df_mw = result_1d.query('de_coef < 0 & de_pval < 0.05').sort_values('de_pval')
-            df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementob.csv")    
+            df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementob.csv")
+        elif args.method == "memento-ht":   
+            adata_subset.layers['normalized'] = adata_subset.X.copy()
+            adata_subset.X =adata_subset.layers['count']
+            adata_subset.obs['stim'] = adata_subset.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
+            le = LabelEncoder()
+            le.fit(adata_subset.obs['sample'])
+            adata_subset.obs['ind'] = le.transform(adata_subset.obs['sample'])
+            adata_subset.layers['normalized'] = adata_subset.X.copy()
+            adata_subset.X =adata_subset.layers['count']
+            adata_subset.obs['capture_rate'] = 0.07
+            memento.setup_memento(adata_subset, q_column='capture_rate')
+            memento.create_groups(adata_subset, label_columns=['stim', 'ind'])
+            memento.compute_1d_moments(adata_subset,
+                min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
+            sample_meta = memento.get_groups(adata_subset)
+            sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
+            treatment_df = sample_meta[['stim']]
+            cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
+            memento.ht_1d_moments(
+                adata_subset, 
+                treatment=treatment_df,
+                covariate=cov_df,
+                num_boot=5000, 
+                verbose=1,
+                num_cpus=args.cpu)
+            result_1d = memento.get_1d_ht_result(adata_subset)
+            df_mc = result_1d.query('de_coef > 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementoht.csv")
+            df_mw = result_1d.query('de_coef < 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementoht.csv")
 
     except Exception as e:
         print(f"Error processing {celltype}: {e}")
