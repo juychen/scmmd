@@ -20,7 +20,7 @@ parser.add_argument("--output", type=str, required=False, help="Output path of t
 #parser.add_argument("--celltype", type=str, required=False, help="Select cell type in obs",default="Neuron")
 parser.add_argument("--region", type=str, required=False, help="Brain region",default="PFC")
 parser.add_argument("--celltype_column", type=str, required=False, help="Column for cell type",default="region_nt")
-parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="wilcoxon")
+parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="memento-binary")
 parser.add_argument("--cpu", type=int, required=False, help="Number of CPUs",default=32)
 
 
@@ -40,24 +40,23 @@ if not os.path.exists(outfolder):
 for celltype in adata.obs[celltype_column].unique():
     try:
         print(f"Processing {celltype}")
-        adata_AMY_neuron = adata[adata.obs[celltype_column].str.contains(celltype)]
-        peak_mat=adata_AMY_neuron
+        adata_subset = adata[adata.obs[celltype_column].str.contains(celltype)]
         base_name = f"{region}_{celltype}"
         base_name = base_name.replace(" ","_")
         base_name = base_name.replace("/","-")
 
         if args.method == "wilcoxon":
-            sc.tl.rank_genes_groups(peak_mat, groupby='expriment', method='wilcoxon',pts=True)
-            df = sc.get.rank_genes_groups_df(peak_mat, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+            sc.tl.rank_genes_groups(adata_subset, groupby='expriment', method='wilcoxon',pts=True)
+            df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
             df.to_csv(f"{outfolder}/{base_name}_MC_wilcoxon.csv")
-            df_mw = sc.get.rank_genes_groups_df(peak_mat, group='MW', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+            df_mw = sc.get.rank_genes_groups_df(adata_subset, group='MW', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_wilcoxon.csv")
         elif args.method == "memento-binary":
-            adata.layers['normalized'] = adata.X.copy()
-            adata.X =adata.layers['count']
-            adata.obs['stim'] = adata.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
+            adata_subset.layers['normalized'] = adata_subset.X.copy()
+            adata_subset.X =adata_subset.layers['count']
+            adata_subset.obs['stim'] = adata_subset.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
             result_1d = memento.binary_test_1d(
-                adata=adata, 
+                adata=adata_subset, 
                 capture_rate=0.07, 
                 treatment_col='stim', 
                 num_cpus=args.cpu,

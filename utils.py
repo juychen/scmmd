@@ -12,6 +12,8 @@ from multiprocessing import Pool
 import concurrent.futures
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
+from snapatac2._snapatac2 import read_motifs, PyDNAMotif
+
 
 def conclude_pycistargets(file_paths:list):
 
@@ -145,7 +147,7 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     df_sorted = df_closest.sort_values(by='distance', key=lambda x: abs(x))
     df_sorted = df_sorted.drop_duplicates(subset=[region_col], keep='first')
 
-    df_result = df_input.merge(df_sorted[[region_col, 'gene_name','gene_id', 'distance','gstart','gend']], on=region_col, how='left')
+    df_result = df_input.merge(df_sorted[[region_col, 'gene_name','gene_id','gstart','gend','strand', 'distance']], on=region_col, how='left')
     return df_result
 
 def process_celltype(allcfile,regions):
@@ -203,3 +205,20 @@ def label_transfer_svc(adata_sc_train, adata_sc_test,label_col='celltype.L1',emb
     y_test = le.inverse_transform(y_test)
     adata_sc_test.obs[label_col] = y_test
     return adata_sc_test
+
+
+def cis_bp_mouse(unique: bool = True , path="data/motifdb/Mus_musculus.meme") -> list[PyDNAMotif]:
+    motifs = read_motifs(path)
+    for motif in motifs:
+        motif.name = motif.id.split('+')[0]
+    if unique:
+        unique_motifs = {}
+        for motif in motifs:
+            name = motif.name
+            if (
+                    name not in unique_motifs or 
+                    unique_motifs[name].info_content() < motif.info_content()
+               ):
+               unique_motifs[name] = motif
+        motifs = list(unique_motifs.values())
+    return motifs
