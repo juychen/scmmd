@@ -3,19 +3,19 @@ source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 
 conda activate snapatac2
 python 11darbysubset.py --input /data2st1/junyi/output/atac0416/3REGIONS_peak.h5ads \
---celltype_column region_nt \
+--celltype_column celltype.L2 \
 --output /data2st1/junyi/output/atac0416/dar \
 --method memento-binary \
 --region HIP
 
 python 11darbysubset.py --input /data2st1/junyi/output/atac0416/3REGIONS_peak.h5ads \
---celltype_column region_nt \
+--celltype_column celltype.L2 \
 --output /data2st1/junyi/output/atac0416/dar \
 --method memento-binary \
 --region AMY
 
 python 11darbysubset.py --input /data2st1/junyi/output/atac0416/3REGIONS_peak.h5ads \
 --output /data2st1/junyi/output/atac0416/dar \
---celltype_column region_nt \
+--celltype_column celltype.L2 \
 --method memento-binary \
 --region PFC
