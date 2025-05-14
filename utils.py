@@ -119,8 +119,12 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     bedbasename = bedbasename.replace(".bed","_sorted.bed")
     destbedname = os.path.join(temp_dir,bedbasename)
     #!sort -k1,1 -k2,2n {filename} > {destname}
-    command_str = f"sort -k1,1 -k2,2n {bedfile} > {destbedname}"
+    command_str = f"sort -k1,1 -k2,2n {bedfile} > {destbedname}.sorted"
     subprocess.run(command_str, shell=True)
+    # Only keep chr1-chr22 x y m
+    command_str = f"grep -E '^(chr[1-9]|chr1[0-9]|chr[XMY])\s' {destbedname}.sorted > {destbedname}"
+    subprocess.run(command_str, shell=True)
+
     #!sort -k1,1 -k2,2n {filename} > {destname}
     destregionname = os.path.join(temp_dir,'tmp_region_sorted.bed')
     command_str = f"sort -k1,1 -k2,2n {os.path.join(temp_dir,'tmp_region.bed')} > {destregionname}"
@@ -131,7 +135,22 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     subprocess.run(command_str, shell=True)
 
     df_closest = pd.read_csv(closest_name, sep='\t', header=None)
-    df_closest.columns = ['chr','start','end','gchr','gstart','gend','score','strand','gene_name','gene_id','annotation','distance']
+    try:
+        df_closest.columns = ['chr','start','end','gchr','gstart','gend','score','strand','gene_name','gene_id','annotation','distance']
+    except:
+        print(df_closest.head(2))
+        print("Error: The closest bed file does not have the expected number of gene columns.")
+        df_closest.columns = ['chr','start','end','gchr','gstart','gend','score','strand','annotation','distance']
+        shutil.rmtree(temp_dir)
+        df_closest[region_col]= df_closest['chr'] + ':' + df_closest['start'].astype(str) + '-' + df_closest['end'].astype(str)
+        # Only keep cloest
+        df_sorted = df_closest.sort_values(by='distance', key=lambda x: abs(x))
+        df_sorted = df_sorted.drop_duplicates(subset=[region_col], keep='first')
+
+        df_result = df_input.merge(df_sorted[[region_col, 'gstart','gend','strand','annotation', 'distance']], on=region_col, how='left')
+
+        return df_result
+        
     # Annotate the regions based on the distance and strand
     # df_closest.loc[(df_closest.distance>2000) & (df_closest.strand=='+'),'annotation'] = 'distal'
     # df_closest.loc[(df_closest.distance>0) & (df_closest.distance<2000) & (df_closest.strand=='+'),'annotation'] = 'promoter'
@@ -147,7 +166,7 @@ def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> p
     df_sorted = df_closest.sort_values(by='distance', key=lambda x: abs(x))
     df_sorted = df_sorted.drop_duplicates(subset=[region_col], keep='first')
 
-    df_result = df_input.merge(df_sorted[[region_col, 'gene_name','gene_id','gstart','gend','strand', 'distance']], on=region_col, how='left')
+    df_result = df_input.merge(df_sorted[[region_col, 'gene_name','gene_id','gstart','gend','strand','annotation', 'distance']], on=region_col, how='left')
     return df_result
 
 def process_celltype(allcfile,regions):
