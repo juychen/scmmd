@@ -245,3 +245,23 @@ def cis_bp_mouse(unique: bool = True , path="data/motifdb/Mus_musculus.meme") ->
 
 # flist = glob.glob('/data2st1/junyi/output/atac0416/dar/motif/region_nt/*AMY*_MC_inner.hdf5')
 # df_report = conclude_pycistargets(flist)
+# bed_allpeaks = "/data2st1/junyi/output/atac0416/cCRE/peak.bed"
+
+# df_allpeaks = pd.read_csv(bed_allpeaks, sep="\t", header=None) 
+# df_allpeaks.columns = ["chr", "start", "end"]
+# df_allpeaks['names'] = df_allpeaks['chr'] + ":" + df_allpeaks['start'].astype(str) + "-" + df_allpeaks['end'].astype(str)
+
+# annotations = [
+#     "/data2st1/junyi/output/atac0416/cCRE/intergenic.bed"
+#     ]
+# dict_annot = {}
+# for file in annotations:
+#     name = file.split('/')[-1].replace('.bed', '')
+#     try:
+#         df_annot = annotate_region(df_allpeaks,region_col='names', bedfile=file)
+#         dict_annot[name] = df_annot[df_annot.distance==0]
+#         dict_annot['cCRE'] = name
+#         print(f"Processed {file},{len(dict_annot[name])}")
+#     except:
+#         print(f"Error processing {file}")
+#         continue
