@@ -47,9 +47,10 @@ for celltype in adata.obs[celltype_column].unique():
 
         if args.method == "wilcoxon":
             sc.tl.rank_genes_groups(adata_subset, groupby='expriment', method='wilcoxon',pts=True)
-            df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+            #df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+            df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',log2fc_min=0)
             df.to_csv(f"{outfolder}/{base_name}_MC_wilcoxon.csv")
-            df_mw = sc.get.rank_genes_groups_df(adata_subset, group='MW', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
+            df_mw = sc.get.rank_genes_groups_df(adata_subset, group='MW', key='rank_genes_groups',log2fc_min=0)
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_wilcoxon.csv")
         elif args.method == "memento-binary":
             adata_subset.layers['normalized'] = adata_subset.X.copy()
@@ -61,9 +62,9 @@ for celltype in adata.obs[celltype_column].unique():
                 treatment_col='stim', 
                 num_cpus=args.cpu,
                 num_boot=5000)
-            df_mc = result_1d.query('de_coef > 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mc = result_1d.query('de_coef > 0').sort_values('de_pval')
             df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementob.csv")
-            df_mw = result_1d.query('de_coef < 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mw = result_1d.query('de_coef < 0').sort_values('de_pval')
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementob.csv")
         elif args.method == "memento-ht":   
             adata_subset.layers['normalized'] = adata_subset.X.copy()
@@ -91,9 +92,9 @@ for celltype in adata.obs[celltype_column].unique():
                 verbose=1,
                 num_cpus=args.cpu)
             result_1d = memento.get_1d_ht_result(adata_subset)
-            df_mc = result_1d.query('de_coef > 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mc = result_1d.query('de_coef > 0').sort_values('de_pval')
             df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementoht.csv")
-            df_mw = result_1d.query('de_coef < 0 & de_pval < 0.05').sort_values('de_pval')
+            df_mw = result_1d.query('de_coef < 0').sort_values('de_pval')
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementoht.csv")
 
     except Exception as e:
