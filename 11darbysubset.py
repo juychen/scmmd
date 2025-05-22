@@ -84,7 +84,7 @@ for celltype in adata.obs[celltype_column].unique():
             memento.compute_1d_moments(adata_subset,
                 min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
             sample_meta = memento.get_groups(adata_subset)
-            sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
+            #sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
             treatment_df = sample_meta[['stim']]
             #cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
             cov_df = sample_meta[['expr_avg']]
