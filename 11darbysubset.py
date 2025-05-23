@@ -33,6 +33,8 @@ region = args.region
 celltype_column = args.celltype_column
 adata = anndata.read_h5ad(file)
 adata = adata[(adata.obs['sample'].str.contains(region))]
+adata = adata[~(adata.obs['celltype.L2'].str.contains('Doublet'))]
+adata = adata[~(adata.obs['celltype.L2'].str.contains('Not_sure'))]
 
 if args.celltype_column == 'region_nt':
     adata.obs['region_nt'] = adata.obs['region_nt'].astype('str')
