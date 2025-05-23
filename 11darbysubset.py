@@ -34,6 +34,9 @@ celltype_column = args.celltype_column
 adata = anndata.read_h5ad(file)
 adata = adata[(adata.obs['sample'].str.contains(region))]
 
+if args.celltype_column == 'region_nt':
+    adata.obs.loc[adata.obs.region_nt=="NN",'region_nt'] = adata.obs.loc[adata.obs.region_nt=="NN",'celltype.L1']
+
 outfolder = os.path.join(args.output,celltype_column)
 if not os.path.exists(outfolder):
     os.makedirs(outfolder)
@@ -79,15 +82,20 @@ for celltype in adata.obs[celltype_column].unique():
             adata_subset.layers['normalized'] = adata_subset.X.copy()
             adata_subset.X =adata_subset.layers['count']
             adata_subset.obs['capture_rate'] = 0.07
+
+            df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
+
+            adata_subset.obs = adata_subset.obs.join(df_frac[['sample','farcq']],how='left', on='sample')
+
             memento.setup_memento(adata_subset, q_column='capture_rate')
-            memento.create_groups(adata_subset, label_columns=['stim', 'expr_avg'])
+            memento.create_groups(adata_subset, label_columns=['stim', 'farcq'])
             memento.compute_1d_moments(adata_subset,
                 min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
             sample_meta = memento.get_groups(adata_subset)
             #sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
             treatment_df = sample_meta[['stim']]
             #cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
-            cov_df = sample_meta[['expr_avg']]
+            cov_df = sample_meta[['farcq']]
 
             memento.ht_1d_moments(
                 adata_subset, 
