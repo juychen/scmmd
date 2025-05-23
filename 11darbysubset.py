@@ -42,8 +42,7 @@ if args.celltype_column == 'region_nt':
 if args.method == "memento-ht":
 
     df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
-    adata.obs = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')
-    adata.obs['farcq'] = adata.obs['farcq'].astype('category')
+    adata.obs['farcq'] = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')['farcq'].astype('category')
 
 outfolder = os.path.join(args.output,celltype_column)
 if not os.path.exists(outfolder):
