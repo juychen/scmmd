@@ -35,7 +35,15 @@ adata = anndata.read_h5ad(file)
 adata = adata[(adata.obs['sample'].str.contains(region))]
 
 if args.celltype_column == 'region_nt':
-    adata.obs.loc[adata.obs.region_nt=="NN",'region_nt'] = adata.obs.loc[adata.obs.region_nt=="NN",'celltype.L1']
+    adata.obs['region_nt'] = adata.obs['region_nt'].astype('str')
+    adata.obs.loc[adata.obs.region_nt=="NN",'region_nt'] = adata.obs.loc[adata.obs.region_nt=="NN",'celltype.L1'].astype('str')
+    adata.obs['region_nt'] = adata.obs['region_nt'].astype('category')
+
+if args.method == "memento-ht":
+
+    df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
+    adata.obs = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')
+    adata.obs['farcq'] = adata.obs['farcq'].astype('category')
 
 outfolder = os.path.join(args.output,celltype_column)
 if not os.path.exists(outfolder):
@@ -82,10 +90,6 @@ for celltype in adata.obs[celltype_column].unique():
             adata_subset.layers['normalized'] = adata_subset.X.copy()
             adata_subset.X =adata_subset.layers['count']
             adata_subset.obs['capture_rate'] = 0.07
-
-            df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
-
-            adata_subset.obs = adata_subset.obs.join(df_frac[['sample','farcq']],how='left', on='sample')
 
             memento.setup_memento(adata_subset, q_column='capture_rate')
             memento.create_groups(adata_subset, label_columns=['stim', 'farcq'])
