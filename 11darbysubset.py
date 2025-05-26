@@ -22,6 +22,7 @@ parser.add_argument("--region", type=str, required=False, help="Brain region",de
 parser.add_argument("--celltype_column", type=str, required=False, help="Column for cell type",default="region_nt")
 parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="memento-ht")
 parser.add_argument("--cpu", type=int, required=False, help="Number of CPUs",default=32)
+parser.add_argument("--cov_column", type=str, required=False, help="Covariate column in the adata.obs",default="farcq")
 
 
 args = parser.parse_args()
@@ -31,6 +32,8 @@ file = args.input
 region = args.region
 #celltype = args.celltype
 celltype_column = args.celltype_column
+
+covariate_column = args.cov_column
 adata = anndata.read_h5ad(file)
 adata = adata[(adata.obs['sample'].str.contains(region))]
 adata = adata[~(adata.obs['celltype.L2'].str.contains('Doublet'))]
@@ -42,9 +45,14 @@ if args.celltype_column == 'region_nt':
     adata.obs['region_nt'] = adata.obs['region_nt'].astype('category')
 
 if args.method == "memento-ht":
-
     df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
     adata.obs['farcq'] = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')['farcq'].astype('category').values
+
+if covariate_column == "Dbatch":
+    adata.obs[covariate_column] = "0"
+    adata.obs.loc[adata.obs['sample'].str.contains("25"),'Dbatch'] = "1"
+    adata.obs.loc[adata.obs['sample'].str.contains("26"),'Dbatch'] = "1"
+
 
 outfolder = os.path.join(args.output,celltype_column)
 if not os.path.exists(outfolder):
@@ -93,14 +101,14 @@ for celltype in adata.obs[celltype_column].unique():
             adata_subset.obs['capture_rate'] = 0.07
 
             memento.setup_memento(adata_subset, q_column='capture_rate')
-            memento.create_groups(adata_subset, label_columns=['stim', 'farcq'])
+            memento.create_groups(adata_subset, label_columns=['stim', covariate_column])
             memento.compute_1d_moments(adata_subset,
                 min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
             sample_meta = memento.get_groups(adata_subset)
             #sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
             treatment_df = sample_meta[['stim']]
             #cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
-            cov_df = sample_meta[['farcq']]
+            cov_df = sample_meta[[covariate_column]]
 
             memento.ht_1d_moments(
                 adata_subset, 
