@@ -23,6 +23,7 @@ parser.add_argument("--celltype_column", type=str, required=False, help="Column 
 parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="memento-ht")
 parser.add_argument("--cpu", type=int, required=False, help="Number of CPUs",default=32)
 parser.add_argument("--cov_column", type=str, required=False, help="Covariate column in the adata.obs",default="farcq")
+parser.add_argument("--capture_rate", type=float, required=False, help="Capture rate for the region",default=0.15)
 
 
 args = parser.parse_args()
@@ -44,9 +45,13 @@ if args.celltype_column == 'region_nt':
     adata.obs.loc[adata.obs.region_nt=="NN",'region_nt'] = adata.obs.loc[adata.obs.region_nt=="NN",'celltype.L1'].astype('str')
     adata.obs['region_nt'] = adata.obs['region_nt'].astype('category')
 
-if args.method == "memento-ht":
+if args.method in ["memento-ht",'memento-binary']:
     df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
     adata.obs['farcq'] = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')['farcq'].astype('category').values
+    adata.obs['fracHQP'] = pd.merge(adata.obs,
+                                  df_frac[['sample','Fraction of high-quality fragments overlapping peaks']],
+                                  on='sample',how='left')['Fraction of high-quality fragments overlapping peaks'].values
+
 
 if covariate_column == "Dbatch":
     adata.obs[covariate_column] = "0"
@@ -76,12 +81,25 @@ for celltype in adata.obs[celltype_column].unique():
             adata_subset.layers['normalized'] = adata_subset.X.copy()
             adata_subset.X =adata_subset.layers['count']
             adata_subset.obs['stim'] = adata_subset.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
-            result_1d = memento.binary_test_1d(
-                adata=adata_subset, 
-                capture_rate=0.07, 
-                treatment_col='stim', 
-                num_cpus=args.cpu,
-                num_boot=5000)
+            adata_subset.obs['capture_rate'] = adata_subset.obs['fracHQP'] * args.capture_rate # 0.25 is the capture rate for the PFC region
+            memento.setup_memento(adata_subset, q_column='capture_rate')
+            memento.create_groups(adata_subset, label_columns=['stim'])
+            memento.compute_1d_moments(adata_subset,
+                min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
+            sample_meta = memento.get_groups(adata_subset)[['stim']]
+            memento.ht_1d_moments(
+                adata_subset, 
+                treatment=sample_meta,
+                num_boot=5000, 
+                verbose=1,
+                num_cpus=args.cpu)
+            result_1d = memento.get_1d_ht_result(adata_subset)
+            # result_1d = memento.binary_test_1d(
+            #     adata=adata_subset, 
+            #     capture_rate=0.07, 
+            #     treatment_col='stim', 
+            #     num_cpus=args.cpu,
+            #     num_boot=5000)
             df_mc = result_1d.query('de_coef > 0').sort_values('de_pval')
             df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementob.csv")
             df_mw = result_1d.query('de_coef < 0').sort_values('de_pval')
@@ -96,10 +114,8 @@ for celltype in adata.obs[celltype_column].unique():
             le = LabelEncoder()
             le.fit(adata_subset.obs['sample'])
             adata_subset.obs['ind'] = le.transform(adata_subset.obs['sample'])
-            adata_subset.layers['normalized'] = adata_subset.X.copy()
-            adata_subset.X =adata_subset.layers['count']
-            adata_subset.obs['capture_rate'] = 0.07
-
+            #adata_subset.obs['capture_rate'] = 0.07
+            adata_subset.obs['capture_rate'] = adata_subset.obs['fracHQP'] * args.capture_rate  # 0.25 is the capture rate for the PFC region
             memento.setup_memento(adata_subset, q_column='capture_rate')
             memento.create_groups(adata_subset, label_columns=['stim', covariate_column])
             memento.compute_1d_moments(adata_subset,
@@ -109,7 +125,6 @@ for celltype in adata.obs[celltype_column].unique():
             treatment_df = sample_meta[['stim']]
             #cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
             cov_df = sample_meta[[covariate_column]]
-
             memento.ht_1d_moments(
                 adata_subset, 
                 treatment=treatment_df,
