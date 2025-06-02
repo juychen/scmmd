@@ -17,7 +17,7 @@ args <- parser$parse_args()
 input <- args$input
 output <- args$output
 n_cores <- args$ncores
-region_ct <- args$region_ct
+region_ct <- args$celltype_name
 
 
 sce <- readH5AD(input)
