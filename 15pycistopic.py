@@ -66,6 +66,11 @@ pickle.dump(
     open(os.path.join(output_path, f"cistopic_{filename}.pkl"), "wb")
 )
 # %%
+
+cistopic_out = os.path.join(output_path, f"cistopic_{filename}_out") 
+if not os.path.exists(cistopic_out):
+    os.makedirs(cistopic_out)
+
 models=run_cgs_models_mallet(
     pycis_topic_obj,
     n_topics=[5,10,20,50,100,200],
@@ -77,7 +82,7 @@ models=run_cgs_models_mallet(
     eta=0.1,
     eta_by_topic=False,
     tmp_path=tempdir,
-    save_path=output_path,
+    save_path=cistopic_out,
     mallet_path=mallet_path,
 )
 
