@@ -73,7 +73,7 @@ if not os.path.exists(cistopic_out):
 
 models=run_cgs_models_mallet(
     pycis_topic_obj,
-    n_topics=[5,10,20,50,100,200],
+    n_topics=[10,20,30,40,50],
     n_cpu=args.cpu,
     n_iter=500,
     random_state=555,
