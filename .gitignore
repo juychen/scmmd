@@ -6,3 +6,4 @@ output
 .vscode/settings.json
 figures/
 *.pyc
+lib/
