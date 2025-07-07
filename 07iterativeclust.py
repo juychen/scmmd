@@ -12,10 +12,10 @@ warnings.filterwarnings("ignore")
 
 
 # %%
-adata_concat = snap.read_dataset('/data2st1/junyi/output/atac0416/mouse_brain_subset.h5ads')
+adata_concat = snap.read_dataset('/data2st1/junyi/output/atac0627/doublet_filtered.h5ads/_dataset.h5ads')
 
 # %%
-df_meta_all = pd.read_csv('/data2st1/junyi/output/atac0416/ATACSC_3REGION_ALL_L2annoated.csv',index_col=0)
+df_meta_all = pd.read_csv('/data2st1/junyi/output/atac0627/ATACSC_3REGION_ALL_L2annoated.csv',index_col=0)
 
 # %%
 black_list = ['Immune','OPC-Oligo','Doublet','PFC Doublet','PFC Not sure','Not sure','Astro-Epen','Neuron']
@@ -29,6 +29,10 @@ best_ress = []
 n_clusters = []
 n_cells = []
 ctypes = []
+overwrite = True
+
+if not os.path.exists('/data2st1/junyi/output/atac0627/iterative/l3'):
+    os.makedirs('/data2st1/junyi/output/atac0627/iterative/l3')
 
 for l2type in df_meta_all["celltype.L2"].unique():
     if l2type in black_list:
@@ -37,14 +41,22 @@ for l2type in df_meta_all["celltype.L2"].unique():
 
     # Subset the data for the current L2 type
     st1 = df_meta_all[df_meta_all["celltype.L2"]==l2type]
-    l2name = l2type.replace(' ','_')
+    l2name = l2type.replace(' ','_').replace('/','-')
 
-    # if os.path.exists(f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}_l3.csv'):
-    #     continue
+    if len(st1) <= 400:
+        continue
+
+    if os.path.exists(f'/data2st1/junyi/output/atac0627/iterative/l3/{l2name}_l3.csv'):
+        if not overwrite:
+            print(f"Skipping {l2name} as it already exists.")
+            continue
+        else:
+            print(f"Overwriting {l2name}.")
+        continue
     
     try:
         # Subset the data
-        datasubset,newidx =adata_concat.subset(obs_indices=st1.index,out=f'/data2st1/junyi/output/atac0416/iterative/l3/{l2name}.h5ads')
+        datasubset,newidx =adata_concat.subset(obs_indices=st1.index,out=f'/data2st1/junyi/output/atac0627/iterative/l3/{l2name}.h5ads')
 
         # Preprocess the subset 
         snap.tl.spectral(datasubset,n_comps=30)
@@ -100,10 +112,10 @@ for l2type in df_meta_all["celltype.L2"].unique():
         celltype_save = celltype.replace(" ","_")
         celltype_save = celltype_save.replace("/","-")
 
-        plt.savefig(f'/data2st1/junyi/output/atac0416/iterative/l3/{celltype_save}_umap.png', dpi=300, bbox_inches='tight')
+        plt.savefig(f'/data2st1/junyi/output/atac0627/iterative/l3/{celltype_save}_umap.png', dpi=300, bbox_inches='tight')
         df_meta_subtypes = pd.DataFrame({"celltype.L3":datasubset.obs['leiden'].to_numpy()},index=datasubset.obs_names)
         df_meta_subtypes["celltype.L3"] = l2type+"-"+df_meta_subtypes["celltype.L3"].astype(str)
-        df_meta_subtypes.to_csv(f'/data2st1/junyi/output/atac0416/iterative/l3/{celltype_save}_l3.csv')
+        df_meta_subtypes.to_csv(f'/data2st1/junyi/output/atac0627/iterative/l3/{celltype_save}_l3.csv')
 
         best_ress.append(best_res)
         n_clusters.append(len(datasubset.obs['leiden'].unique()))
@@ -118,6 +130,6 @@ for l2type in df_meta_all["celltype.L2"].unique():
 df_summary = pd.DataFrame({"celltype.L2":ctypes,"best_resolution":best_ress,"n_clusters":n_clusters,"n_cells":n_cells})  
 
 # %%
-df_summary.to_csv('/data2st1/junyi/output/atac0416/iterative/l3/l3_summary.csv')
+df_summary.to_csv('/data2st1/junyi/output/atac0627/iterative/l3/l3_summary.csv')
 
 
