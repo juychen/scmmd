@@ -19,6 +19,7 @@ parser.add_argument("--output", type=str, required=False, help="Output path of t
                     default="output/motif/")
 #parser.add_argument("--celltype", type=str, required=False, help="Select cell type in obs",default="Neuron")
 parser.add_argument("--region", type=str, required=False, help="Brain region",default="PFC")
+parser.add_argument("--by", type=str, required=False, help="Group by DEG",default="Condition")
 parser.add_argument("--celltype_column", type=str, required=False, help="Column for cell type",default="region_nt")
 parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="memento-ht")
 parser.add_argument("--cpu", type=int, required=False, help="Number of CPUs",default=32)
@@ -33,6 +34,7 @@ file = args.input
 region = args.region
 #celltype = args.celltype
 celltype_column = args.celltype_column
+DEGby = args.by
 
 covariate_column = args.cov_column
 adata = anndata.read_h5ad(file)
@@ -46,7 +48,7 @@ if args.celltype_column == 'region_nt':
     adata.obs['region_nt'] = adata.obs['region_nt'].astype('category')
 
 if args.method in ["memento-ht",'memento-binary']:
-    df_frac = pd.read_csv('/data2st1/junyi/output/atac0416/frac_qc.csv')
+    df_frac = pd.read_csv('/data2st1/junyi/output/atac0627/frac_qc.csv')
     adata.obs['farcq'] = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')['farcq'].astype('category').values
     adata.obs['fracHQP'] = pd.merge(adata.obs,
                                   df_frac[['sample','Fraction of high-quality fragments overlapping peaks']],
@@ -71,7 +73,7 @@ for celltype in adata.obs[celltype_column].unique():
         base_name = base_name.replace("/","-")
 
         if args.method == "wilcoxon":
-            sc.tl.rank_genes_groups(adata_subset, groupby='expriment', method='wilcoxon',pts=True)
+            sc.tl.rank_genes_groups(adata_subset, groupby=DEGby, method='wilcoxon',pts=True)
             #df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
             df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',log2fc_min=0)
             df.to_csv(f"{outfolder}/{base_name}_MC_wilcoxon.csv")
@@ -80,7 +82,7 @@ for celltype in adata.obs[celltype_column].unique():
         elif args.method == "memento-binary":
             adata_subset.layers['normalized'] = adata_subset.X.copy()
             adata_subset.X =adata_subset.layers['count']
-            adata_subset.obs['stim'] = adata_subset.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
+            adata_subset.obs['stim'] = adata_subset.obs[DEGby].apply(lambda x: 0 if x == 'MW' else 1)
             adata_subset.obs['capture_rate'] = adata_subset.obs['fracHQP'] * args.capture_rate # 0.25 is the capture rate for the PFC region
             memento.setup_memento(adata_subset, q_column='capture_rate')
             memento.create_groups(adata_subset, label_columns=['stim'])
@@ -94,12 +96,6 @@ for celltype in adata.obs[celltype_column].unique():
                 verbose=1,
                 num_cpus=args.cpu)
             result_1d = memento.get_1d_ht_result(adata_subset)
-            # result_1d = memento.binary_test_1d(
-            #     adata=adata_subset, 
-            #     capture_rate=0.07, 
-            #     treatment_col='stim', 
-            #     num_cpus=args.cpu,
-            #     num_boot=5000)
             df_mc = result_1d.query('de_coef > 0').sort_values('de_pval')
             df_mc.to_csv(f"{outfolder}/{base_name}_MC_mementob.csv")
             df_mw = result_1d.query('de_coef < 0').sort_values('de_pval')
@@ -110,7 +106,7 @@ for celltype in adata.obs[celltype_column].unique():
             adata_subset.obs['expr'] = adata_subset[:, :].X.sum(axis=1).astype(int)
             adata_subset.obs['expr_bin'] = pd.qcut(adata_subset.obs['expr'], 10)
             adata_subset.obs =adata_subset.obs.join(adata_subset.obs.groupby('expr_bin')['expr'].median(), on='expr_bin', rsuffix='_avg')
-            adata_subset.obs['stim'] = adata_subset.obs['expriment'].apply(lambda x: 0 if x == 'MW' else 1)
+            adata_subset.obs['stim'] = adata_subset.obs[DEGby].apply(lambda x: 0 if x == 'MW' else 1)
             le = LabelEncoder()
             le.fit(adata_subset.obs['sample'])
             adata_subset.obs['ind'] = le.transform(adata_subset.obs['sample'])

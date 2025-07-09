@@ -31,6 +31,7 @@ filename = os.path.basename(input_file).split('.')[0]
 # %%
 adata = sc.read_h5ad(input_file)
 
+#adata.obs['celltype.L2_con'] = adata.obs['celltype.L2'].astype('str') + '__' + adata.obs['expriment'].astype('str')
 # %%
 gene_peak_matrix = adata.layers['count'].T.tocsr()
 #gene_peak_matrix = adata.X.T.tocsr()
@@ -57,9 +58,11 @@ pycis_topic_obj.add_region_data(gene_data)
 
 # %%
 pycis_topic_obj.cell_data['ACC:celltype.L2']= pycis_topic_obj.cell_data['celltype.L2'].astype('category')
-pycis_topic_obj.cell_data['condtion'] = pycis_topic_obj.cell_data['expriment'].astype('category')
+pycis_topic_obj.cell_data['condtion'] = pycis_topic_obj.cell_data['Condition'].astype('category')
 pycis_topic_obj.cell_data['ACC:condtion'] = pycis_topic_obj.cell_data['condtion'].astype('category')
-
+# add a ACC:celltype.L2.condtion column
+pycis_topic_obj.cell_data['ACC:celltype.L2.condtion'] = pycis_topic_obj.cell_data['celltype.L2'].astype('str') + '_' + pycis_topic_obj.cell_data['condtion'].astype('str')
+pycis_topic_obj.cell_data['ACC:celltype.L2.condtion'] = pycis_topic_obj.cell_data['ACC:celltype.L2.condtion'].astype('category')
 
 pickle.dump(
     pycis_topic_obj,
