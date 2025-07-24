@@ -13,9 +13,9 @@ conda activate scenicplus
 # snakemake --cores 32
 # cd /data1st2/junyi/output/atac0627/scenic/HIP_HIP_GABA/Snakemake
 # snakemake --cores 32
-cd /data1st2/junyi/output/atac0627/scenic_test/PFC_NN/Snakemake
+# cd /data1st2/junyi/output/atac0627/scenic/PFC_NN/Snakemake
+# snakemake --cores 32
+cd /data1st2/junyi/output/atac0627/scenic/AMY_NN/Snakemake
 snakemake --cores 32
-# cd /data1st2/junyi/output/atac0627/scenic/AMY_NN/Snakemake
-# snakemake --cores 32
-# cd /data1st2/junyi/output/atac0627/scenic/HIP_NN/Snakemake
-# snakemake --cores 32
+cd /data1st2/junyi/output/atac0627/scenic/HIP_NN/Snakemake
+snakemake --cores 32
