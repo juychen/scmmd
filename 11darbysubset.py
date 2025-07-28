@@ -47,6 +47,9 @@ if args.celltype_column == 'region_nt':
     adata.obs.loc[adata.obs.region_nt=="NN",'region_nt'] = adata.obs.loc[adata.obs.region_nt=="NN",'celltype.L1'].astype('str')
     adata.obs['region_nt'] = adata.obs['region_nt'].astype('category')
 
+if args.celltype_column == 'All':
+    adata.obs['All'] = 'All'
+
 if args.method in ["memento-ht",'memento-binary']:
     df_frac = pd.read_csv('/data2st1/junyi/output/atac0627/frac_qc.csv')
     adata.obs['farcq'] = pd.merge(adata.obs,df_frac[['sample','farcq']],on='sample',how='left')['farcq'].astype('category').values
@@ -73,6 +76,7 @@ for celltype in adata.obs[celltype_column].unique():
         base_name = base_name.replace("/","-")
 
         if args.method == "wilcoxon":
+            # If not normalized, normalize the data
             sc.tl.rank_genes_groups(adata_subset, groupby=DEGby, method='wilcoxon',pts=True)
             #df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
             df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',log2fc_min=0)
