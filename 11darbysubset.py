@@ -77,6 +77,10 @@ for celltype in adata.obs[celltype_column].unique():
 
         if args.method == "wilcoxon":
             # If not normalized, normalize the data
+            if 'log1p' not in adata_subset.uns.keys():
+                sc.pp.normalize_total(adata_subset)
+                sc.pp.log1p(adata_subset)
+    
             sc.tl.rank_genes_groups(adata_subset, groupby=DEGby, method='wilcoxon',pts=True)
             #df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',pval_cutoff=0.05,log2fc_min=0)
             df = sc.get.rank_genes_groups_df(adata_subset, group='MC', key='rank_genes_groups',log2fc_min=0)
