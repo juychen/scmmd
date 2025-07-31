@@ -88,8 +88,9 @@ for celltype in adata.obs[celltype_column].unique():
             df_mw = sc.get.rank_genes_groups_df(adata_subset, group='MW', key='rank_genes_groups',log2fc_min=0)
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_wilcoxon.csv")
         elif args.method == "memento-binary":
-            adata_subset.layers['normalized'] = adata_subset.X.copy()
-            adata_subset.X =adata_subset.layers['count']
+            if 'count' in adata_subset.layers.keys():
+                adata_subset.layers['normalized'] = adata_subset.X.copy()
+                adata_subset.X =adata_subset.layers['count']
             adata_subset.obs['stim'] = adata_subset.obs[DEGby].apply(lambda x: 0 if x == 'MW' else 1)
             adata_subset.obs['capture_rate'] = adata_subset.obs['fracHQP'] * args.capture_rate # 0.25 is the capture rate for the PFC region
             memento.setup_memento(adata_subset, q_column='capture_rate')
