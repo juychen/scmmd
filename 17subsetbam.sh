@@ -17,7 +17,7 @@ for folder in /data1st2/junyi/output/atac0627/tobiasbam/*; do
         continue
       fi
       # Run the subset-bam command
-      /home/junyichen/subset-bam_linux --bam "/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam" --cell-barcodes "$file" --out-bam "$out_bam" --cores 32
+      #printf "Running subset-bam for %s with cell barcodes from %s\n" "$sample_name" "$file"
       /home/junyichen/subset-bam_linux --bam "/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam" --cell-barcodes "$file" --out-bam "$out_bam" --cores 32
       # Uncomment the line below if you want to run the command for each file
     #   /home/junyichen/subset-bam_linux --bam /data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam \

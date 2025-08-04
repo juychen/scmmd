@@ -5,6 +5,9 @@ library(ggplot2)
 library(gprofiler2)
 
 # Pass a parameter to the gost funct
+args <- commandArgs(trailingOnly = TRUE)
+cat("First argument:", args[1], "\n")
+brainregion <- args[1]  # e.g., "TH" or "AMY"
 
 # %%
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
@@ -32,6 +35,18 @@ df_important_TF.unique <- unique(df_important_TF$TF)
 # subset 5 files for testing
 #df_grns <- df_grns[1:3]  # Adjust this line to read all files if needed
 for (file in df_grns) {
+  # if file name does not contain brainregion, skip
+  # If it is non neuron cells
+  if (brainregion=='NN') {
+    regions <- c('HPF','Isocortex', 'AMY','PFC', 'TH', 'STR',  'HY', 'MB')
+    # if the file name contains any of the regions, skip
+    if (any(grepl(paste(regions, collapse = "|"), file))) {
+      print(paste("Skipping file:", file, "because it is not NN name."))
+      next
+    }
+  } else if (!grepl(brainregion, file)) {
+    next
+  }
   celltype <- gsub("^.*adj_([A-Za-z0-9_]+)_.*$", "\\1", file) 
   gender <-gsub(".*_([A-Za-z]+)\\.tsv", "\\1", file)
   region <- gsub("^.*adj_([A-Za-z0-9]+)_([A-Za-z0-9_]+).*$", "\\1", file) 
@@ -45,6 +60,7 @@ for (file in df_grns) {
   for (tf in unique(df_grn$TF)) {
 
       if (file.exists(paste(outdir, "GO_enrichment",celltype,gender,tf,".csv",sep = "_")) && !overwrite) {
+        print(paste("File already exists:", paste(outdir, "GO_enrichment",celltype,gender,tf,".csv",sep = "_")))
         next
       }
         tryCatch(
