@@ -4,6 +4,8 @@ library(org.Mm.eg.db)
 library(ggplot2)
 library(gprofiler2)
 
+# Pass a parameter to the gost funct
+
 # %%
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
 outdir <- '/data2st1/junyi/output/atac0627/snregulation/gost/'
