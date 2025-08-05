@@ -13,7 +13,7 @@ conda activate snapatac2
 # --regions /data2st1/junyi/output/atac0627/cCRE/peak.bed \
 # --output /data2st1/junyi/output/test/PFC_L2-3_IT_Glut_MC_footprints.bw --cores 32
 
-TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/merged_motifs.jaspar \
+TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_key_motifs.jaspar \
 --signals /data2st1/junyi/output/test/PFC_L2-3_IT_Glut_MC_footprints.bw \
 --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
 --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
