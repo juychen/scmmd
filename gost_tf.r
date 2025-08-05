@@ -41,15 +41,20 @@ for (file in df_grns) {
     regions <- c('HPF','Isocortex', 'AMY','PFC', 'TH', 'STR',  'HY', 'MB')
     # if the file name contains any of the regions, skip
     if (any(grepl(paste(regions, collapse = "|"), file))) {
-      print(paste("Skipping file:", file, "because it is not NN name."))
+      #print(paste("Skipping file:", file, "because it is not NN name."))
       next
     }
   } else if (!grepl(brainregion, file)) {
     next
   }
-  celltype <- gsub("^.*adj_([A-Za-z0-9_]+)_.*$", "\\1", file) 
-  gender <-gsub(".*_([A-Za-z]+)\\.tsv", "\\1", file)
-  region <- gsub("^.*adj_([A-Za-z0-9]+)_([A-Za-z0-9_]+).*$", "\\1", file) 
+  # celltype <- gsub("^.*adj_([A-Za-z0-9_]+)_.*$", "\\1", file) 
+  # gender <-gsub(".*_([A-Za-z]+)\\.tsv", "\\1", file)
+  # region <- gsub("^.*adj_([A-Za-z0-9]+)_([A-Za-z0-9_]+).*$", "\\1", file) 
+
+  region <- strsplit(strsplit(file, "adj_")[[1]][2], "_")[[1]][1]
+  gender <- strsplit(strsplit(file, "\\.")[[1]][1], "_")[[1]][length(strsplit(strsplit(file, "\\.")[[1]][1], "_")[[1]])]
+  celltype <- gsub(paste0("_", gender, "\\.tsv"), "", strsplit(file, "adj_")[[1]][2])
+
 
   # if file already exists and overwrite is FALSE, skip
   df_grn <- read.table(file, header = TRUE, sep = "\t")
