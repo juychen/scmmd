@@ -18,7 +18,7 @@ for file in $folder/*; do
     fi
     # Run the subset-bam command
     #printf "Running subset-bam for %s with cell barcodes from %s\n" "$sample_name" "$file"
-    /home/junyichen/subset-bam_linux --bam "/data1st2/junyi/data/possorted_bam.bam" --cell-barcodes "$file" --out-bam "$out_bam" --cores 32
+    /home/junyichen/subset-bam_linux --bam "/data1st2/hannan_25/data/snATAC_process/MW65A_AMY/JZ25099449-MW65A-AMY-ATAC-MW65A-AMY-ATAC-50/outs/possorted_bam.bam" --cell-barcodes "$file" --out-bam "$out_bam" --cores 32
     # Uncomment the line below if you want to run the command for each file
   #   /home/junyichen/subset-bam_linux --bam /data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam \
   #   --cell-barcodes $file \
