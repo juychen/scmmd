@@ -11,8 +11,8 @@ brainregion <- args[1]  # e.g., "TH" or "AMY"
 
 # %%
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
-outdir <- '/data2st1/junyi/output/atac0627/snregulation/gost/'
-df_important_TF <- read.csv(paste0(indir, '/TFtarget_analysis_important_TF.csv'))
+outdir <- '/data2st1/junyi/output/atac0627/snregulation/gostmodule/'
+df_important_TF <- read.csv(paste0(indir, '/genemodule.csv'))
 df_grns <- list.files('/data1st1/yejun/pyscenic/grn/', pattern = 'adj_.*\\.tsv', full.names = TRUE)
 overwrite <- FALSE
 
@@ -60,9 +60,10 @@ for (file in df_grns) {
   df_grn <- read.table(file, header = TRUE, sep = "\t")
 
   # filter the GRN dataframe to only include important TFs
-  df_grn <- df_grn[df_grn$TF %in% df_important_TF.unique, ]
+  #df_grn <- df_grn[df_grn$TF %in% df_important_TF.unique, ]
 
-  for (tf in unique(df_grn$TF)) {
+for (module in unique(df_important_TF$module)) {
+      tf <- paste0("TFmoudule",module)
 
       if (file.exists(paste(outdir, "GO_enrichment",celltype,gender,tf,".csv",sep = "_")) && !overwrite) {
         print(paste("File already exists:", paste(outdir, "GO_enrichment",celltype,gender,tf,".csv",sep = "_")))
@@ -70,8 +71,11 @@ for (file in df_grns) {
       }
         tryCatch(
         {
-          subset_df <- df_grn[df_grn$TF == tf, ]
-          gene_type_label = "gene"
+
+          tf_moduel <- df_important_TF[df_important_TF$module == module, ]
+          subset_df <- df_grn[df_grn$TF %in% tf_moduel$TF, ]
+          write.csv(subset_df, file = paste(outdir, "GRN_",celltype,gender,tf,".csv",sep = "_"), row.names = FALSE)
+          gene_type_label <- "gene"
           gene_list <- unique(subset_df$target)
           if(length(gene_list) > 0) {
       
