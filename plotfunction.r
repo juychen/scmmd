@@ -76,11 +76,14 @@ goheatmap<-function(go,cluster_rows=TRUE,cutoff=10,title="_GO_BP_MF_heatmap_cuto
       "Astro-Epen" = "#17becf",    
       "OPC-Oligo" = "#7f7f7f", 
       Immune = "#ff9896",        
-      Vascular = "#c5b0d5"       
+      Vascular = "#c5b0d5",
+      NN= "#494949ff"  # Non-neuron cells       
     ),
     sex = c(
       Male = "#0080FF",
-      Female = "#E800E8"
+      Female = "#E800E8",
+      M = "#0080FF",
+      F = "#E800E8"
     )
   )
   
@@ -110,7 +113,7 @@ goheatmap<-function(go,cluster_rows=TRUE,cutoff=10,title="_GO_BP_MF_heatmap_cuto
   pdf(paste0("figures/",title), height = dim(mat_t)[1]/15+8, width = dim(mat_t)[2]/15+8)
   
   p1<-Heatmap(mat_t,
-              name = "-log10(p_val_adj)",
+              name = "nlog10_p_val_adj",
               col = col_fun,
               heatmap_legend_param = list(
                 at = c(-cutoff, -cutoff/2, 0, cutoff/2, cutoff),
@@ -178,11 +181,15 @@ goheatmap1<-function(go,cluster_rows=TRUE,cutoff=10,title="_GO_BP_MF_heatmap_cut
       "Astro-Epen" = "#17becf",    
       "OPC-Oligo" = "#7f7f7f", 
       Immune = "#ff9896",        
-      Vascular = "#c5b0d5"       
+      Vascular = "#c5b0d5",
+      NN= "#494949ff"  # Non-neuron cells       
+       
     ),
     sex = c(
       Male = "#0080FF",
-      Female = "#E800E8"
+      Female = "#E800E8",
+      M = "#0080FF",
+      F = "#E800E8"
     )
   )
   
@@ -212,7 +219,7 @@ goheatmap1<-function(go,cluster_rows=TRUE,cutoff=10,title="_GO_BP_MF_heatmap_cut
   pdf(paste0("figures/",title), height = dim(mat_t)[1]/15+8, width = dim(mat_t)[2]/15+8)
   
   p1<-Heatmap(mat_t,
-              name = "-log10(p_val_adj)",
+              name = "nlog10_p_val_adj",
               col = col_fun,
               heatmap_legend_param = list(
                 at = c(-cutoff, -cutoff/2, 0, cutoff/2, cutoff),
@@ -302,7 +309,9 @@ goheatmap2<-function(go,row=NULL,col=NULL,cluster_rows=TRUE,cluster_columns = TR
     ),
     sex = c(
       Male = "#0080FF",
-      Female = "#E800E8"
+      Female = "#E800E8",
+      M = "#0080FF",
+      F = "#E800E8"
     ),
     # Create a named vector for modules with associated colors
     module1 = c(
@@ -379,7 +388,7 @@ goheatmap2<-function(go,row=NULL,col=NULL,cluster_rows=TRUE,cluster_columns = TR
   pdf(paste0("figures/",title), height = dim(mat_t)[1]/15+8, width = dim(mat_t)[2]/15+8)
   
   p1<-Heatmap(mat_t,
-              name = "-log10(p_val_adj)",
+              name = "nlog10_p_val_adj",
               col = col_fun,
               heatmap_legend_param = list(
                 at = c(-cutoff, -cutoff/2, 0, cutoff/2, cutoff),
