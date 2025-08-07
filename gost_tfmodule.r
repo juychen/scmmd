@@ -13,7 +13,7 @@ brainregion <- args[1]  # e.g., "TH" or "AMY"
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
 outdir <- '/data2st1/junyi/output/atac0627/snregulation/gostmodule/'
 df_important_TF <- read.csv(paste0(indir, '/genemodule.csv'))
-df_grns <- list.files('/data1st1/yejun/pyscenic/grn/', pattern = 'adj_.*\\.tsv', full.names = TRUE)
+df_grns <- list.files('/data2st1/junyi/output/atac0627/snregulation/ctx/', pattern = 'ctx_.*\\.tsv', full.names = TRUE)
 overwrite <- FALSE
 
 # %%
@@ -51,9 +51,9 @@ for (file in df_grns) {
   # gender <-gsub(".*_([A-Za-z]+)\\.tsv", "\\1", file)
   # region <- gsub("^.*adj_([A-Za-z0-9]+)_([A-Za-z0-9_]+).*$", "\\1", file) 
 
-  region <- strsplit(strsplit(file, "adj_")[[1]][2], "_")[[1]][1]
+  region <- strsplit(strsplit(file, "ctx_")[[1]][2], "_")[[1]][1]
   gender <- strsplit(strsplit(file, "\\.")[[1]][1], "_")[[1]][length(strsplit(strsplit(file, "\\.")[[1]][1], "_")[[1]])]
-  celltype <- gsub(paste0("_", gender, "\\.tsv"), "", strsplit(file, "adj_")[[1]][2])
+  celltype <- gsub(paste0("_", gender, "\\.tsv"), "", strsplit(file, "ctx_")[[1]][2])
 
 
   # if file already exists and overwrite is FALSE, skip
