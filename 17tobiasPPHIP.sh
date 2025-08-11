@@ -4,7 +4,7 @@ conda activate tobias_cnv
 ulimit -n 65534
 
 cd /data1st2/junyi/output/atac0627/tobiasbam
-for folder in /data1st2/junyi/output/atac0627/tobiasbam/*HIP*; do
+for folder in /data1st2/junyi/output/atac0627/tobiasbam/MC*HIP*; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
@@ -22,18 +22,27 @@ for folder in /data1st2/junyi/output/atac0627/tobiasbam/*HIP*; do
         echo "Output BAM file $out_bam already exists. processing in  $folder "
         mkdir -p $folder/corrected
         #cat "test" > $folder/corrected/$sample_name\_$ctname.txt
-        TOBIAS ATACorrect --bam $out_bam \
-        --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-        --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
-        --blacklist /data2st1/junyi/ref/mm10-blacklist.v2.bed \
-        --outdir $folder/corrected \
-        --cores 64
+        out_bw=$folder/corrected/$ctname\_corrected.bw
+        # if not exists out_bw, run TOBIAS ATAC correct 
 
+        if [[ ! -f $out_bw ]]; then
+          # DRI run echo
+          echo "Running TOBIAS ATACorrect for $out_bam"
+          TOBIAS ATACorrect --bam $out_bam \
+          --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
+          --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
+          --blacklist /data2st1/junyi/ref/mm10-blacklist.v2.bed \
+          --outdir $folder/corrected \
+          --cores 64
+        fi
+        # else print exist
+        out_fp=$folder/corrected/$ctname\_footprints.bw
+        echo "Output BW file $out_bw already exists."
+        echo "generating footprints $out_fp"
         TOBIAS FootprintScores --signal $folder/corrected/$ctname\_corrected.bw \
         --regions /data2st1/junyi/output/atac0627/cCRE/peak.bed \
-        --output /data2st1/junyi/output/test/$ctname\_footprints.bw \
+        --output $out_fp \
         --cores 64
-
       fi
       # Run the subset-bam command
       #printf "Running subset-bam for %s with cell barcodes from %s\n" "$sample_name" "$file"
