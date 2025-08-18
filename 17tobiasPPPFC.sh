@@ -37,12 +37,14 @@ for folder in /data1st2/junyi/output/atac0627/tobiasbam/MC*PFC*; do
         fi
         # else print exist
         out_fp=$folder/corrected/$ctname\_footprints.bw
-        echo "Output BW file $out_bw already exists."
-        echo "generating footprints $out_fp"
-        TOBIAS FootprintScores --signal $folder/corrected/$ctname\_corrected.bw \
-        --regions /data2st1/junyi/output/atac0627/cCRE/peak.bed \
-        --output $out_fp \
-        --cores 64
+        if [[ ! -f $out_fp ]]; then
+          echo "Output BW file $out_fp not exists. calculating..."
+          echo "generating footprints $out_fp"
+          TOBIAS FootprintScores --signal $folder/corrected/$ctname\_corrected.bw \
+          --regions /data2st1/junyi/output/atac0627/cCRE/peak.bed \
+          --output $out_fp \
+          --cores 64
+        fi
       fi
       # Run the subset-bam command
       #printf "Running subset-bam for %s with cell barcodes from %s\n" "$sample_name" "$file"
