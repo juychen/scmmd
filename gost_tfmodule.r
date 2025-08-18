@@ -11,7 +11,7 @@ brainregion <- args[1]  # e.g., "TH" or "AMY"
 
 # %%
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
-outdir <- '/data2st1/junyi/output/atac0627/snregulation/gostmodule/'
+outdir <- '/data2st1/junyi/output/atac0627/snregulation/gostmodule_new/'
 df_important_TF <- read.csv(paste0(indir, '/genemodule.csv'))
 df_grns <- list.files('/data2st1/junyi/output/atac0627/snregulation/ctx/', pattern = 'ctx_.*\\.tsv', full.names = TRUE)
 overwrite <- FALSE

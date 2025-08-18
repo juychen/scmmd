@@ -12,7 +12,7 @@ brainregion <- args[1]  # e.g., "TH" or "AMY"
 # %%
 indir <- '/data2st1/junyi/output/atac0627/snregulation'
 outdir <- '/data2st1/junyi/output/atac0627/snregulation/gostnew/'
-df_important_TF <- read.csv(paste0(indir, '/TFtarget_analysis_important_TF.csv'))
+df_important_TF <- read.csv(paste0(indir, '/TFregulon_analysis_important_TF_gender_new.csv'))
 df_grns <- list.files('/data2st1/junyi/output/atac0627/snregulation/ctx/', pattern = 'ctx_.*\\.tsv', full.names = TRUE)
 overwrite <- FALSE
 

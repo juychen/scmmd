@@ -19,6 +19,7 @@ import joblib
 parse = argparse.ArgumentParser(description="Train a classifier to predict module and function from GO terms")
 parse.add_argument("--csv_source_path", type=str, default="/home/junyichen/code/test/GOclassifier4.csv", help="Path to the CSV file containing GO terms and their corresponding modules and functions")
 parse.add_argument("--csv_test_path", type=str, default="test.csv", help="Path to the CSV file containing test GO terms")
+parse.add_argument("--column", type=str, default=None, help="Row name of the column to predict")
 parse.add_argument("--output_path", type=str, default=None, help="Path to save the predictions")
 args = parse.parse_args()
 
@@ -43,9 +44,9 @@ def train_go_classifier(csv_file_path):
     """
     # Load and preprocess data
     df = pd.read_csv(csv_file_path)
+    df = df.dropna()
     df['clean_go_term'] = df.iloc[:, 0].apply(preprocess_go_term)
     # Find nan from df
-    df = df.dropna()
     # downsample  class 10 in df to
     # Split into features (X) and targets (y)
     X = df['clean_go_term']
@@ -139,7 +140,11 @@ predictors = classifiers['module_classifier']
 # joblib.dump(predictors, 'go_module_classifier.joblib')
 # read the test data
 df_test = pd.read_csv(csv_test)
-df_test['clean_go_term'] = df_test.iloc[:, 0].apply(preprocess_go_term)
+if args.column is None:
+    df_test['clean_go_term'] = df_test.iloc[:, 0].apply(preprocess_go_term)
+else:
+    df_test['clean_go_term'] = df_test[args.column].apply(preprocess_go_term)
+
 # Predict on the test data
 predictions = df_test['clean_go_term'].apply(lambda x: predict_go_term({'module_classifier': predictors}, x))   
 # Convert predictions to DataFrame
