@@ -4,7 +4,7 @@ conda activate tobias_cnv
 ulimit -n 65534
 
 cd /data1st2/junyi/output/atac0627/tobiasbam
-for folder in /data1st2/junyi/output/atac0627/tobiasbam/MW5*HIP*; do
+for folder in /data1st2/junyi/output/atac0627/tobiasbam/MW4*HIP*; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
