@@ -1,20 +1,20 @@
 #!/bin/bash
 source /home/junyichen/anaconda3/etc/profile.d/conda.sh
-conda activate tobias_cnv
+conda activate tobias
 ulimit -n 65534
 
-cd /data1st2/junyi/output/atac0627/tobiasbam
-for folder in /data1st2/junyi/output/atac0627/tobiasbam/MW4*HIP*; do
+cd /data2st2/junyi/output/atac0627/tobiasbam
+for folder in /data2st2/junyi/output/atac0627/tobiasbam/MC_HIP; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
   for file in $folder/*; do
     echo $file
-    if [[ $file == *.csv ]]; then
+    if [[ $file == *.bam ]]; then
       celltype=$(basename $folder)
       echo "Processing celltype: $celltype"
-      out_bam="${file%.csv}.bam"
-      ctname=$(basename "${file%.csv}")
+      out_bam="${file%.bam}.bam"
+      ctname=$(basename "${file%.bam}")
       echo "Output BAM: $out_bam"
       
       # if out_bam already exists, skip
