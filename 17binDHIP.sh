@@ -8,7 +8,7 @@ folder1="/data2st2/junyi/output/atac0627/tobiasbam/MC_HIP/corrected/"
 folder2="/data2st2/junyi/output/atac0627/tobiasbam/MW_HIP/corrected/"
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac0627/tobiasbam/PFC"
+output_dir="/data2st2/junyi/output/atac0627/tobiasbam/HIP"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 
 # Iterate through all .bam files in the first folder
@@ -27,9 +27,10 @@ for bam_file in "$folder1"/*footprints.bw; do
         # 
         mkdir -p "$output_dir/finish_list"
         if [[ ! -f "$output_dir/finish_list/$filename.txt" ]]; then
+            mkdir -p "$output_dir/$filename"
             TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_im_motifs.jaspar \
             --signals "$folder1/$filename" "$folder2/$new_name" \
-            --outdir /data2st2/junyi/output/atac0627/tobiasbam/HIP/ --cond_names MC MW --cores 32 \
+            --outdir "$output_dir/$filename" --cond_names MC MW --cores 32 \
             --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
             --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
             # if samtools finished successfully

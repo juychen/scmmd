@@ -27,9 +27,10 @@ for bam_file in "$folder1"/*footprints.bw; do
         # 
         mkdir -p "$output_dir/finish_list"
         if [[ ! -f "$output_dir/finish_list/$filename.txt" ]]; then
+            mkdir -p "$output_dir/$filename"
             TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_im_motifs.jaspar \
             --signals "$folder1/$filename" "$folder2/$new_name" \
-            --outdir /data2st2/junyi/output/atac0627/tobiasbam/PFC/ --cond_names MC MW --cores 32 \
+            --outdir "$output_dir/$filename" --cond_names MC MW --cores 32 \
             --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
             --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
             # if samtools finished successfully
