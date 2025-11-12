@@ -23,7 +23,9 @@ parser.add_argument("--by", type=str, required=False, help="Group by DEG",defaul
 parser.add_argument("--celltype_column", type=str, required=False, help="Column for cell type",default="region_nt")
 parser.add_argument("--method", type=str, required=False, help="Method for analysis",default="memento-ht")
 parser.add_argument("--cpu", type=int, required=False, help="Number of CPUs",default=32)
-parser.add_argument("--cov_column", type=str, required=False, help="Covariate column in the adata.obs",default="farcq")
+#parser.add_argument("--cov_column", type=str, required=False, help="Covariate column in the adata.obs",default="farcq")
+parser.add_argument('--covariates', type=str, nargs='+', default=None, help='Covariates to adjust for')
+
 parser.add_argument("--capture_rate", type=float, required=False, help="Capture rate for the region",default=0.15)
 
 
@@ -36,7 +38,8 @@ region = args.region
 celltype_column = args.celltype_column
 DEGby = args.by
 
-covariate_column = args.cov_column
+#covariate_column = args.cov_column
+covariates = args.covariates
 adata = anndata.read_h5ad(file)
 adata = adata[(adata.obs['sample'].str.contains(region))]
 adata = adata[~(adata.obs['celltype.L2'].str.contains('Doublet'))]
@@ -56,12 +59,12 @@ if args.method in ["memento-ht",'memento-binary']:
     adata.obs['fracHQP'] = pd.merge(adata.obs,
                                   df_frac[['sample','Fraction of high-quality fragments overlapping peaks']],
                                   on='sample',how='left')['Fraction of high-quality fragments overlapping peaks'].values
+    adata.obs['date'] = pd.merge(adata.obs,df_frac[['sample','date']],on='sample',how='left')['date'].astype('category').values
 
 
-if covariate_column == "Dbatch":
-    adata.obs[covariate_column] = "0"
-    adata.obs.loc[adata.obs['sample'].str.contains("25"),'Dbatch'] = "1"
-    adata.obs.loc[adata.obs['sample'].str.contains("26"),'Dbatch'] = "1"
+adata.obs['Dbatch'] = "0"
+adata.obs.loc[adata.obs['sample'].str.contains("25"),'Dbatch'] = "1"
+adata.obs.loc[adata.obs['sample'].str.contains("26"),'Dbatch'] = "1"
 
 
 outfolder = os.path.join(args.output,celltype_column)
@@ -110,11 +113,24 @@ for celltype in adata.obs[celltype_column].unique():
             df_mw = result_1d.query('de_coef < 0').sort_values('de_pval')
             df_mw.to_csv(f"{outfolder}/{base_name}_MW_mementob.csv")
         elif args.method == "memento-ht":   
+            cols = ['stim']
+            if covariates is not None and len(covariates) > 0:
+                cols.extend(covariates)
+
             adata_subset.layers['normalized'] = adata_subset.X.copy()
             adata_subset.X =adata_subset.layers['count']
             adata_subset.obs['expr'] = adata_subset[:, :].X.sum(axis=1).astype(int)
             adata_subset.obs['expr_bin'] = pd.qcut(adata_subset.obs['expr'], 10)
             adata_subset.obs =adata_subset.obs.join(adata_subset.obs.groupby('expr_bin')['expr'].median(), on='expr_bin', rsuffix='_avg')
+            if 'ngeneson_avg' not in adata_subset.obs.columns:
+                gene_counts = np.asarray((adata_subset.X > 0).sum(axis=1)).ravel()
+                adata_subset.obs["ngeneson"] = gene_counts.astype(float)
+                adata_subset.obs['ngeneson_bin'] = pd.qcut(adata_subset.obs['ngeneson'], 10)
+                adata_subset.obs = adata_subset.obs.join(adata_subset.obs.groupby('ngeneson_bin')['ngeneson'].median(), on='ngeneson_bin', rsuffix='_avg')
+                # if ('ngeneson_avg' not in cols) and ('ngeneson_avg' in covariates):
+                #     print("[INFO] Adding 'ngeneson_avg' to covariates.")
+                #     cols.append('ngeneson_avg')
+
             adata_subset.obs['stim'] = adata_subset.obs[DEGby].apply(lambda x: 0 if x == 'MW' else 1)
             le = LabelEncoder()
             le.fit(adata_subset.obs['sample'])
@@ -122,14 +138,15 @@ for celltype in adata.obs[celltype_column].unique():
             #adata_subset.obs['capture_rate'] = 0.07
             adata_subset.obs['capture_rate'] = adata_subset.obs['fracHQP'] * args.capture_rate  # 0.25 is the capture rate for the PFC region
             memento.setup_memento(adata_subset, q_column='capture_rate')
-            memento.create_groups(adata_subset, label_columns=['stim', covariate_column])
+            cols = []
+            memento.create_groups(adata_subset, label_columns=cols)
             memento.compute_1d_moments(adata_subset,
                 min_perc_group=.9) # percentage of groups that satisfy the condition for a gene to be considered. 
             sample_meta = memento.get_groups(adata_subset)
             #sample_meta['ind'] = sample_meta['ind'].astype('category') # make sure to not confuse ourselves in case replicate labels are numbers
             treatment_df = sample_meta[['stim']]
             #cov_df = pd.get_dummies(sample_meta['ind'].astype('category'))
-            cov_df = sample_meta[[covariate_column]]
+            cov_df = sample_meta.drop('stim', axis=1)
             memento.ht_1d_moments(
                 adata_subset, 
                 treatment=treatment_df,
