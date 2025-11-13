@@ -35,7 +35,10 @@ region = args.region
 celltype_column = args.celltype_column
 condition = args.condition
 adata_all = sc.read_h5ad(file)
-adata_all = adata_all[(adata_all.obs['sample'].str.contains(region)) & (adata_all.obs['expriment'].str.contains(condition))]
+if condition != "ALL":
+    adata_all = adata_all[(adata_all.obs['sample'].str.contains(region)) & (adata_all.obs['expriment'].str.contains(condition))]
+else:
+    adata_all = adata_all[(adata_all.obs['sample'].str.contains(region))]
 
 black_list = ['Immune','OPC-Oligo','Doublet','PFC Doublet','PFC Not sure','Not sure','Astro-Epen','Neuron']
 
