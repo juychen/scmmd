@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /data1st2/junyi/output/atac0627/tobiasbam
-for folder in /data1st2/junyi/output/atac0627/tobiasbam/*; do
+cd /data2st2/junyi/output/atac1112/tobiasbam
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/*; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
