@@ -60,7 +60,7 @@ def run_pyscenic(csv_file: str):
     return csv_file
 
 # Max parallel jobs
-max_parallel_jobs = 4
+max_parallel_jobs = 8
 
 # ---- Only submit tasks for files without .processing flag ----
 files_to_run = []
@@ -68,8 +68,14 @@ for csv_file in csv_files:
     flag_file = os.path.join(
         output_directory, f"{os.path.splitext(csv_file)[0]}.processing"
     )
+    output_file = os.path.join(
+        output_directory,
+        f"adj_{csv_file.replace('.loom', '.tsv')}"
+    )
     if os.path.exists(flag_file):
         print(f"Skipping {csv_file}: {flag_file} already exists.")
+    elif os.path.exists(output_file):
+        print(f"Skipping {csv_file}: output file {output_file} already exists.")
     else:
         files_to_run.append(csv_file)
 

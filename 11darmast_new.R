@@ -74,6 +74,13 @@ perform_mast_analysis <- function(seurat_obj,
       
 
       seo_subset = subset(seurat_obj, subset = celltype.L2 == cell_group)
+      if (ncol(seo_subset) > 25000) {
+        # Randomly sample 10000 cells
+        set.seed(123)
+        cells_keep <- sample(colnames(seo_subset), 10000)
+        seo_subset <- subset(seo_subset, cells = cells_keep)
+      }
+
       # Filter genes expressed in at least 5 cells
       exprs <- GetAssayData(seo_subset, slot = "counts")
       peaks_to_keep <- rowSums(exprs > 0) >= 10
