@@ -74,6 +74,7 @@ perform_mast_analysis <- function(seurat_obj,
       
 
       seo_subset = subset(seurat_obj, subset = celltype.L2 == cell_group)
+      
       if (ncol(seo_subset) > 25000) {
         # Randomly sample 10000 cells
         set.seed(123)
@@ -110,7 +111,6 @@ perform_mast_analysis <- function(seurat_obj,
       # 判断每个batch是否包含两个treatment组
       batches_all_have_both_treatments <- all(rowSums(batch_treatment_table > 0) == ncol(batch_treatment_table))
       
-      # 是否有多个batch
       multiple_batches_exist <- nrow(batch_treatment_table) > 1
       
       # 根据分布决定是否用batch效应
@@ -187,7 +187,7 @@ perform_mast_analysis <- function(seurat_obj,
   
   return(all_results)
 }
-
+seo <- subset(seo, subset = celltype.L1_ct != "OPC")
 r.deg_M <- perform_mast_analysis(seo,
                                 group.by = "celltype.L2",
                                 compare.by = "expriment",
