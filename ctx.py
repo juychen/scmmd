@@ -14,7 +14,7 @@ DATABASE = "/data1st2/yejun/scenic/mouse/mm10__refseq-r80__10kb_up_and_down_tss.
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Dynamic CPU detection
-workers = min(64, max(1, multiprocessing.cpu_count() - 4))
+workers = min(32, max(1, multiprocessing.cpu_count() - 4))
 
 def fix_grn_columns(grn_path):
     """Ensure GRN file column names are correct for PySCENIC."""
@@ -91,7 +91,7 @@ def run_pyscenic_ctx(csv_file):
     return csv_file
 
 # === PARALLEL EXECUTION ===
-max_parallel_jobs = 8
+max_parallel_jobs = 4
 
 csv_files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.loom')]
 files_to_run = []
