@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 def run_aucell(ctx_file, expr_dir, ctx_dir, auc_dir, workers):
     """运行单个 AUCell 任务"""
     base_name = ctx_file.split('ctx_')[-1].split('.csv')[0]
-    expr_file = os.path.join(expr_dir, f"{base_name}.csv")
+    expr_file = os.path.join(expr_dir, f"{base_name}.loom")
     ctx_path = os.path.join(ctx_dir, ctx_file)
     auc_output = os.path.join(auc_dir, f"auc_{base_name}.tsv")
     flag_file = os.path.join(auc_dir, f"{base_name}.processing")

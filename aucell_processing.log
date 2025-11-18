@@ -1,0 +1,408 @@
+2025-11-18 09:45:08,190 - INFO - 🚀 Submitting 307 AUCell tasks...
+2025-11-18 09:45:08,190 - INFO - 👉 Parallel jobs: 4
+2025-11-18 09:45:08,190 - INFO - 👉 Workers per job (--num_workers): 32
+2025-11-18 09:45:08,194 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Myo5b_B230323A14Rik_Glut_M.csv
+2025-11-18 09:45:08,194 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Maf_Pthlh_GABA_M.csv
+2025-11-18 09:45:08,194 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Hypendymal_cell_M.csv
+2025-11-18 09:45:08,194 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_VLMC_M.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_VLMC_M.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Ependymal_cell_M.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_MOL-1_F.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_COP_M.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Astrocyte-1_F.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Tac2_Onecut1_Glut_M.csv
+2025-11-18 09:45:08,195 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6b_Glut_F.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_OPC_M.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Ependymal_cell_F.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Microglia-1_M.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MOL-2_M.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MFOL_M.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_MOL-2_F.csv
+2025-11-18 09:45:08,196 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MFOL_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Gabrr2_Pcbp3_GABA_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_VLMC_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_VSMC_M.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Mossy_Glut_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Meis2_Isl1_GABA_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MOL-2_M.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_Fbn2_GABA_F.csv
+2025-11-18 09:45:08,197 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Pericyte_F.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Esr2_Gldn_GABA_M.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Fgf10_Gm16263_Glut_M.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Pericyte_F.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Ependymal_cell_F.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Astrocyte-3_M.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MOL-1_F.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_MOL-3_M.csv
+2025-11-18 09:45:08,198 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Ependymal_cell_M.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Perivascular_Macrophage_M.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Microglia-2_M.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MOL-3_M.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Zbtb7c_Vwa5b1_Glut_F.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_OPC_F.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_CA3_Glut_F.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Endothelial_cell_F.csv
+2025-11-18 09:45:08,199 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Endothelial_cell_F.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Choroid_plexus_cell_M.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L4_RSP_ACA_Glut_M.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Trabd2b_Coch_Glut_F.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MOL-1_F.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Microglia-1_F.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_COP_M.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Astrocyte-3_M.csv
+2025-11-18 09:45:08,200 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MOL-3_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Astrocyte-1_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_CA1_Glut_M.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Parm1_Mdga1_Glut_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Zfhx4_Pde7b_GABA_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Astrocyte-3_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Endothelial_cell_M.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Htr3a_GABA_F.csv
+2025-11-18 09:45:08,201 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Fam20a_Fbln1_Glut_M.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_MOL-1_M.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Choroid_plexus_cell_M.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Chol_M.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_MOL-1_M.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Pax7_Spon1_GABA_F.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Ependymal_cell_F.csv
+2025-11-18 09:45:08,202 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Endothelial_cell_F.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Subiculum_CT_Glut_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D3_Folh1_GABA_F.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Pax7_Nfib_GABA_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Ependymal_cell_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Perivascular_Macrophage_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Choroid_plexus_cell_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D2_GABA_F.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Endothelial_cell_M.csv
+2025-11-18 09:45:08,203 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_MOL-1_F.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Astrocyte-3_M.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Microglia-1_F.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Scml2_Gda_Glut_M.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Endothelial_cell_M.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MOL-1_M.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Pericyte_M.csv
+2025-11-18 09:45:08,204 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_MOL-1_M.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_MOL-3_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Astrocyte-2_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_Grik1_Kcnc2_GABA_M.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_MOL-2_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Ndnf_Lamp5_GABA_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Microglia-2_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Sero_F.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Astrocyte-4_M.csv
+2025-11-18 09:45:08,205 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Microglia-1_M.csv
+2025-11-18 09:45:08,206 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Pericyte_F.csv
+2025-11-18 09:45:08,206 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Pvalb_Vipr2_GABA_F.csv
+2025-11-18 09:45:08,206 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Microglia-1_F.csv
+2025-11-18 09:45:08,206 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Arachnoid_Barrier_cell_F.csv
+2025-11-18 09:45:08,206 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Lama1_Gpr149_Glut_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Tanycyte_M.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_Car3_Glut_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Sox6_Gm44593_GABA_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Astrocyte-3_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_MOL-2_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Choroid_plexus_cell_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Tanycyte_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Astrocyte-1_F.csv
+2025-11-18 09:45:08,207 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_MOL-3_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Astrocyte-2_F.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Mossy_Glut_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Astrocyte-4_F.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Perivascular_Macrophage_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_L4-5_IT_Glut_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_MOL-2_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_MOL-2_M.csv
+2025-11-18 09:45:08,208 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Ependymal_cell_F.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Ebf1_Nrn1_Glut_M.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Lymphocyte_M.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_B230323A14Rik_Ntng2_Glut_M.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Arachnoid_Barrier_cell_F.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Microglia-2_M.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Lepr_Prox1_GABA_M.csv
+2025-11-18 09:45:08,209 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Ependymal_cell_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_MOL-2_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Tanycyte_F.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_Sst_Chodl_GABA_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Hypendymal_cell_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Pvalb_GABA_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L5_ET_Glut_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Arachnoid_Barrier_cell_M.csv
+2025-11-18 09:45:08,210 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_Lamp5_GABA_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Ndst4_Cnih3_Glut_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Sero_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_Pvalb_Vipr2_GABA_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Choroid_plexus_cell_F.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Astrocyte-2_F.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MOL-3_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_L5_NP_Glut_M.csv
+2025-11-18 09:45:08,211 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Choroid_plexus_cell_F.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Subiculum_SUB_Glut_M.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Ebf1_Nrn1_Glut_F.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_Sncg_GABA_M.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Vip_GABA_F.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Ependymal_cell_M.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Tanycyte_M.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Fign_Ostm1_GABA_F.csv
+2025-11-18 09:45:08,212 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_MOL-2_M.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Microglia-2_F.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Microglia-2_M.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Perivascular_Macrophage_M.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Astrocyte-2_M.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Scml2_Gda_Glut_F.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Pericyte_F.csv
+2025-11-18 09:45:08,213 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Lymphocyte_F.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Astrocyte-2_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Endothelial_cell_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Tanycyte_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Lamp5_GABA_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Nxph1_Tmem132d_GABA_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_VSMC_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Pericyte_M.csv
+2025-11-18 09:45:08,214 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Lymphocyte_M.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Lymphocyte_F.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_MFOL_F.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Perivascular_Macrophage_M.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Piezo2_Cpa6_Glut_M.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Sox6_Gm44593_GABA_M.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Astrocyte-2_F.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Perivascular_Macrophage_F.csv
+2025-11-18 09:45:08,215 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Hist_M.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Tac2_Onecut1_Glut_F.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Trabd2b_Coch_Glut_M.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Astrocyte-3_M.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_GABA_M.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_Sst_Chodl_GABA_F.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Pericyte_F.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_MFOL_M.csv
+2025-11-18 09:45:08,216 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Tanycyte_F.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Ccbe1_Ano1_GABA_F.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Dopa_M.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Foxp2_Penk_GABA_M.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_OPC_F.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Perivascular_Macrophage_F.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Ependymal_cell_F.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_Fbn2_GABA_M.csv
+2025-11-18 09:45:08,217 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Endothelial_cell_M.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Arachnoid_Barrier_cell_F.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Otx2_Fat4_GABA_F.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Col27a1_Npsr1_Glut_M.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Sst_Agrp_GABA_F.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_MOL-2_F.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_NFOL_F.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L4_IT_Glut_M.csv
+2025-11-18 09:45:08,218 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_VLMC_F.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_MFOL_M.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_Pericyte_M.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Htr3a_GABA_M.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Endothelial_cell_F.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_Sulf1_GABA_M.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Perivascular_Macrophage_F.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Lymphocyte_F.csv
+2025-11-18 09:45:08,219 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6_CT_Glut_M.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_Lamp5_GABA_F.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_VLMC_M.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_Lamp5_GABA_F.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Esr1_Stk32a_Glut_M.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MOL-1_M.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_MOL-3_M.csv
+2025-11-18 09:45:08,220 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Arachnoid_Barrier_cell_M.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Rai14_Six3_GABA_F.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Microglia-2_M.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_OPC_M.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Astrocyte-4_F.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_Spon1_GABA_F.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Ependymal_cell_F.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Microglia-1_F.csv
+2025-11-18 09:45:08,221 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Hypendymal_cell_M.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_COP_F.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MOL-1_M.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Kitl_Pde5a_Glut_F.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Subiculum_ProS_Glut_M.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MOL-3_M.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L4_RSP_ACA_Glut_F.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Subiculum_ProS_Glut_F.csv
+2025-11-18 09:45:08,222 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_NFOL_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Pericyte_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Lymphocyte_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L5_IT_Glut_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Fign_Ostm1_GABA_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Astrocyte-4_F.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Rspo2_Gm11639_Glut_F.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Hcrtr2_Hapln1_GABA_M.csv
+2025-11-18 09:45:08,223 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_NFOL_M.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Pou6f2_Kcnmb2_GABA_M.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6b_Glut_M.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Slc17a6_Tmem163_Glut_M.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MOL-1_F.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Myo5b_B230323A14Rik_Glut_F.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Immature_cell_M.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Astrocyte-4_F.csv
+2025-11-18 09:45:08,224 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Perivascular_Macrophage_F.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Tanycyte_F.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_L2-3_IT_Glut_M.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_NFOL_M.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Prox1_Gck_GABA_M.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Crhbp_Maf_GABA_M.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6_CT_Glut_F.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_STR_D1_Chst9_GABA_M.csv
+2025-11-18 09:45:08,225 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Choroid_plexus_cell_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Microglia-2_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Microglia-1_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_MFOL_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MOL-3_F.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_COP_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Astrocyte-3_F.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Pax7_Spon1_GABA_M.csv
+2025-11-18 09:45:08,226 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_DG_GC_Glut_M.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_NFOL_F.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6_IT_Glut_M.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Egflam_Fbn2_Glut_F.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_OPC_M.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Kcnk13_Nox4_Glut_M.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Esr1_Stk32a_Glut_F.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_VLMC_F.csv
+2025-11-18 09:45:08,227 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Ebf3_Adamts2_Glut_F.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Arachnoid_Barrier_cell_M.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_Arachnoid_Barrier_cell_M.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_VLMC_M.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Astrocyte-1_F.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_Lamp5_GABA_M.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Gli3_Aff1_GABA_F.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_VSMC_F.csv
+2025-11-18 09:45:08,228 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_VSMC_M.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_Immature_cell_M.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Car4_Tspan11_Glut_M.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_MFOL_F.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Esr2_Gldn_GABA_F.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Rorb_Smoc1_Glut_F.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Endothelial_cell_F.csv
+2025-11-18 09:45:08,229 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L6_IT_Glut_F.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_HPF_Subiculum_NP_Glut_F.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_Tanycyte_M.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Egflam_Fbn2_Glut_M.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_COP_F.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_VSMC_F.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_NFOL_F.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Arachnoid_Barrier_cell_M.csv
+2025-11-18 09:45:08,230 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Crhbp_Maf_GABA_F.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/AMY_AMY_Rai14_Six3_GABA_M.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_Ependymal_cell_M.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Sst_Agrp_GABA_M.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Microglia-2_F.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_L2-3_IT_Glut_F.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Ccdc192_Ctxn3_Glut_M.csv
+2025-11-18 09:45:08,231 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Prr5l_Vipr2_GABA_F.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_PFC_Vip_GABA_M.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_TH_Car4_Tspan11_Glut_F.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_VSMC_M.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_Microglia-2_M.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/STR_Lymphocyte_F.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_iCTX_Sst_Chodl_GABA_M.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Slc17a6_Tmem163_Glut_F.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_Hypendymal_cell_M.csv
+2025-11-18 09:45:08,232 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_OPC_F.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/MB_MB_Chol_F.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/PFC_OPC_M.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Lef1_Slc16a10_GABA_M.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/iCTX_COP_F.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/TH_VLMC_F.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HPF_MFOL_F.csv
+2025-11-18 09:45:08,233 - INFO - Done: Missing expr: /data2st2/junyi/output/stg1028/subsetsn/HY_HY_Hist_F.csv
+2025-11-18 09:45:08,234 - INFO - 🎉 All AUCell tasks completed.
+2025-11-18 09:46:35,766 - INFO - 🚀 Submitting 307 AUCell tasks...
+2025-11-18 09:46:35,766 - INFO - 👉 Parallel jobs: 4
+2025-11-18 09:46:35,766 - INFO - 👉 Workers per job (--num_workers): 32
+2025-11-18 09:46:35,791 - INFO - ▶ Running AUCell for: AMY_AMY_Maf_Pthlh_GABA_M
+2025-11-18 09:46:35,799 - INFO - ▶ Running AUCell for: HY_HY_Myo5b_B230323A14Rik_Glut_M
+2025-11-18 09:46:35,804 - INFO - ▶ Running AUCell for: STR_VLMC_M
+2025-11-18 09:46:35,807 - INFO - ▶ Running AUCell for: HPF_Hypendymal_cell_M
+2025-11-18 09:46:46,717 - ERROR - ❌ Failed HPF_Hypendymal_cell_M: Command '['pyscenic', 'aucell', '/data2st2/junyi/output/stg1028/subsetsn/HPF_Hypendymal_cell_M.loom', '/data2st2/junyi/output/stg1028/scenic_ctx/ctx_HPF_Hypendymal_cell_M.csv', '--output', '/data2st2/junyi/output/stg1028/scenic_auc/auc_HPF_Hypendymal_cell_M.tsv', '--num_workers', '32']' returned non-zero exit status 1.
+2025-11-18 09:46:46,720 - INFO - Done: HPF_Hypendymal_cell_M
+2025-11-18 09:46:46,723 - INFO - ▶ Running AUCell for: iCTX_Ependymal_cell_M
+2025-11-18 09:46:52,380 - INFO - ✅ Completed AUCell: STR_VLMC_M
+2025-11-18 09:46:52,383 - INFO - Done: STR_VLMC_M
+2025-11-18 09:46:52,410 - INFO - ▶ Running AUCell for: iCTX_VLMC_M
+2025-11-18 09:46:53,235 - INFO - ✅ Completed AUCell: AMY_AMY_Maf_Pthlh_GABA_M
+2025-11-18 09:46:53,238 - INFO - Done: AMY_AMY_Maf_Pthlh_GABA_M
+2025-11-18 09:46:53,241 - INFO - ▶ Running AUCell for: AMY_MOL-1_F
+2025-11-18 09:46:55,341 - INFO - ✅ Completed AUCell: HY_HY_Myo5b_B230323A14Rik_Glut_M
+2025-11-18 09:46:55,343 - INFO - Done: HY_HY_Myo5b_B230323A14Rik_Glut_M
+2025-11-18 09:46:55,397 - INFO - ▶ Running AUCell for: AMY_COP_M
+2025-11-18 09:47:01,019 - INFO - ✅ Completed AUCell: iCTX_Ependymal_cell_M
+2025-11-18 09:47:01,022 - INFO - Done: iCTX_Ependymal_cell_M
+2025-11-18 09:47:01,025 - INFO - ▶ Running AUCell for: STR_Astrocyte-1_F
+2025-11-18 09:47:07,460 - INFO - ✅ Completed AUCell: iCTX_VLMC_M
+2025-11-18 09:47:07,462 - INFO - Done: iCTX_VLMC_M
+2025-11-18 09:47:07,465 - INFO - ▶ Running AUCell for: TH_TH_Tac2_Onecut1_Glut_M
+2025-11-18 09:47:09,808 - INFO - ✅ Completed AUCell: AMY_MOL-1_F
+2025-11-18 09:47:09,810 - INFO - Done: AMY_MOL-1_F
+2025-11-18 09:47:09,834 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6b_Glut_F
+2025-11-18 09:47:10,614 - INFO - ✅ Completed AUCell: AMY_COP_M
+2025-11-18 09:47:10,616 - INFO - Done: AMY_COP_M
+2025-11-18 09:47:10,643 - INFO - ▶ Running AUCell for: HPF_OPC_M
+2025-11-18 09:47:16,005 - INFO - ✅ Completed AUCell: STR_Astrocyte-1_F
+2025-11-18 09:47:16,007 - INFO - Done: STR_Astrocyte-1_F
+2025-11-18 09:47:16,011 - INFO - ▶ Running AUCell for: STR_Ependymal_cell_F
+2025-11-18 09:47:23,261 - INFO - ✅ Completed AUCell: TH_TH_Tac2_Onecut1_Glut_M
+2025-11-18 09:47:23,263 - INFO - Done: TH_TH_Tac2_Onecut1_Glut_M
+2025-11-18 09:47:23,284 - INFO - ▶ Running AUCell for: MB_Microglia-1_M
+2025-11-18 09:47:26,511 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6b_Glut_F
+2025-11-18 09:47:26,543 - INFO - Done: iCTX_iCTX_L6b_Glut_F
+2025-11-18 09:47:26,547 - INFO - ▶ Running AUCell for: STR_MOL-2_M
+2025-11-18 09:47:27,521 - INFO - ✅ Completed AUCell: HPF_OPC_M
+2025-11-18 09:47:27,524 - INFO - Done: HPF_OPC_M
+2025-11-18 09:47:27,527 - INFO - ▶ Running AUCell for: HY_MFOL_M
+2025-11-18 09:47:30,401 - INFO - ✅ Completed AUCell: STR_Ependymal_cell_F
+2025-11-18 09:47:30,403 - INFO - Done: STR_Ependymal_cell_F
+2025-11-18 09:47:30,408 - INFO - ▶ Running AUCell for: AMY_MOL-2_F
+2025-11-18 09:47:39,152 - INFO - ✅ Completed AUCell: MB_Microglia-1_M
+2025-11-18 09:47:39,153 - INFO - Done: MB_Microglia-1_M
+2025-11-18 09:47:39,182 - INFO - ▶ Running AUCell for: HY_MFOL_F
+2025-11-18 09:47:42,593 - INFO - ✅ Completed AUCell: HY_MFOL_M
+2025-11-18 09:47:42,596 - INFO - Done: HY_MFOL_M
+2025-11-18 09:47:42,623 - INFO - ▶ Running AUCell for: STR_VLMC_F
+2025-11-18 09:47:44,564 - INFO - ✅ Completed AUCell: STR_MOL-2_M
+2025-11-18 09:47:44,566 - INFO - Done: STR_MOL-2_M
+2025-11-18 09:47:44,571 - INFO - ▶ Running AUCell for: MB_MB_Gabrr2_Pcbp3_GABA_F
+2025-11-18 09:47:46,164 - INFO - ✅ Completed AUCell: AMY_MOL-2_F
+2025-11-18 09:47:46,166 - INFO - Done: AMY_MOL-2_F
+2025-11-18 09:47:46,188 - INFO - ▶ Running AUCell for: PFC_VSMC_M
+2025-11-18 09:47:53,943 - INFO - ✅ Completed AUCell: HY_MFOL_F
+2025-11-18 09:47:53,946 - INFO - Done: HY_MFOL_F
+2025-11-18 09:47:53,976 - INFO - ▶ Running AUCell for: HPF_HPF_Mossy_Glut_F
+2025-11-18 09:47:57,073 - INFO - ✅ Completed AUCell: STR_VLMC_F
+2025-11-18 09:47:57,075 - INFO - Done: STR_VLMC_F
+2025-11-18 09:47:57,099 - INFO - ▶ Running AUCell for: TH_TH_Meis2_Isl1_GABA_F
+2025-11-18 09:47:59,440 - INFO - ✅ Completed AUCell: PFC_VSMC_M
+2025-11-18 09:47:59,442 - INFO - Done: PFC_VSMC_M
+2025-11-18 09:47:59,524 - INFO - ▶ Running AUCell for: STR_STR_D1_Fbn2_GABA_F
+2025-11-18 09:48:01,120 - INFO - ✅ Completed AUCell: MB_MB_Gabrr2_Pcbp3_GABA_F
+2025-11-18 09:48:01,122 - INFO - Done: MB_MB_Gabrr2_Pcbp3_GABA_F
+2025-11-18 09:48:01,125 - INFO - ▶ Running AUCell for: MB_MOL-2_M
+2025-11-18 09:48:08,766 - INFO - ✅ Completed AUCell: HPF_HPF_Mossy_Glut_F
+2025-11-18 09:48:08,773 - INFO - Done: HPF_HPF_Mossy_Glut_F
+2025-11-18 09:48:08,776 - INFO - ▶ Running AUCell for: HY_Pericyte_F
+2025-11-18 09:48:13,526 - INFO - ✅ Completed AUCell: TH_TH_Meis2_Isl1_GABA_F
+2025-11-18 09:48:13,528 - INFO - Done: TH_TH_Meis2_Isl1_GABA_F
+2025-11-18 09:48:13,532 - INFO - ▶ Running AUCell for: AMY_AMY_Esr2_Gldn_GABA_M
+2025-11-18 09:48:18,244 - INFO - ✅ Completed AUCell: STR_STR_D1_Fbn2_GABA_F
+2025-11-18 09:48:18,246 - INFO - Done: STR_STR_D1_Fbn2_GABA_F
+2025-11-18 09:48:18,250 - INFO - ▶ Running AUCell for: TH_TH_Fgf10_Gm16263_Glut_M
+2025-11-18 09:48:23,840 - INFO - ✅ Completed AUCell: HY_Pericyte_F
+2025-11-18 09:48:23,842 - INFO - Done: HY_Pericyte_F
+2025-11-18 09:48:23,887 - INFO - ▶ Running AUCell for: AMY_Pericyte_F
+2025-11-18 09:48:35,013 - INFO - ✅ Completed AUCell: TH_TH_Fgf10_Gm16263_Glut_M
+2025-11-18 09:48:35,015 - INFO - Done: TH_TH_Fgf10_Gm16263_Glut_M
+2025-11-18 09:48:35,019 - INFO - ▶ Running AUCell for: HPF_Ependymal_cell_F
+2025-11-18 09:48:38,431 - INFO - ✅ Completed AUCell: AMY_Pericyte_F
+2025-11-18 09:48:38,433 - INFO - Done: AMY_Pericyte_F
+2025-11-18 09:48:38,460 - INFO - ▶ Running AUCell for: AMY_Astrocyte-3_M
+2025-11-18 09:48:50,975 - INFO - ✅ Completed AUCell: HPF_Ependymal_cell_F
+2025-11-18 09:48:50,977 - INFO - Done: HPF_Ependymal_cell_F
+2025-11-18 09:48:51,027 - INFO - ▶ Running AUCell for: HY_MOL-1_F
+2025-11-18 09:48:53,186 - INFO - ✅ Completed AUCell: AMY_Astrocyte-3_M
+2025-11-18 09:48:53,187 - INFO - Done: AMY_Astrocyte-3_M
+2025-11-18 09:48:53,191 - INFO - ▶ Running AUCell for: STR_Ependymal_cell_M
+2025-11-18 09:48:55,902 - INFO - ✅ Completed AUCell: AMY_AMY_Esr2_Gldn_GABA_M
+2025-11-18 09:48:55,904 - INFO - Done: AMY_AMY_Esr2_Gldn_GABA_M
+2025-11-18 09:48:55,934 - INFO - ▶ Running AUCell for: PFC_MOL-3_M
