@@ -406,3 +406,831 @@
 2025-11-18 09:48:55,902 - INFO - ✅ Completed AUCell: AMY_AMY_Esr2_Gldn_GABA_M
 2025-11-18 09:48:55,904 - INFO - Done: AMY_AMY_Esr2_Gldn_GABA_M
 2025-11-18 09:48:55,934 - INFO - ▶ Running AUCell for: PFC_MOL-3_M
+2025-11-18 09:49:06,478 - INFO - ✅ Completed AUCell: MB_MOL-2_M
+2025-11-18 09:49:06,480 - INFO - Done: MB_MOL-2_M
+2025-11-18 09:49:06,536 - INFO - ▶ Running AUCell for: AMY_Microglia-2_M
+2025-11-18 09:49:08,632 - INFO - ✅ Completed AUCell: STR_Ependymal_cell_M
+2025-11-18 09:49:08,634 - INFO - Done: STR_Ependymal_cell_M
+2025-11-18 09:49:08,637 - INFO - ▶ Running AUCell for: MB_Perivascular_Macrophage_M
+2025-11-18 09:49:09,337 - INFO - ✅ Completed AUCell: HY_MOL-1_F
+2025-11-18 09:49:09,340 - INFO - Done: HY_MOL-1_F
+2025-11-18 09:49:09,344 - INFO - ▶ Running AUCell for: HY_MOL-3_M
+2025-11-18 09:49:10,927 - INFO - ✅ Completed AUCell: PFC_MOL-3_M
+2025-11-18 09:49:10,930 - INFO - Done: PFC_MOL-3_M
+2025-11-18 09:49:10,933 - INFO - ▶ Running AUCell for: AMY_AMY_Zbtb7c_Vwa5b1_Glut_F
+2025-11-18 09:49:21,238 - INFO - ✅ Completed AUCell: AMY_Microglia-2_M
+2025-11-18 09:49:21,240 - INFO - Done: AMY_Microglia-2_M
+2025-11-18 09:49:21,243 - INFO - ▶ Running AUCell for: HPF_OPC_F
+2025-11-18 09:49:23,228 - INFO - ✅ Completed AUCell: MB_Perivascular_Macrophage_M
+2025-11-18 09:49:23,230 - INFO - Done: MB_Perivascular_Macrophage_M
+2025-11-18 09:49:23,234 - INFO - ▶ Running AUCell for: HPF_HPF_CA3_Glut_F
+2025-11-18 09:49:24,223 - INFO - ✅ Completed AUCell: HY_MOL-3_M
+2025-11-18 09:49:24,225 - INFO - Done: HY_MOL-3_M
+2025-11-18 09:49:24,249 - INFO - ▶ Running AUCell for: HPF_Endothelial_cell_F
+2025-11-18 09:49:33,149 - INFO - ✅ Completed AUCell: AMY_AMY_Zbtb7c_Vwa5b1_Glut_F
+2025-11-18 09:49:33,151 - INFO - Done: AMY_AMY_Zbtb7c_Vwa5b1_Glut_F
+2025-11-18 09:49:33,169 - INFO - ▶ Running AUCell for: iCTX_Endothelial_cell_F
+2025-11-18 09:49:36,671 - INFO - ✅ Completed AUCell: HPF_OPC_F
+2025-11-18 09:49:36,673 - INFO - Done: HPF_OPC_F
+2025-11-18 09:49:36,698 - INFO - ▶ Running AUCell for: iCTX_iCTX_L4_RSP_ACA_Glut_M
+2025-11-18 09:49:38,847 - INFO - ✅ Completed AUCell: HPF_Endothelial_cell_F
+2025-11-18 09:49:38,850 - INFO - Done: HPF_Endothelial_cell_F
+2025-11-18 09:49:38,853 - INFO - ▶ Running AUCell for: MB_Choroid_plexus_cell_M
+2025-11-18 09:49:48,369 - INFO - ✅ Completed AUCell: iCTX_Endothelial_cell_F
+2025-11-18 09:49:48,371 - INFO - Done: iCTX_Endothelial_cell_F
+2025-11-18 09:49:48,375 - INFO - ▶ Running AUCell for: AMY_AMY_Trabd2b_Coch_Glut_F
+2025-11-18 09:49:52,105 - INFO - ✅ Completed AUCell: iCTX_iCTX_L4_RSP_ACA_Glut_M
+2025-11-18 09:49:52,107 - INFO - Done: iCTX_iCTX_L4_RSP_ACA_Glut_M
+2025-11-18 09:49:52,111 - INFO - ▶ Running AUCell for: STR_MOL-1_F
+2025-11-18 09:49:52,259 - INFO - ✅ Completed AUCell: MB_Choroid_plexus_cell_M
+2025-11-18 09:49:52,262 - INFO - Done: MB_Choroid_plexus_cell_M
+2025-11-18 09:49:52,265 - INFO - ▶ Running AUCell for: PFC_Astrocyte-3_M
+2025-11-18 09:50:06,006 - INFO - ✅ Completed AUCell: AMY_AMY_Trabd2b_Coch_Glut_F
+2025-11-18 09:50:06,008 - INFO - Done: AMY_AMY_Trabd2b_Coch_Glut_F
+2025-11-18 09:50:06,012 - INFO - ▶ Running AUCell for: AMY_Microglia-1_F
+2025-11-18 09:50:06,977 - INFO - ✅ Completed AUCell: PFC_Astrocyte-3_M
+2025-11-18 09:50:06,979 - INFO - Done: PFC_Astrocyte-3_M
+2025-11-18 09:50:07,003 - INFO - ▶ Running AUCell for: TH_COP_M
+2025-11-18 09:50:16,421 - INFO - ✅ Completed AUCell: STR_MOL-1_F
+2025-11-18 09:50:16,423 - INFO - Done: STR_MOL-1_F
+2025-11-18 09:50:16,426 - INFO - ▶ Running AUCell for: STR_MOL-3_F
+2025-11-18 09:50:17,706 - INFO - ✅ Completed AUCell: HPF_HPF_CA3_Glut_F
+2025-11-18 09:50:17,709 - INFO - Done: HPF_HPF_CA3_Glut_F
+2025-11-18 09:50:17,727 - INFO - ▶ Running AUCell for: AMY_Astrocyte-1_F
+2025-11-18 09:50:20,834 - INFO - ✅ Completed AUCell: AMY_Microglia-1_F
+2025-11-18 09:50:20,837 - INFO - Done: AMY_Microglia-1_F
+2025-11-18 09:50:20,871 - INFO - ▶ Running AUCell for: HPF_HPF_CA1_Glut_M
+2025-11-18 09:50:21,922 - INFO - ✅ Completed AUCell: TH_COP_M
+2025-11-18 09:50:21,924 - INFO - Done: TH_COP_M
+2025-11-18 09:50:21,948 - INFO - ▶ Running AUCell for: AMY_AMY_Zfhx4_Pde7b_GABA_F
+2025-11-18 09:50:31,971 - INFO - ✅ Completed AUCell: STR_MOL-3_F
+2025-11-18 09:50:31,973 - INFO - Done: STR_MOL-3_F
+2025-11-18 09:50:32,015 - INFO - ▶ Running AUCell for: TH_TH_Parm1_Mdga1_Glut_F
+2025-11-18 09:50:37,259 - INFO - ✅ Completed AUCell: AMY_Astrocyte-1_F
+2025-11-18 09:50:37,262 - INFO - Done: AMY_Astrocyte-1_F
+2025-11-18 09:50:37,265 - INFO - ▶ Running AUCell for: STR_Astrocyte-3_F
+2025-11-18 09:50:43,162 - INFO - ✅ Completed AUCell: AMY_AMY_Zfhx4_Pde7b_GABA_F
+2025-11-18 09:50:43,188 - INFO - Done: AMY_AMY_Zfhx4_Pde7b_GABA_F
+2025-11-18 09:50:43,260 - INFO - ▶ Running AUCell for: TH_TH_Fam20a_Fbln1_Glut_M
+2025-11-18 09:50:48,218 - INFO - ✅ Completed AUCell: TH_TH_Parm1_Mdga1_Glut_F
+2025-11-18 09:50:48,220 - INFO - Done: TH_TH_Parm1_Mdga1_Glut_F
+2025-11-18 09:50:48,224 - INFO - ▶ Running AUCell for: HPF_Endothelial_cell_M
+2025-11-18 09:50:53,297 - INFO - ✅ Completed AUCell: STR_Astrocyte-3_F
+2025-11-18 09:50:53,299 - INFO - Done: STR_Astrocyte-3_F
+2025-11-18 09:50:53,303 - INFO - ▶ Running AUCell for: HPF_HPF_Htr3a_GABA_F
+2025-11-18 09:51:02,758 - INFO - ✅ Completed AUCell: HPF_Endothelial_cell_M
+2025-11-18 09:51:02,785 - INFO - Done: HPF_Endothelial_cell_M
+2025-11-18 09:51:02,828 - INFO - ▶ Running AUCell for: HPF_MOL-1_M
+2025-11-18 09:51:03,811 - INFO - ✅ Completed AUCell: TH_TH_Fam20a_Fbln1_Glut_M
+2025-11-18 09:51:03,813 - INFO - Done: TH_TH_Fam20a_Fbln1_Glut_M
+2025-11-18 09:51:03,834 - INFO - ▶ Running AUCell for: HY_HY_Chol_M
+2025-11-18 09:51:09,013 - INFO - ✅ Completed AUCell: HPF_HPF_Htr3a_GABA_F
+2025-11-18 09:51:09,016 - INFO - Done: HPF_HPF_Htr3a_GABA_F
+2025-11-18 09:51:09,036 - INFO - ▶ Running AUCell for: iCTX_Choroid_plexus_cell_M
+2025-11-18 09:51:19,123 - INFO - ✅ Completed AUCell: HY_HY_Chol_M
+2025-11-18 09:51:19,126 - INFO - Done: HY_HY_Chol_M
+2025-11-18 09:51:19,129 - INFO - ▶ Running AUCell for: iCTX_MOL-1_M
+2025-11-18 09:51:23,353 - INFO - ✅ Completed AUCell: iCTX_Choroid_plexus_cell_M
+2025-11-18 09:51:23,356 - INFO - Done: iCTX_Choroid_plexus_cell_M
+2025-11-18 09:51:23,359 - INFO - ▶ Running AUCell for: MB_MB_Pax7_Spon1_GABA_F
+2025-11-18 09:51:38,447 - INFO - ✅ Completed AUCell: iCTX_MOL-1_M
+2025-11-18 09:51:38,450 - INFO - Done: iCTX_MOL-1_M
+2025-11-18 09:51:38,453 - INFO - ▶ Running AUCell for: TH_Ependymal_cell_F
+2025-11-18 09:51:38,645 - INFO - ✅ Completed AUCell: MB_MB_Pax7_Spon1_GABA_F
+2025-11-18 09:51:38,647 - INFO - Done: MB_MB_Pax7_Spon1_GABA_F
+2025-11-18 09:51:38,650 - INFO - ▶ Running AUCell for: PFC_Endothelial_cell_F
+2025-11-18 09:51:41,440 - INFO - ✅ Completed AUCell: HPF_MOL-1_M
+2025-11-18 09:51:41,442 - INFO - Done: HPF_MOL-1_M
+2025-11-18 09:51:41,446 - INFO - ▶ Running AUCell for: HPF_HPF_Subiculum_CT_Glut_M
+2025-11-18 09:51:48,466 - INFO - ✅ Completed AUCell: HPF_HPF_CA1_Glut_M
+2025-11-18 09:51:48,469 - INFO - Done: HPF_HPF_CA1_Glut_M
+2025-11-18 09:51:48,509 - INFO - ▶ Running AUCell for: STR_STR_D3_Folh1_GABA_F
+2025-11-18 09:51:53,353 - INFO - ✅ Completed AUCell: TH_Ependymal_cell_F
+2025-11-18 09:51:53,355 - INFO - Done: TH_Ependymal_cell_F
+2025-11-18 09:51:53,359 - INFO - ▶ Running AUCell for: MB_MB_Pax7_Nfib_GABA_M
+2025-11-18 09:51:53,452 - INFO - ✅ Completed AUCell: PFC_Endothelial_cell_F
+2025-11-18 09:51:53,454 - INFO - Done: PFC_Endothelial_cell_F
+2025-11-18 09:51:53,457 - INFO - ▶ Running AUCell for: PFC_Ependymal_cell_M
+2025-11-18 09:51:56,851 - INFO - ✅ Completed AUCell: HPF_HPF_Subiculum_CT_Glut_M
+2025-11-18 09:51:56,854 - INFO - Done: HPF_HPF_Subiculum_CT_Glut_M
+2025-11-18 09:51:56,875 - INFO - ▶ Running AUCell for: AMY_Perivascular_Macrophage_M
+2025-11-18 09:52:04,218 - INFO - ✅ Completed AUCell: STR_STR_D3_Folh1_GABA_F
+2025-11-18 09:52:04,221 - INFO - Done: STR_STR_D3_Folh1_GABA_F
+2025-11-18 09:52:04,279 - INFO - ▶ Running AUCell for: STR_Choroid_plexus_cell_M
+2025-11-18 09:52:06,866 - INFO - ✅ Completed AUCell: PFC_Ependymal_cell_M
+2025-11-18 09:52:06,868 - INFO - Done: PFC_Ependymal_cell_M
+2025-11-18 09:52:06,871 - INFO - ▶ Running AUCell for: STR_STR_D2_GABA_F
+2025-11-18 09:52:09,385 - INFO - ✅ Completed AUCell: MB_MB_Pax7_Nfib_GABA_M
+2025-11-18 09:52:09,387 - INFO - Done: MB_MB_Pax7_Nfib_GABA_M
+2025-11-18 09:52:09,404 - INFO - ▶ Running AUCell for: STR_Endothelial_cell_M
+2025-11-18 09:52:11,818 - INFO - ✅ Completed AUCell: AMY_Perivascular_Macrophage_M
+2025-11-18 09:52:11,820 - INFO - Done: AMY_Perivascular_Macrophage_M
+2025-11-18 09:52:11,824 - INFO - ▶ Running AUCell for: iCTX_MOL-1_F
+2025-11-18 09:52:17,342 - INFO - ✅ Completed AUCell: STR_Choroid_plexus_cell_M
+2025-11-18 09:52:17,344 - INFO - Done: STR_Choroid_plexus_cell_M
+2025-11-18 09:52:17,369 - INFO - ▶ Running AUCell for: PFC_Microglia-1_F
+2025-11-18 09:52:24,059 - INFO - ✅ Completed AUCell: STR_Endothelial_cell_M
+2025-11-18 09:52:24,062 - INFO - Done: STR_Endothelial_cell_M
+2025-11-18 09:52:24,065 - INFO - ▶ Running AUCell for: STR_Astrocyte-3_M
+2025-11-18 09:52:27,633 - INFO - ✅ Completed AUCell: iCTX_MOL-1_F
+2025-11-18 09:52:27,635 - INFO - Done: iCTX_MOL-1_F
+2025-11-18 09:52:27,664 - INFO - ▶ Running AUCell for: MB_MB_Scml2_Gda_Glut_M
+2025-11-18 09:52:32,545 - INFO - ✅ Completed AUCell: PFC_Microglia-1_F
+2025-11-18 09:52:32,547 - INFO - Done: PFC_Microglia-1_F
+2025-11-18 09:52:32,574 - INFO - ▶ Running AUCell for: iCTX_Endothelial_cell_M
+2025-11-18 09:52:39,164 - INFO - ✅ Completed AUCell: STR_Astrocyte-3_M
+2025-11-18 09:52:39,166 - INFO - Done: STR_Astrocyte-3_M
+2025-11-18 09:52:39,196 - INFO - ▶ Running AUCell for: TH_Pericyte_M
+2025-11-18 09:52:39,659 - INFO - ✅ Completed AUCell: STR_STR_D2_GABA_F
+2025-11-18 09:52:39,662 - INFO - Done: STR_STR_D2_GABA_F
+2025-11-18 09:52:39,694 - INFO - ▶ Running AUCell for: HY_MOL-1_M
+2025-11-18 09:52:43,328 - INFO - ✅ Completed AUCell: MB_MB_Scml2_Gda_Glut_M
+2025-11-18 09:52:43,330 - INFO - Done: MB_MB_Scml2_Gda_Glut_M
+2025-11-18 09:52:43,334 - INFO - ▶ Running AUCell for: AMY_MOL-1_M
+2025-11-18 09:52:47,296 - INFO - ✅ Completed AUCell: iCTX_Endothelial_cell_M
+2025-11-18 09:52:47,298 - INFO - Done: iCTX_Endothelial_cell_M
+2025-11-18 09:52:47,302 - INFO - ▶ Running AUCell for: PFC_MOL-3_F
+2025-11-18 09:52:53,857 - INFO - ✅ Completed AUCell: TH_Pericyte_M
+2025-11-18 09:52:53,859 - INFO - Done: TH_Pericyte_M
+2025-11-18 09:52:53,863 - INFO - ▶ Running AUCell for: STR_STR_Grik1_Kcnc2_GABA_M
+2025-11-18 09:52:57,691 - INFO - ✅ Completed AUCell: HY_MOL-1_M
+2025-11-18 09:52:57,693 - INFO - Done: HY_MOL-1_M
+2025-11-18 09:52:57,697 - INFO - ▶ Running AUCell for: TH_Astrocyte-2_F
+2025-11-18 09:52:59,080 - INFO - ✅ Completed AUCell: AMY_MOL-1_M
+2025-11-18 09:52:59,083 - INFO - Done: AMY_MOL-1_M
+2025-11-18 09:52:59,113 - INFO - ▶ Running AUCell for: iCTX_MOL-2_F
+2025-11-18 09:53:02,139 - INFO - ✅ Completed AUCell: PFC_MOL-3_F
+2025-11-18 09:53:02,141 - INFO - Done: PFC_MOL-3_F
+2025-11-18 09:53:02,145 - INFO - ▶ Running AUCell for: AMY_AMY_Ndnf_Lamp5_GABA_F
+2025-11-18 09:53:11,261 - INFO - ✅ Completed AUCell: TH_Astrocyte-2_F
+2025-11-18 09:53:11,294 - INFO - Done: TH_Astrocyte-2_F
+2025-11-18 09:53:11,322 - INFO - ▶ Running AUCell for: HPF_Microglia-2_F
+2025-11-18 09:53:13,971 - INFO - ✅ Completed AUCell: STR_STR_Grik1_Kcnc2_GABA_M
+2025-11-18 09:53:13,973 - INFO - Done: STR_STR_Grik1_Kcnc2_GABA_M
+2025-11-18 09:53:13,976 - INFO - ▶ Running AUCell for: MB_MB_Sero_F
+2025-11-18 09:53:14,296 - INFO - ✅ Completed AUCell: iCTX_MOL-2_F
+2025-11-18 09:53:14,298 - INFO - Done: iCTX_MOL-2_F
+2025-11-18 09:53:14,323 - INFO - ▶ Running AUCell for: HPF_Astrocyte-4_M
+2025-11-18 09:53:17,317 - INFO - ✅ Completed AUCell: AMY_AMY_Ndnf_Lamp5_GABA_F
+2025-11-18 09:53:17,343 - INFO - Done: AMY_AMY_Ndnf_Lamp5_GABA_F
+2025-11-18 09:53:17,348 - INFO - ▶ Running AUCell for: HPF_Microglia-1_M
+2025-11-18 09:53:26,718 - INFO - ✅ Completed AUCell: HPF_Microglia-2_F
+2025-11-18 09:53:26,720 - INFO - Done: HPF_Microglia-2_F
+2025-11-18 09:53:26,741 - INFO - ▶ Running AUCell for: MB_Pericyte_F
+2025-11-18 09:53:29,317 - INFO - ✅ Completed AUCell: HPF_Astrocyte-4_M
+2025-11-18 09:53:29,320 - INFO - Done: HPF_Astrocyte-4_M
+2025-11-18 09:53:29,350 - INFO - ▶ Running AUCell for: HPF_HPF_Pvalb_Vipr2_GABA_F
+2025-11-18 09:53:29,492 - INFO - ✅ Completed AUCell: MB_MB_Sero_F
+2025-11-18 09:53:29,495 - INFO - Done: MB_MB_Sero_F
+2025-11-18 09:53:29,498 - INFO - ▶ Running AUCell for: STR_Microglia-1_F
+2025-11-18 09:53:32,471 - INFO - ✅ Completed AUCell: HPF_Microglia-1_M
+2025-11-18 09:53:32,473 - INFO - Done: HPF_Microglia-1_M
+2025-11-18 09:53:32,477 - INFO - ▶ Running AUCell for: PFC_Arachnoid_Barrier_cell_F
+2025-11-18 09:53:41,184 - INFO - ✅ Completed AUCell: MB_Pericyte_F
+2025-11-18 09:53:41,187 - INFO - Done: MB_Pericyte_F
+2025-11-18 09:53:41,190 - INFO - ▶ Running AUCell for: HY_HY_Lama1_Gpr149_Glut_F
+2025-11-18 09:53:44,251 - INFO - ✅ Completed AUCell: HPF_HPF_Pvalb_Vipr2_GABA_F
+2025-11-18 09:53:44,253 - INFO - Done: HPF_HPF_Pvalb_Vipr2_GABA_F
+2025-11-18 09:53:44,271 - INFO - ▶ Running AUCell for: PFC_Tanycyte_M
+2025-11-18 09:53:44,937 - INFO - ✅ Completed AUCell: STR_Microglia-1_F
+2025-11-18 09:53:44,939 - INFO - Done: STR_Microglia-1_F
+2025-11-18 09:53:44,962 - INFO - ▶ Running AUCell for: iCTX_iCTX_Car3_Glut_F
+2025-11-18 09:53:47,649 - INFO - ✅ Completed AUCell: PFC_Arachnoid_Barrier_cell_F
+2025-11-18 09:53:47,652 - INFO - Done: PFC_Arachnoid_Barrier_cell_F
+2025-11-18 09:53:47,655 - INFO - ▶ Running AUCell for: HY_HY_Sox6_Gm44593_GABA_F
+2025-11-18 09:53:53,854 - ERROR - ❌ Failed PFC_Tanycyte_M: Command '['pyscenic', 'aucell', '/data2st2/junyi/output/stg1028/subsetsn/PFC_Tanycyte_M.loom', '/data2st2/junyi/output/stg1028/scenic_ctx/ctx_PFC_Tanycyte_M.csv', '--output', '/data2st2/junyi/output/stg1028/scenic_auc/auc_PFC_Tanycyte_M.tsv', '--num_workers', '32']' returned non-zero exit status 1.
+2025-11-18 09:53:53,857 - INFO - Done: PFC_Tanycyte_M
+2025-11-18 09:53:53,860 - INFO - ▶ Running AUCell for: PFC_Astrocyte-3_F
+2025-11-18 09:54:00,805 - INFO - ✅ Completed AUCell: HY_HY_Lama1_Gpr149_Glut_F
+2025-11-18 09:54:00,807 - INFO - Done: HY_HY_Lama1_Gpr149_Glut_F
+2025-11-18 09:54:00,811 - INFO - ▶ Running AUCell for: TH_MOL-2_F
+2025-11-18 09:54:01,594 - INFO - ✅ Completed AUCell: iCTX_iCTX_Car3_Glut_F
+2025-11-18 09:54:01,596 - INFO - Done: iCTX_iCTX_Car3_Glut_F
+2025-11-18 09:54:01,599 - INFO - ▶ Running AUCell for: iCTX_Choroid_plexus_cell_F
+2025-11-18 09:54:04,529 - INFO - ✅ Completed AUCell: HY_HY_Sox6_Gm44593_GABA_F
+2025-11-18 09:54:04,531 - INFO - Done: HY_HY_Sox6_Gm44593_GABA_F
+2025-11-18 09:54:04,554 - INFO - ▶ Running AUCell for: STR_Tanycyte_F
+2025-11-18 09:54:08,814 - INFO - ✅ Completed AUCell: PFC_Astrocyte-3_F
+2025-11-18 09:54:08,816 - INFO - Done: PFC_Astrocyte-3_F
+2025-11-18 09:54:08,845 - INFO - ▶ Running AUCell for: HPF_Astrocyte-1_F
+2025-11-18 09:54:11,291 - ERROR - ❌ Failed iCTX_Choroid_plexus_cell_F: Command '['pyscenic', 'aucell', '/data2st2/junyi/output/stg1028/subsetsn/iCTX_Choroid_plexus_cell_F.loom', '/data2st2/junyi/output/stg1028/scenic_ctx/ctx_iCTX_Choroid_plexus_cell_F.csv', '--output', '/data2st2/junyi/output/stg1028/scenic_auc/auc_iCTX_Choroid_plexus_cell_F.tsv', '--num_workers', '32']' returned non-zero exit status 1.
+2025-11-18 09:54:11,293 - INFO - Done: iCTX_Choroid_plexus_cell_F
+2025-11-18 09:54:11,296 - INFO - ▶ Running AUCell for: iCTX_MOL-3_M
+2025-11-18 09:54:18,885 - INFO - ✅ Completed AUCell: STR_Tanycyte_F
+2025-11-18 09:54:18,897 - INFO - Done: STR_Tanycyte_F
+2025-11-18 09:54:18,900 - INFO - ▶ Running AUCell for: HPF_Astrocyte-2_F
+2025-11-18 09:54:19,980 - INFO - ✅ Completed AUCell: TH_MOL-2_F
+2025-11-18 09:54:19,983 - INFO - Done: TH_MOL-2_F
+2025-11-18 09:54:19,986 - INFO - ▶ Running AUCell for: HPF_HPF_Mossy_Glut_M
+2025-11-18 09:54:23,589 - INFO - ✅ Completed AUCell: HPF_Astrocyte-1_F
+2025-11-18 09:54:23,591 - INFO - Done: HPF_Astrocyte-1_F
+2025-11-18 09:54:23,622 - INFO - ▶ Running AUCell for: AMY_Astrocyte-4_F
+2025-11-18 09:54:27,028 - INFO - ✅ Completed AUCell: iCTX_MOL-3_M
+2025-11-18 09:54:27,031 - INFO - Done: iCTX_MOL-3_M
+2025-11-18 09:54:27,035 - INFO - ▶ Running AUCell for: PFC_PFC_L4-5_IT_Glut_M
+2025-11-18 09:54:34,367 - INFO - ✅ Completed AUCell: HPF_Astrocyte-2_F
+2025-11-18 09:54:34,370 - INFO - Done: HPF_Astrocyte-2_F
+2025-11-18 09:54:34,377 - INFO - ▶ Running AUCell for: PFC_Perivascular_Macrophage_M
+2025-11-18 09:54:35,039 - INFO - ✅ Completed AUCell: HPF_HPF_Mossy_Glut_M
+2025-11-18 09:54:35,041 - INFO - Done: HPF_HPF_Mossy_Glut_M
+2025-11-18 09:54:35,045 - INFO - ▶ Running AUCell for: HPF_MOL-2_M
+2025-11-18 09:54:38,825 - INFO - ✅ Completed AUCell: AMY_Astrocyte-4_F
+2025-11-18 09:54:38,827 - INFO - Done: AMY_Astrocyte-4_F
+2025-11-18 09:54:38,855 - INFO - ▶ Running AUCell for: TH_MOL-2_M
+2025-11-18 09:54:48,726 - INFO - ✅ Completed AUCell: PFC_Perivascular_Macrophage_M
+2025-11-18 09:54:48,729 - INFO - Done: PFC_Perivascular_Macrophage_M
+2025-11-18 09:54:48,758 - INFO - ▶ Running AUCell for: AMY_Ependymal_cell_F
+2025-11-18 09:55:01,398 - INFO - ✅ Completed AUCell: TH_MOL-2_M
+2025-11-18 09:55:01,400 - INFO - Done: TH_MOL-2_M
+2025-11-18 09:55:01,447 - INFO - ▶ Running AUCell for: HY_HY_Ebf1_Nrn1_Glut_M
+2025-11-18 09:55:03,711 - INFO - ✅ Completed AUCell: AMY_Ependymal_cell_F
+2025-11-18 09:55:03,713 - INFO - Done: AMY_Ependymal_cell_F
+2025-11-18 09:55:03,717 - INFO - ▶ Running AUCell for: PFC_Lymphocyte_M
+2025-11-18 09:55:11,119 - INFO - ✅ Completed AUCell: HPF_MOL-2_M
+2025-11-18 09:55:11,121 - INFO - Done: HPF_MOL-2_M
+2025-11-18 09:55:11,147 - INFO - ▶ Running AUCell for: MB_MB_B230323A14Rik_Ntng2_Glut_M
+2025-11-18 09:55:17,516 - INFO - ✅ Completed AUCell: PFC_Lymphocyte_M
+2025-11-18 09:55:17,519 - INFO - Done: PFC_Lymphocyte_M
+2025-11-18 09:55:17,522 - INFO - ▶ Running AUCell for: iCTX_Arachnoid_Barrier_cell_F
+2025-11-18 09:55:32,797 - INFO - ✅ Completed AUCell: iCTX_Arachnoid_Barrier_cell_F
+2025-11-18 09:55:32,800 - INFO - Done: iCTX_Arachnoid_Barrier_cell_F
+2025-11-18 09:55:32,828 - INFO - ▶ Running AUCell for: HY_HY_Lepr_Prox1_GABA_M
+2025-11-18 09:55:38,290 - INFO - ✅ Completed AUCell: MB_MB_B230323A14Rik_Ntng2_Glut_M
+2025-11-18 09:55:38,292 - INFO - Done: MB_MB_B230323A14Rik_Ntng2_Glut_M
+2025-11-18 09:55:38,341 - INFO - ▶ Running AUCell for: MB_Microglia-2_M
+2025-11-18 09:55:41,079 - INFO - ✅ Completed AUCell: PFC_PFC_L4-5_IT_Glut_M
+2025-11-18 09:55:41,081 - INFO - Done: PFC_PFC_L4-5_IT_Glut_M
+2025-11-18 09:55:41,085 - INFO - ▶ Running AUCell for: HPF_Ependymal_cell_M
+2025-11-18 09:55:41,427 - INFO - ✅ Completed AUCell: HY_HY_Ebf1_Nrn1_Glut_M
+2025-11-18 09:55:41,429 - INFO - Done: HY_HY_Ebf1_Nrn1_Glut_M
+2025-11-18 09:55:41,457 - INFO - ▶ Running AUCell for: HY_MOL-2_M
+2025-11-18 09:55:48,286 - INFO - ✅ Completed AUCell: HY_HY_Lepr_Prox1_GABA_M
+2025-11-18 09:55:48,288 - INFO - Done: HY_HY_Lepr_Prox1_GABA_M
+2025-11-18 09:55:48,292 - INFO - ▶ Running AUCell for: STR_STR_Sst_Chodl_GABA_M
+2025-11-18 09:55:53,255 - INFO - ✅ Completed AUCell: MB_Microglia-2_M
+2025-11-18 09:55:53,257 - INFO - Done: MB_Microglia-2_M
+2025-11-18 09:55:53,260 - INFO - ▶ Running AUCell for: AMY_Tanycyte_F
+2025-11-18 09:55:55,903 - INFO - ✅ Completed AUCell: HPF_Ependymal_cell_M
+2025-11-18 09:55:55,906 - INFO - Done: HPF_Ependymal_cell_M
+2025-11-18 09:55:55,909 - INFO - ▶ Running AUCell for: MB_Hypendymal_cell_M
+2025-11-18 09:55:58,009 - INFO - ✅ Completed AUCell: HY_MOL-2_M
+2025-11-18 09:55:58,011 - INFO - Done: HY_MOL-2_M
+2025-11-18 09:55:58,014 - INFO - ▶ Running AUCell for: HPF_HPF_Pvalb_GABA_M
+2025-11-18 09:56:04,539 - INFO - ✅ Completed AUCell: STR_STR_Sst_Chodl_GABA_M
+2025-11-18 09:56:04,541 - INFO - Done: STR_STR_Sst_Chodl_GABA_M
+2025-11-18 09:56:04,566 - INFO - ▶ Running AUCell for: STR_Arachnoid_Barrier_cell_M
+2025-11-18 09:56:07,185 - INFO - ✅ Completed AUCell: AMY_Tanycyte_F
+2025-11-18 09:56:07,188 - INFO - Done: AMY_Tanycyte_F
+2025-11-18 09:56:07,191 - INFO - ▶ Running AUCell for: iCTX_iCTX_L5_ET_Glut_M
+2025-11-18 09:56:10,509 - INFO - ✅ Completed AUCell: MB_Hypendymal_cell_M
+2025-11-18 09:56:10,512 - INFO - Done: MB_Hypendymal_cell_M
+2025-11-18 09:56:10,545 - INFO - ▶ Running AUCell for: iCTX_iCTX_Lamp5_GABA_M
+2025-11-18 09:56:14,298 - INFO - ✅ Completed AUCell: HPF_HPF_Pvalb_GABA_M
+2025-11-18 09:56:14,301 - INFO - Done: HPF_HPF_Pvalb_GABA_M
+2025-11-18 09:56:14,328 - INFO - ▶ Running AUCell for: MB_MB_Ndst4_Cnih3_Glut_M
+2025-11-18 09:56:18,705 - INFO - ✅ Completed AUCell: STR_Arachnoid_Barrier_cell_M
+2025-11-18 09:56:18,707 - INFO - Done: STR_Arachnoid_Barrier_cell_M
+2025-11-18 09:56:18,711 - INFO - ▶ Running AUCell for: MB_MB_Sero_M
+2025-11-18 09:56:26,014 - INFO - ✅ Completed AUCell: iCTX_iCTX_L5_ET_Glut_M
+2025-11-18 09:56:26,016 - INFO - Done: iCTX_iCTX_L5_ET_Glut_M
+2025-11-18 09:56:26,043 - INFO - ▶ Running AUCell for: PFC_PFC_Pvalb_Vipr2_GABA_M
+2025-11-18 09:56:27,031 - INFO - ✅ Completed AUCell: iCTX_iCTX_Lamp5_GABA_M
+2025-11-18 09:56:27,034 - INFO - Done: iCTX_iCTX_Lamp5_GABA_M
+2025-11-18 09:56:27,070 - INFO - ▶ Running AUCell for: STR_Choroid_plexus_cell_F
+2025-11-18 09:56:34,635 - INFO - ✅ Completed AUCell: MB_MB_Sero_M
+2025-11-18 09:56:34,638 - INFO - Done: MB_MB_Sero_M
+2025-11-18 09:56:34,641 - INFO - ▶ Running AUCell for: STR_MOL-3_M
+2025-11-18 09:56:36,684 - INFO - ✅ Completed AUCell: MB_MB_Ndst4_Cnih3_Glut_M
+2025-11-18 09:56:36,686 - INFO - Done: MB_MB_Ndst4_Cnih3_Glut_M
+2025-11-18 09:56:36,689 - INFO - ▶ Running AUCell for: STR_Astrocyte-2_F
+2025-11-18 09:56:40,501 - INFO - ✅ Completed AUCell: STR_Choroid_plexus_cell_F
+2025-11-18 09:56:40,503 - INFO - Done: STR_Choroid_plexus_cell_F
+2025-11-18 09:56:40,530 - INFO - ▶ Running AUCell for: PFC_PFC_L5_NP_Glut_M
+2025-11-18 09:56:41,045 - INFO - ✅ Completed AUCell: PFC_PFC_Pvalb_Vipr2_GABA_M
+2025-11-18 09:56:41,047 - INFO - Done: PFC_PFC_Pvalb_Vipr2_GABA_M
+2025-11-18 09:56:41,075 - INFO - ▶ Running AUCell for: HPF_Choroid_plexus_cell_F
+2025-11-18 09:56:50,137 - INFO - ✅ Completed AUCell: STR_MOL-3_M
+2025-11-18 09:56:50,139 - INFO - Done: STR_MOL-3_M
+2025-11-18 09:56:50,173 - INFO - ▶ Running AUCell for: HPF_HPF_Subiculum_SUB_Glut_M
+2025-11-18 09:56:53,565 - INFO - ✅ Completed AUCell: STR_Astrocyte-2_F
+2025-11-18 09:56:53,567 - INFO - Done: STR_Astrocyte-2_F
+2025-11-18 09:56:53,593 - INFO - ▶ Running AUCell for: HY_HY_Ebf1_Nrn1_Glut_F
+2025-11-18 09:56:56,038 - INFO - ✅ Completed AUCell: HPF_Choroid_plexus_cell_F
+2025-11-18 09:56:56,040 - INFO - Done: HPF_Choroid_plexus_cell_F
+2025-11-18 09:56:56,044 - INFO - ▶ Running AUCell for: PFC_PFC_Sncg_GABA_M
+2025-11-18 09:56:58,181 - INFO - ✅ Completed AUCell: PFC_PFC_L5_NP_Glut_M
+2025-11-18 09:56:58,183 - INFO - Done: PFC_PFC_L5_NP_Glut_M
+2025-11-18 09:56:58,187 - INFO - ▶ Running AUCell for: HPF_HPF_Vip_GABA_F
+2025-11-18 09:57:06,262 - INFO - ✅ Completed AUCell: HPF_HPF_Subiculum_SUB_Glut_M
+2025-11-18 09:57:06,264 - INFO - Done: HPF_HPF_Subiculum_SUB_Glut_M
+2025-11-18 09:57:06,296 - INFO - ▶ Running AUCell for: HY_Ependymal_cell_M
+2025-11-18 09:57:11,342 - INFO - ✅ Completed AUCell: PFC_PFC_Sncg_GABA_M
+2025-11-18 09:57:11,344 - INFO - Done: PFC_PFC_Sncg_GABA_M
+2025-11-18 09:57:11,366 - INFO - ▶ Running AUCell for: AMY_Tanycyte_M
+2025-11-18 09:57:13,036 - INFO - ✅ Completed AUCell: HPF_HPF_Vip_GABA_F
+2025-11-18 09:57:13,038 - INFO - Done: HPF_HPF_Vip_GABA_F
+2025-11-18 09:57:13,041 - INFO - ▶ Running AUCell for: AMY_AMY_Fign_Ostm1_GABA_F
+2025-11-18 09:57:16,197 - INFO - ✅ Completed AUCell: HY_HY_Ebf1_Nrn1_Glut_F
+2025-11-18 09:57:16,200 - INFO - Done: HY_HY_Ebf1_Nrn1_Glut_F
+2025-11-18 09:57:16,231 - INFO - ▶ Running AUCell for: AMY_MOL-2_M
+2025-11-18 09:57:21,491 - INFO - ✅ Completed AUCell: HY_Ependymal_cell_M
+2025-11-18 09:57:21,493 - INFO - Done: HY_Ependymal_cell_M
+2025-11-18 09:57:21,496 - INFO - ▶ Running AUCell for: AMY_Microglia-2_F
+2025-11-18 09:57:25,304 - INFO - ✅ Completed AUCell: AMY_Tanycyte_M
+2025-11-18 09:57:25,306 - INFO - Done: AMY_Tanycyte_M
+2025-11-18 09:57:25,310 - INFO - ▶ Running AUCell for: PFC_Microglia-2_M
+2025-11-18 09:57:32,219 - INFO - ✅ Completed AUCell: AMY_MOL-2_M
+2025-11-18 09:57:32,221 - INFO - Done: AMY_MOL-2_M
+2025-11-18 09:57:32,225 - INFO - ▶ Running AUCell for: HPF_Perivascular_Macrophage_M
+2025-11-18 09:57:34,197 - INFO - ✅ Completed AUCell: AMY_AMY_Fign_Ostm1_GABA_F
+2025-11-18 09:57:34,199 - INFO - Done: AMY_AMY_Fign_Ostm1_GABA_F
+2025-11-18 09:57:34,264 - INFO - ▶ Running AUCell for: MB_MB_Scml2_Gda_Glut_F
+2025-11-18 09:57:36,339 - INFO - ✅ Completed AUCell: AMY_Microglia-2_F
+2025-11-18 09:57:36,341 - INFO - Done: AMY_Microglia-2_F
+2025-11-18 09:57:36,345 - INFO - ▶ Running AUCell for: HY_Astrocyte-2_M
+2025-11-18 09:57:39,961 - INFO - ✅ Completed AUCell: PFC_Microglia-2_M
+2025-11-18 09:57:39,964 - INFO - Done: PFC_Microglia-2_M
+2025-11-18 09:57:40,006 - INFO - ▶ Running AUCell for: PFC_Pericyte_F
+2025-11-18 09:57:46,585 - INFO - ✅ Completed AUCell: HPF_Perivascular_Macrophage_M
+2025-11-18 09:57:46,587 - INFO - Done: HPF_Perivascular_Macrophage_M
+2025-11-18 09:57:46,590 - INFO - ▶ Running AUCell for: AMY_Lymphocyte_F
+2025-11-18 09:57:49,844 - INFO - ✅ Completed AUCell: MB_MB_Scml2_Gda_Glut_F
+2025-11-18 09:57:49,846 - INFO - Done: MB_MB_Scml2_Gda_Glut_F
+2025-11-18 09:57:49,876 - INFO - ▶ Running AUCell for: TH_Astrocyte-2_M
+2025-11-18 09:57:51,068 - INFO - ✅ Completed AUCell: HY_Astrocyte-2_M
+2025-11-18 09:57:51,070 - INFO - Done: HY_Astrocyte-2_M
+2025-11-18 09:57:51,073 - INFO - ▶ Running AUCell for: HY_Tanycyte_M
+2025-11-18 09:57:53,933 - INFO - ✅ Completed AUCell: PFC_Pericyte_F
+2025-11-18 09:57:53,936 - INFO - Done: PFC_Pericyte_F
+2025-11-18 09:57:53,940 - INFO - ▶ Running AUCell for: PFC_Endothelial_cell_M
+2025-11-18 09:57:59,841 - INFO - ✅ Completed AUCell: AMY_Lymphocyte_F
+2025-11-18 09:57:59,844 - INFO - Done: AMY_Lymphocyte_F
+2025-11-18 09:57:59,848 - INFO - ▶ Running AUCell for: HPF_HPF_Lamp5_GABA_M
+2025-11-18 09:58:05,142 - INFO - ✅ Completed AUCell: TH_Astrocyte-2_M
+2025-11-18 09:58:05,144 - INFO - Done: TH_Astrocyte-2_M
+2025-11-18 09:58:05,212 - INFO - ▶ Running AUCell for: STR_VSMC_M
+2025-11-18 09:58:07,021 - INFO - ✅ Completed AUCell: HY_Tanycyte_M
+2025-11-18 09:58:07,023 - INFO - Done: HY_Tanycyte_M
+2025-11-18 09:58:07,052 - INFO - ▶ Running AUCell for: TH_Lymphocyte_M
+2025-11-18 09:58:08,673 - INFO - ✅ Completed AUCell: PFC_Endothelial_cell_M
+2025-11-18 09:58:08,675 - INFO - Done: PFC_Endothelial_cell_M
+2025-11-18 09:58:08,702 - INFO - ▶ Running AUCell for: MB_MB_Nxph1_Tmem132d_GABA_M
+2025-11-18 09:58:16,414 - INFO - ✅ Completed AUCell: HPF_HPF_Lamp5_GABA_M
+2025-11-18 09:58:16,416 - INFO - Done: HPF_HPF_Lamp5_GABA_M
+2025-11-18 09:58:16,420 - INFO - ▶ Running AUCell for: MB_Pericyte_M
+2025-11-18 09:58:18,692 - INFO - ✅ Completed AUCell: STR_VSMC_M
+2025-11-18 09:58:18,694 - INFO - Done: STR_VSMC_M
+2025-11-18 09:58:18,697 - INFO - ▶ Running AUCell for: HY_Lymphocyte_F
+2025-11-18 09:58:21,278 - INFO - ✅ Completed AUCell: TH_Lymphocyte_M
+2025-11-18 09:58:21,280 - INFO - Done: TH_Lymphocyte_M
+2025-11-18 09:58:21,284 - INFO - ▶ Running AUCell for: PFC_MFOL_F
+2025-11-18 09:58:26,789 - INFO - ✅ Completed AUCell: MB_MB_Nxph1_Tmem132d_GABA_M
+2025-11-18 09:58:26,791 - INFO - Done: MB_MB_Nxph1_Tmem132d_GABA_M
+2025-11-18 09:58:26,795 - INFO - ▶ Running AUCell for: AMY_AMY_Piezo2_Cpa6_Glut_M
+2025-11-18 09:58:31,124 - INFO - ✅ Completed AUCell: MB_Pericyte_M
+2025-11-18 09:58:31,127 - INFO - Done: MB_Pericyte_M
+2025-11-18 09:58:31,149 - INFO - ▶ Running AUCell for: TH_Perivascular_Macrophage_M
+2025-11-18 09:58:32,244 - INFO - ✅ Completed AUCell: HY_Lymphocyte_F
+2025-11-18 09:58:32,246 - INFO - Done: HY_Lymphocyte_F
+2025-11-18 09:58:32,250 - INFO - ▶ Running AUCell for: HY_HY_Sox6_Gm44593_GABA_M
+2025-11-18 09:58:36,121 - INFO - ✅ Completed AUCell: PFC_MFOL_F
+2025-11-18 09:58:36,123 - INFO - Done: PFC_MFOL_F
+2025-11-18 09:58:36,170 - INFO - ▶ Running AUCell for: PFC_Astrocyte-2_F
+2025-11-18 09:58:46,007 - INFO - ✅ Completed AUCell: TH_Perivascular_Macrophage_M
+2025-11-18 09:58:46,009 - INFO - Done: TH_Perivascular_Macrophage_M
+2025-11-18 09:58:46,059 - INFO - ▶ Running AUCell for: HY_Perivascular_Macrophage_F
+2025-11-18 09:58:48,102 - INFO - ✅ Completed AUCell: HY_HY_Sox6_Gm44593_GABA_M
+2025-11-18 09:58:48,104 - INFO - Done: HY_HY_Sox6_Gm44593_GABA_M
+2025-11-18 09:58:48,106 - INFO - ▶ Running AUCell for: HY_HY_Hist_M
+2025-11-18 09:58:51,414 - INFO - ✅ Completed AUCell: AMY_AMY_Piezo2_Cpa6_Glut_M
+2025-11-18 09:58:51,416 - INFO - Done: AMY_AMY_Piezo2_Cpa6_Glut_M
+2025-11-18 09:58:51,420 - INFO - ▶ Running AUCell for: TH_TH_Tac2_Onecut1_Glut_F
+2025-11-18 09:58:53,820 - INFO - ✅ Completed AUCell: PFC_Astrocyte-2_F
+2025-11-18 09:58:53,823 - INFO - Done: PFC_Astrocyte-2_F
+2025-11-18 09:58:53,826 - INFO - ▶ Running AUCell for: AMY_AMY_Trabd2b_Coch_Glut_M
+2025-11-18 09:58:59,961 - INFO - ✅ Completed AUCell: HY_Perivascular_Macrophage_F
+2025-11-18 09:58:59,964 - INFO - Done: HY_Perivascular_Macrophage_F
+2025-11-18 09:58:59,990 - INFO - ▶ Running AUCell for: HY_Astrocyte-3_M
+2025-11-18 09:59:03,820 - INFO - ✅ Completed AUCell: HY_HY_Hist_M
+2025-11-18 09:59:03,822 - INFO - Done: HY_HY_Hist_M
+2025-11-18 09:59:03,826 - INFO - ▶ Running AUCell for: STR_STR_D1_GABA_M
+2025-11-18 09:59:06,917 - INFO - ✅ Completed AUCell: TH_TH_Tac2_Onecut1_Glut_F
+2025-11-18 09:59:06,920 - INFO - Done: TH_TH_Tac2_Onecut1_Glut_F
+2025-11-18 09:59:06,923 - INFO - ▶ Running AUCell for: STR_STR_Sst_Chodl_GABA_F
+2025-11-18 09:59:14,941 - INFO - ✅ Completed AUCell: AMY_AMY_Trabd2b_Coch_Glut_M
+2025-11-18 09:59:14,942 - INFO - Done: AMY_AMY_Trabd2b_Coch_Glut_M
+2025-11-18 09:59:14,951 - INFO - ✅ Completed AUCell: HY_Astrocyte-3_M
+2025-11-18 09:59:15,010 - INFO - Done: HY_Astrocyte-3_M
+2025-11-18 09:59:15,011 - INFO - ▶ Running AUCell for: iCTX_Pericyte_F
+2025-11-18 09:59:15,034 - INFO - ▶ Running AUCell for: HPF_MFOL_M
+2025-11-18 09:59:23,015 - INFO - ✅ Completed AUCell: STR_STR_Sst_Chodl_GABA_F
+2025-11-18 09:59:23,017 - INFO - Done: STR_STR_Sst_Chodl_GABA_F
+2025-11-18 09:59:23,079 - INFO - ▶ Running AUCell for: HPF_Tanycyte_F
+2025-11-18 09:59:29,136 - INFO - ✅ Completed AUCell: iCTX_Pericyte_F
+2025-11-18 09:59:29,138 - INFO - Done: iCTX_Pericyte_F
+2025-11-18 09:59:29,141 - INFO - ▶ Running AUCell for: MB_MB_Ccbe1_Ano1_GABA_F
+2025-11-18 09:59:30,159 - INFO - ✅ Completed AUCell: HPF_MFOL_M
+2025-11-18 09:59:30,162 - INFO - Done: HPF_MFOL_M
+2025-11-18 09:59:30,188 - INFO - ▶ Running AUCell for: MB_MB_Dopa_M
+2025-11-18 09:59:37,854 - INFO - ✅ Completed AUCell: HPF_Tanycyte_F
+2025-11-18 09:59:37,856 - INFO - Done: HPF_Tanycyte_F
+2025-11-18 09:59:37,860 - INFO - ▶ Running AUCell for: AMY_AMY_Foxp2_Penk_GABA_M
+2025-11-18 09:59:45,879 - INFO - ✅ Completed AUCell: MB_MB_Ccbe1_Ano1_GABA_F
+2025-11-18 09:59:45,881 - INFO - Done: MB_MB_Ccbe1_Ano1_GABA_F
+2025-11-18 09:59:45,906 - INFO - ▶ Running AUCell for: TH_OPC_F
+2025-11-18 09:59:47,074 - INFO - ✅ Completed AUCell: MB_MB_Dopa_M
+2025-11-18 09:59:47,076 - INFO - Done: MB_MB_Dopa_M
+2025-11-18 09:59:47,102 - INFO - ▶ Running AUCell for: AMY_Perivascular_Macrophage_F
+2025-11-18 09:59:57,061 - INFO - ✅ Completed AUCell: AMY_AMY_Foxp2_Penk_GABA_M
+2025-11-18 09:59:57,063 - INFO - Done: AMY_AMY_Foxp2_Penk_GABA_M
+2025-11-18 09:59:57,094 - INFO - ▶ Running AUCell for: PFC_Ependymal_cell_F
+2025-11-18 10:00:01,274 - INFO - ✅ Completed AUCell: AMY_Perivascular_Macrophage_F
+2025-11-18 10:00:01,276 - INFO - Done: AMY_Perivascular_Macrophage_F
+2025-11-18 10:00:01,280 - INFO - ▶ Running AUCell for: TH_Endothelial_cell_M
+2025-11-18 10:00:06,805 - ERROR - ❌ Failed PFC_Ependymal_cell_F: Command '['pyscenic', 'aucell', '/data2st2/junyi/output/stg1028/subsetsn/PFC_Ependymal_cell_F.loom', '/data2st2/junyi/output/stg1028/scenic_ctx/ctx_PFC_Ependymal_cell_F.csv', '--output', '/data2st2/junyi/output/stg1028/scenic_auc/auc_PFC_Ependymal_cell_F.tsv', '--num_workers', '32']' returned non-zero exit status 1.
+2025-11-18 10:00:06,807 - INFO - Done: PFC_Ependymal_cell_F
+2025-11-18 10:00:06,810 - INFO - ▶ Running AUCell for: STR_STR_D1_Fbn2_GABA_M
+2025-11-18 10:00:13,792 - INFO - ✅ Completed AUCell: TH_OPC_F
+2025-11-18 10:00:13,794 - INFO - Done: TH_OPC_F
+2025-11-18 10:00:13,798 - INFO - ▶ Running AUCell for: TH_Arachnoid_Barrier_cell_F
+2025-11-18 10:00:16,116 - INFO - ✅ Completed AUCell: TH_Endothelial_cell_M
+2025-11-18 10:00:16,118 - INFO - Done: TH_Endothelial_cell_M
+2025-11-18 10:00:16,140 - INFO - ▶ Running AUCell for: MB_MB_Otx2_Fat4_GABA_F
+2025-11-18 10:00:27,233 - INFO - ✅ Completed AUCell: TH_Arachnoid_Barrier_cell_F
+2025-11-18 10:00:27,235 - INFO - Done: TH_Arachnoid_Barrier_cell_F
+2025-11-18 10:00:27,262 - INFO - ▶ Running AUCell for: TH_TH_Col27a1_Npsr1_Glut_M
+2025-11-18 10:00:27,669 - INFO - ✅ Completed AUCell: STR_STR_D1_Fbn2_GABA_M
+2025-11-18 10:00:27,671 - INFO - Done: STR_STR_D1_Fbn2_GABA_M
+2025-11-18 10:00:27,674 - INFO - ▶ Running AUCell for: HY_HY_Sst_Agrp_GABA_F
+2025-11-18 10:00:32,665 - INFO - ✅ Completed AUCell: MB_MB_Otx2_Fat4_GABA_F
+2025-11-18 10:00:32,667 - INFO - Done: MB_MB_Otx2_Fat4_GABA_F
+2025-11-18 10:00:32,671 - INFO - ▶ Running AUCell for: HPF_MOL-2_F
+2025-11-18 10:00:43,889 - INFO - ✅ Completed AUCell: HY_HY_Sst_Agrp_GABA_F
+2025-11-18 10:00:43,891 - INFO - Done: HY_HY_Sst_Agrp_GABA_F
+2025-11-18 10:00:43,919 - INFO - ▶ Running AUCell for: iCTX_NFOL_F
+2025-11-18 10:00:48,317 - INFO - ✅ Completed AUCell: HPF_MOL-2_F
+2025-11-18 10:00:48,320 - INFO - Done: HPF_MOL-2_F
+2025-11-18 10:00:48,348 - INFO - ▶ Running AUCell for: iCTX_iCTX_L4_IT_Glut_M
+2025-11-18 10:00:50,955 - INFO - ✅ Completed AUCell: TH_TH_Col27a1_Npsr1_Glut_M
+2025-11-18 10:00:50,957 - INFO - Done: TH_TH_Col27a1_Npsr1_Glut_M
+2025-11-18 10:00:50,984 - INFO - ▶ Running AUCell for: MB_VLMC_F
+2025-11-18 10:00:59,132 - INFO - ✅ Completed AUCell: iCTX_NFOL_F
+2025-11-18 10:00:59,134 - INFO - Done: iCTX_NFOL_F
+2025-11-18 10:00:59,161 - INFO - ▶ Running AUCell for: PFC_MFOL_M
+2025-11-18 10:01:05,492 - INFO - ✅ Completed AUCell: MB_VLMC_F
+2025-11-18 10:01:05,494 - INFO - Done: MB_VLMC_F
+2025-11-18 10:01:05,526 - INFO - ▶ Running AUCell for: PFC_Pericyte_M
+2025-11-18 10:01:11,451 - INFO - ✅ Completed AUCell: STR_STR_D1_GABA_M
+2025-11-18 10:01:11,453 - INFO - Done: STR_STR_D1_GABA_M
+2025-11-18 10:01:11,456 - INFO - ▶ Running AUCell for: HPF_HPF_Htr3a_GABA_M
+2025-11-18 10:01:13,966 - INFO - ✅ Completed AUCell: iCTX_iCTX_L4_IT_Glut_M
+2025-11-18 10:01:13,969 - INFO - Done: iCTX_iCTX_L4_IT_Glut_M
+2025-11-18 10:01:13,972 - INFO - ▶ Running AUCell for: TH_Endothelial_cell_F
+2025-11-18 10:01:14,046 - INFO - ✅ Completed AUCell: PFC_MFOL_M
+2025-11-18 10:01:14,085 - INFO - Done: PFC_MFOL_M
+2025-11-18 10:01:14,113 - INFO - ▶ Running AUCell for: STR_STR_D1_Sulf1_GABA_M
+2025-11-18 10:01:19,682 - INFO - ✅ Completed AUCell: PFC_Pericyte_M
+2025-11-18 10:01:19,685 - INFO - Done: PFC_Pericyte_M
+2025-11-18 10:01:19,688 - INFO - ▶ Running AUCell for: HPF_Perivascular_Macrophage_F
+2025-11-18 10:01:28,041 - INFO - ✅ Completed AUCell: HPF_HPF_Htr3a_GABA_M
+2025-11-18 10:01:28,043 - INFO - Done: HPF_HPF_Htr3a_GABA_M
+2025-11-18 10:01:28,067 - INFO - ▶ Running AUCell for: MB_Lymphocyte_F
+2025-11-18 10:01:28,950 - INFO - ✅ Completed AUCell: TH_Endothelial_cell_F
+2025-11-18 10:01:28,952 - INFO - Done: TH_Endothelial_cell_F
+2025-11-18 10:01:28,977 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6_CT_Glut_M
+2025-11-18 10:01:33,159 - INFO - ✅ Completed AUCell: STR_STR_D1_Sulf1_GABA_M
+2025-11-18 10:01:33,162 - INFO - Done: STR_STR_D1_Sulf1_GABA_M
+2025-11-18 10:01:33,165 - INFO - ▶ Running AUCell for: PFC_PFC_Lamp5_GABA_F
+2025-11-18 10:01:34,502 - INFO - ✅ Completed AUCell: HPF_Perivascular_Macrophage_F
+2025-11-18 10:01:34,504 - INFO - Done: HPF_Perivascular_Macrophage_F
+2025-11-18 10:01:34,507 - INFO - ▶ Running AUCell for: iCTX_iCTX_Lamp5_GABA_F
+2025-11-18 10:01:41,966 - INFO - ✅ Completed AUCell: MB_Lymphocyte_F
+2025-11-18 10:01:41,968 - INFO - Done: MB_Lymphocyte_F
+2025-11-18 10:01:41,971 - INFO - ▶ Running AUCell for: MB_VLMC_M
+2025-11-18 10:01:50,275 - INFO - ✅ Completed AUCell: iCTX_iCTX_Lamp5_GABA_F
+2025-11-18 10:01:50,277 - INFO - Done: iCTX_iCTX_Lamp5_GABA_F
+2025-11-18 10:01:50,302 - INFO - ▶ Running AUCell for: HY_HY_Esr1_Stk32a_Glut_M
+2025-11-18 10:01:51,941 - INFO - ✅ Completed AUCell: PFC_PFC_Lamp5_GABA_F
+2025-11-18 10:01:51,943 - INFO - Done: PFC_PFC_Lamp5_GABA_F
+2025-11-18 10:01:51,969 - INFO - ▶ Running AUCell for: MB_MOL-1_M
+2025-11-18 10:01:55,900 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6_CT_Glut_M
+2025-11-18 10:01:55,903 - INFO - Done: iCTX_iCTX_L6_CT_Glut_M
+2025-11-18 10:01:55,953 - INFO - ▶ Running AUCell for: TH_MOL-3_M
+2025-11-18 10:01:56,802 - INFO - ✅ Completed AUCell: MB_VLMC_M
+2025-11-18 10:01:56,805 - INFO - Done: MB_VLMC_M
+2025-11-18 10:01:56,837 - INFO - ▶ Running AUCell for: iCTX_Arachnoid_Barrier_cell_M
+2025-11-18 10:02:09,416 - INFO - ✅ Completed AUCell: HY_HY_Esr1_Stk32a_Glut_M
+2025-11-18 10:02:09,419 - INFO - Done: HY_HY_Esr1_Stk32a_Glut_M
+2025-11-18 10:02:09,446 - INFO - ▶ Running AUCell for: AMY_AMY_Rai14_Six3_GABA_F
+2025-11-18 10:02:12,614 - INFO - ✅ Completed AUCell: TH_MOL-3_M
+2025-11-18 10:02:12,617 - INFO - Done: TH_MOL-3_M
+2025-11-18 10:02:12,621 - INFO - ▶ Running AUCell for: HPF_Microglia-2_M
+2025-11-18 10:02:12,697 - INFO - ✅ Completed AUCell: iCTX_Arachnoid_Barrier_cell_M
+2025-11-18 10:02:12,699 - INFO - Done: iCTX_Arachnoid_Barrier_cell_M
+2025-11-18 10:02:12,731 - INFO - ▶ Running AUCell for: TH_OPC_M
+2025-11-18 10:02:17,256 - INFO - ✅ Completed AUCell: MB_MOL-1_M
+2025-11-18 10:02:17,259 - INFO - Done: MB_MOL-1_M
+2025-11-18 10:02:17,264 - INFO - ▶ Running AUCell for: HY_Astrocyte-4_F
+2025-11-18 10:02:25,582 - INFO - ✅ Completed AUCell: AMY_AMY_Rai14_Six3_GABA_F
+2025-11-18 10:02:25,584 - INFO - Done: AMY_AMY_Rai14_Six3_GABA_F
+2025-11-18 10:02:25,609 - INFO - ▶ Running AUCell for: STR_STR_D1_Spon1_GABA_F
+2025-11-18 10:02:27,393 - INFO - ✅ Completed AUCell: HPF_Microglia-2_M
+2025-11-18 10:02:27,396 - INFO - Done: HPF_Microglia-2_M
+2025-11-18 10:02:27,399 - INFO - ▶ Running AUCell for: iCTX_Ependymal_cell_F
+2025-11-18 10:02:30,453 - INFO - ✅ Completed AUCell: TH_OPC_M
+2025-11-18 10:02:30,456 - INFO - Done: TH_OPC_M
+2025-11-18 10:02:30,483 - INFO - ▶ Running AUCell for: iCTX_Microglia-1_F
+2025-11-18 10:02:32,139 - INFO - ✅ Completed AUCell: HY_Astrocyte-4_F
+2025-11-18 10:02:32,141 - INFO - Done: HY_Astrocyte-4_F
+2025-11-18 10:02:32,145 - INFO - ▶ Running AUCell for: HY_Hypendymal_cell_M
+2025-11-18 10:02:40,846 - INFO - ✅ Completed AUCell: iCTX_Ependymal_cell_F
+2025-11-18 10:02:40,848 - INFO - Done: iCTX_Ependymal_cell_F
+2025-11-18 10:02:40,852 - INFO - ▶ Running AUCell for: STR_COP_F
+2025-11-18 10:02:41,793 - ERROR - ❌ Failed HY_Hypendymal_cell_M: Command '['pyscenic', 'aucell', '/data2st2/junyi/output/stg1028/subsetsn/HY_Hypendymal_cell_M.loom', '/data2st2/junyi/output/stg1028/scenic_ctx/ctx_HY_Hypendymal_cell_M.csv', '--output', '/data2st2/junyi/output/stg1028/scenic_auc/auc_HY_Hypendymal_cell_M.tsv', '--num_workers', '32']' returned non-zero exit status 1.
+2025-11-18 10:02:41,795 - INFO - Done: HY_Hypendymal_cell_M
+2025-11-18 10:02:41,799 - INFO - ▶ Running AUCell for: STR_MOL-1_M
+2025-11-18 10:02:42,141 - INFO - ✅ Completed AUCell: STR_STR_D1_Spon1_GABA_F
+2025-11-18 10:02:42,190 - INFO - Done: STR_STR_D1_Spon1_GABA_F
+2025-11-18 10:02:42,195 - INFO - ▶ Running AUCell for: HPF_HPF_Subiculum_ProS_Glut_M
+2025-11-18 10:02:45,167 - INFO - ✅ Completed AUCell: iCTX_Microglia-1_F
+2025-11-18 10:02:45,169 - INFO - Done: iCTX_Microglia-1_F
+2025-11-18 10:02:45,173 - INFO - ▶ Running AUCell for: MB_MB_Kitl_Pde5a_Glut_F
+2025-11-18 10:02:56,113 - INFO - ✅ Completed AUCell: STR_COP_F
+2025-11-18 10:02:56,115 - INFO - Done: STR_COP_F
+2025-11-18 10:02:56,140 - INFO - ▶ Running AUCell for: MB_MOL-3_M
+2025-11-18 10:02:58,639 - INFO - ✅ Completed AUCell: HPF_HPF_Subiculum_ProS_Glut_M
+2025-11-18 10:02:58,671 - INFO - Done: HPF_HPF_Subiculum_ProS_Glut_M
+2025-11-18 10:02:58,698 - INFO - ▶ Running AUCell for: iCTX_iCTX_L4_RSP_ACA_Glut_F
+2025-11-18 10:03:00,855 - INFO - ✅ Completed AUCell: STR_MOL-1_M
+2025-11-18 10:03:00,858 - INFO - Done: STR_MOL-1_M
+2025-11-18 10:03:00,861 - INFO - ▶ Running AUCell for: HPF_HPF_Subiculum_ProS_Glut_F
+2025-11-18 10:03:02,180 - INFO - ✅ Completed AUCell: MB_MB_Kitl_Pde5a_Glut_F
+2025-11-18 10:03:02,182 - INFO - Done: MB_MB_Kitl_Pde5a_Glut_F
+2025-11-18 10:03:02,186 - INFO - ▶ Running AUCell for: iCTX_NFOL_M
+2025-11-18 10:03:11,412 - INFO - ✅ Completed AUCell: MB_MOL-3_M
+2025-11-18 10:03:11,414 - INFO - Done: MB_MOL-3_M
+2025-11-18 10:03:11,417 - INFO - ▶ Running AUCell for: HY_Pericyte_M
+2025-11-18 10:03:13,938 - INFO - ✅ Completed AUCell: iCTX_iCTX_L4_RSP_ACA_Glut_F
+2025-11-18 10:03:13,941 - INFO - Done: iCTX_iCTX_L4_RSP_ACA_Glut_F
+2025-11-18 10:03:13,944 - INFO - ▶ Running AUCell for: STR_Lymphocyte_M
+2025-11-18 10:03:16,804 - INFO - ✅ Completed AUCell: HPF_HPF_Subiculum_ProS_Glut_F
+2025-11-18 10:03:16,806 - INFO - Done: HPF_HPF_Subiculum_ProS_Glut_F
+2025-11-18 10:03:16,809 - INFO - ▶ Running AUCell for: iCTX_iCTX_L5_IT_Glut_M
+2025-11-18 10:03:17,211 - INFO - ✅ Completed AUCell: iCTX_NFOL_M
+2025-11-18 10:03:17,214 - INFO - Done: iCTX_NFOL_M
+2025-11-18 10:03:17,244 - INFO - ▶ Running AUCell for: AMY_AMY_Fign_Ostm1_GABA_M
+2025-11-18 10:03:26,189 - INFO - ✅ Completed AUCell: HY_Pericyte_M
+2025-11-18 10:03:26,192 - INFO - Done: HY_Pericyte_M
+2025-11-18 10:03:26,238 - INFO - ▶ Running AUCell for: iCTX_Astrocyte-4_F
+2025-11-18 10:03:27,649 - INFO - ✅ Completed AUCell: STR_Lymphocyte_M
+2025-11-18 10:03:27,651 - INFO - Done: STR_Lymphocyte_M
+2025-11-18 10:03:27,654 - INFO - ▶ Running AUCell for: AMY_AMY_Rspo2_Gm11639_Glut_F
+2025-11-18 10:03:35,968 - INFO - ✅ Completed AUCell: iCTX_iCTX_L5_IT_Glut_M
+2025-11-18 10:03:35,970 - INFO - Done: iCTX_iCTX_L5_IT_Glut_M
+2025-11-18 10:03:35,996 - INFO - ▶ Running AUCell for: AMY_AMY_Hcrtr2_Hapln1_GABA_M
+2025-11-18 10:03:41,170 - INFO - ✅ Completed AUCell: iCTX_Astrocyte-4_F
+2025-11-18 10:03:41,172 - INFO - Done: iCTX_Astrocyte-4_F
+2025-11-18 10:03:41,199 - INFO - ▶ Running AUCell for: TH_NFOL_M
+2025-11-18 10:03:41,510 - INFO - ✅ Completed AUCell: AMY_AMY_Fign_Ostm1_GABA_M
+2025-11-18 10:03:41,512 - INFO - Done: AMY_AMY_Fign_Ostm1_GABA_M
+2025-11-18 10:03:41,544 - INFO - ▶ Running AUCell for: HY_HY_Pou6f2_Kcnmb2_GABA_M
+2025-11-18 10:03:46,824 - INFO - ✅ Completed AUCell: AMY_AMY_Rspo2_Gm11639_Glut_F
+2025-11-18 10:03:46,826 - INFO - Done: AMY_AMY_Rspo2_Gm11639_Glut_F
+2025-11-18 10:03:46,830 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6b_Glut_M
+2025-11-18 10:03:50,744 - INFO - ✅ Completed AUCell: AMY_AMY_Hcrtr2_Hapln1_GABA_M
+2025-11-18 10:03:50,747 - INFO - Done: AMY_AMY_Hcrtr2_Hapln1_GABA_M
+2025-11-18 10:03:50,802 - INFO - ▶ Running AUCell for: MB_MB_Slc17a6_Tmem163_Glut_M
+2025-11-18 10:03:56,108 - INFO - ✅ Completed AUCell: TH_NFOL_M
+2025-11-18 10:03:56,111 - INFO - Done: TH_NFOL_M
+2025-11-18 10:03:56,137 - INFO - ▶ Running AUCell for: MB_MOL-1_F
+2025-11-18 10:04:03,316 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6b_Glut_M
+2025-11-18 10:04:03,317 - INFO - Done: iCTX_iCTX_L6b_Glut_M
+2025-11-18 10:04:03,320 - INFO - ▶ Running AUCell for: HY_HY_Myo5b_B230323A14Rik_Glut_F
+2025-11-18 10:04:16,062 - INFO - ✅ Completed AUCell: MB_MOL-1_F
+2025-11-18 10:04:16,065 - INFO - Done: MB_MOL-1_F
+2025-11-18 10:04:16,098 - INFO - ▶ Running AUCell for: TH_Astrocyte-4_F
+2025-11-18 10:04:20,318 - INFO - ✅ Completed AUCell: HY_HY_Myo5b_B230323A14Rik_Glut_F
+2025-11-18 10:04:20,320 - INFO - Done: HY_HY_Myo5b_B230323A14Rik_Glut_F
+2025-11-18 10:04:20,375 - INFO - ▶ Running AUCell for: TH_Immature_cell_M
+2025-11-18 10:04:33,202 - INFO - ✅ Completed AUCell: TH_Astrocyte-4_F
+2025-11-18 10:04:33,274 - INFO - Done: TH_Astrocyte-4_F
+2025-11-18 10:04:33,302 - INFO - ▶ Running AUCell for: TH_Perivascular_Macrophage_F
+2025-11-18 10:04:33,896 - INFO - ✅ Completed AUCell: TH_Immature_cell_M
+2025-11-18 10:04:33,898 - INFO - Done: TH_Immature_cell_M
+2025-11-18 10:04:33,901 - INFO - ▶ Running AUCell for: MB_Tanycyte_F
+2025-11-18 10:04:38,453 - INFO - ✅ Completed AUCell: HY_HY_Pou6f2_Kcnmb2_GABA_M
+2025-11-18 10:04:38,456 - INFO - Done: HY_HY_Pou6f2_Kcnmb2_GABA_M
+2025-11-18 10:04:38,483 - INFO - ▶ Running AUCell for: HY_HY_Prox1_Gck_GABA_M
+2025-11-18 10:04:47,719 - INFO - ✅ Completed AUCell: MB_Tanycyte_F
+2025-11-18 10:04:47,722 - INFO - Done: MB_Tanycyte_F
+2025-11-18 10:04:47,725 - INFO - ▶ Running AUCell for: PFC_PFC_L2-3_IT_Glut_M
+2025-11-18 10:04:48,058 - INFO - ✅ Completed AUCell: TH_Perivascular_Macrophage_F
+2025-11-18 10:04:48,061 - INFO - Done: TH_Perivascular_Macrophage_F
+2025-11-18 10:04:48,064 - INFO - ▶ Running AUCell for: HY_NFOL_M
+2025-11-18 10:05:03,435 - INFO - ✅ Completed AUCell: HY_NFOL_M
+2025-11-18 10:05:03,436 - INFO - Done: HY_NFOL_M
+2025-11-18 10:05:03,440 - INFO - ▶ Running AUCell for: AMY_AMY_Crhbp_Maf_GABA_M
+2025-11-18 10:05:17,664 - INFO - ✅ Completed AUCell: HY_HY_Prox1_Gck_GABA_M
+2025-11-18 10:05:17,667 - INFO - Done: HY_HY_Prox1_Gck_GABA_M
+2025-11-18 10:05:17,671 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6_CT_Glut_F
+2025-11-18 10:05:32,481 - INFO - ✅ Completed AUCell: AMY_AMY_Crhbp_Maf_GABA_M
+2025-11-18 10:05:32,484 - INFO - Done: AMY_AMY_Crhbp_Maf_GABA_M
+2025-11-18 10:05:32,511 - INFO - ▶ Running AUCell for: HPF_Choroid_plexus_cell_M
+2025-11-18 10:05:37,638 - INFO - ✅ Completed AUCell: MB_MB_Slc17a6_Tmem163_Glut_M
+2025-11-18 10:05:37,647 - INFO - Done: MB_MB_Slc17a6_Tmem163_Glut_M
+2025-11-18 10:05:37,692 - INFO - ▶ Running AUCell for: STR_STR_D1_Chst9_GABA_M
+2025-11-18 10:05:41,225 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6_CT_Glut_F
+2025-11-18 10:05:41,228 - INFO - Done: iCTX_iCTX_L6_CT_Glut_F
+2025-11-18 10:05:41,255 - INFO - ▶ Running AUCell for: iCTX_Microglia-2_M
+2025-11-18 10:05:47,439 - INFO - ✅ Completed AUCell: HPF_Choroid_plexus_cell_M
+2025-11-18 10:05:47,466 - INFO - Done: HPF_Choroid_plexus_cell_M
+2025-11-18 10:05:47,470 - INFO - ▶ Running AUCell for: MB_MOL-3_F
+2025-11-18 10:05:50,482 - INFO - ✅ Completed AUCell: PFC_PFC_L2-3_IT_Glut_M
+2025-11-18 10:05:50,484 - INFO - Done: PFC_PFC_L2-3_IT_Glut_M
+2025-11-18 10:05:50,488 - INFO - ▶ Running AUCell for: iCTX_MFOL_M
+2025-11-18 10:05:54,010 - INFO - ✅ Completed AUCell: STR_STR_D1_Chst9_GABA_M
+2025-11-18 10:05:54,012 - INFO - Done: STR_STR_D1_Chst9_GABA_M
+2025-11-18 10:05:54,056 - INFO - ▶ Running AUCell for: iCTX_Microglia-1_M
+2025-11-18 10:05:56,963 - INFO - ✅ Completed AUCell: iCTX_Microglia-2_M
+2025-11-18 10:05:56,965 - INFO - Done: iCTX_Microglia-2_M
+2025-11-18 10:05:56,999 - INFO - ▶ Running AUCell for: MB_MB_Pax7_Spon1_GABA_M
+2025-11-18 10:06:03,325 - INFO - ✅ Completed AUCell: MB_MOL-3_F
+2025-11-18 10:06:03,327 - INFO - Done: MB_MOL-3_F
+2025-11-18 10:06:03,331 - INFO - ▶ Running AUCell for: MB_COP_M
+2025-11-18 10:06:05,575 - INFO - ✅ Completed AUCell: iCTX_MFOL_M
+2025-11-18 10:06:05,578 - INFO - Done: iCTX_MFOL_M
+2025-11-18 10:06:05,581 - INFO - ▶ Running AUCell for: AMY_Astrocyte-3_F
+2025-11-18 10:06:09,166 - INFO - ✅ Completed AUCell: iCTX_Microglia-1_M
+2025-11-18 10:06:09,168 - INFO - Done: iCTX_Microglia-1_M
+2025-11-18 10:06:09,171 - INFO - ▶ Running AUCell for: HPF_HPF_DG_GC_Glut_M
+2025-11-18 10:06:12,649 - INFO - ✅ Completed AUCell: MB_MB_Pax7_Spon1_GABA_M
+2025-11-18 10:06:12,652 - INFO - Done: MB_MB_Pax7_Spon1_GABA_M
+2025-11-18 10:06:12,675 - INFO - ▶ Running AUCell for: PFC_NFOL_F
+2025-11-18 10:06:18,690 - INFO - ✅ Completed AUCell: MB_COP_M
+2025-11-18 10:06:18,693 - INFO - Done: MB_COP_M
+2025-11-18 10:06:18,724 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6_IT_Glut_M
+2025-11-18 10:06:21,055 - INFO - ✅ Completed AUCell: AMY_Astrocyte-3_F
+2025-11-18 10:06:21,057 - INFO - Done: AMY_Astrocyte-3_F
+2025-11-18 10:06:21,092 - INFO - ▶ Running AUCell for: TH_TH_Egflam_Fbn2_Glut_F
+2025-11-18 10:06:27,662 - INFO - ✅ Completed AUCell: PFC_NFOL_F
+2025-11-18 10:06:27,665 - INFO - Done: PFC_NFOL_F
+2025-11-18 10:06:27,668 - INFO - ▶ Running AUCell for: STR_OPC_M
+2025-11-18 10:06:37,104 - INFO - ✅ Completed AUCell: TH_TH_Egflam_Fbn2_Glut_F
+2025-11-18 10:06:37,106 - INFO - Done: TH_TH_Egflam_Fbn2_Glut_F
+2025-11-18 10:06:37,110 - INFO - ▶ Running AUCell for: TH_TH_Kcnk13_Nox4_Glut_M
+2025-11-18 10:06:38,100 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6_IT_Glut_M
+2025-11-18 10:06:38,103 - INFO - Done: iCTX_iCTX_L6_IT_Glut_M
+2025-11-18 10:06:38,122 - INFO - ▶ Running AUCell for: HY_HY_Esr1_Stk32a_Glut_F
+2025-11-18 10:06:43,782 - INFO - ✅ Completed AUCell: STR_OPC_M
+2025-11-18 10:06:43,784 - INFO - Done: STR_OPC_M
+2025-11-18 10:06:43,788 - INFO - ▶ Running AUCell for: HY_VLMC_F
+2025-11-18 10:06:55,493 - INFO - ✅ Completed AUCell: TH_TH_Kcnk13_Nox4_Glut_M
+2025-11-18 10:06:55,495 - INFO - Done: TH_TH_Kcnk13_Nox4_Glut_M
+2025-11-18 10:06:55,498 - INFO - ▶ Running AUCell for: HY_HY_Ebf3_Adamts2_Glut_F
+2025-11-18 10:06:59,565 - INFO - ✅ Completed AUCell: HY_VLMC_F
+2025-11-18 10:06:59,567 - INFO - Done: HY_VLMC_F
+2025-11-18 10:06:59,571 - INFO - ▶ Running AUCell for: HPF_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:01,900 - INFO - ✅ Completed AUCell: HY_HY_Esr1_Stk32a_Glut_F
+2025-11-18 10:07:01,902 - INFO - Done: HY_HY_Esr1_Stk32a_Glut_F
+2025-11-18 10:07:01,905 - INFO - ▶ Running AUCell for: AMY_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:14,083 - INFO - ✅ Completed AUCell: HPF_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:14,085 - INFO - Done: HPF_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:14,089 - INFO - ▶ Running AUCell for: HY_VLMC_M
+2025-11-18 10:07:16,897 - INFO - ✅ Completed AUCell: AMY_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:16,899 - INFO - Done: AMY_Arachnoid_Barrier_cell_M
+2025-11-18 10:07:16,903 - INFO - ▶ Running AUCell for: MB_Astrocyte-1_F
+2025-11-18 10:07:17,537 - INFO - ✅ Completed AUCell: HPF_HPF_DG_GC_Glut_M
+2025-11-18 10:07:17,540 - INFO - Done: HPF_HPF_DG_GC_Glut_M
+2025-11-18 10:07:17,591 - INFO - ▶ Running AUCell for: PFC_PFC_Lamp5_GABA_M
+2025-11-18 10:07:17,687 - INFO - ✅ Completed AUCell: HY_HY_Ebf3_Adamts2_Glut_F
+2025-11-18 10:07:17,689 - INFO - Done: HY_HY_Ebf3_Adamts2_Glut_F
+2025-11-18 10:07:17,692 - INFO - ▶ Running AUCell for: MB_MB_Gli3_Aff1_GABA_F
+2025-11-18 10:07:28,879 - INFO - ✅ Completed AUCell: HY_VLMC_M
+2025-11-18 10:07:28,881 - INFO - Done: HY_VLMC_M
+2025-11-18 10:07:28,884 - INFO - ▶ Running AUCell for: HPF_VSMC_F
+2025-11-18 10:07:32,961 - INFO - ✅ Completed AUCell: MB_MB_Gli3_Aff1_GABA_F
+2025-11-18 10:07:32,963 - INFO - Done: MB_MB_Gli3_Aff1_GABA_F
+2025-11-18 10:07:32,966 - INFO - ▶ Running AUCell for: HY_VSMC_M
+2025-11-18 10:07:34,351 - INFO - ✅ Completed AUCell: PFC_PFC_Lamp5_GABA_M
+2025-11-18 10:07:34,353 - INFO - Done: PFC_PFC_Lamp5_GABA_M
+2025-11-18 10:07:34,385 - INFO - ▶ Running AUCell for: HPF_Immature_cell_M
+2025-11-18 10:07:35,898 - INFO - ✅ Completed AUCell: MB_Astrocyte-1_F
+2025-11-18 10:07:35,901 - INFO - Done: MB_Astrocyte-1_F
+2025-11-18 10:07:35,904 - INFO - ▶ Running AUCell for: TH_TH_Car4_Tspan11_Glut_M
+2025-11-18 10:07:42,546 - INFO - ✅ Completed AUCell: HPF_VSMC_F
+2025-11-18 10:07:42,548 - INFO - Done: HPF_VSMC_F
+2025-11-18 10:07:42,551 - INFO - ▶ Running AUCell for: STR_MFOL_F
+2025-11-18 10:07:46,606 - INFO - ✅ Completed AUCell: HY_VSMC_M
+2025-11-18 10:07:46,609 - INFO - Done: HY_VSMC_M
+2025-11-18 10:07:46,630 - INFO - ▶ Running AUCell for: AMY_AMY_Esr2_Gldn_GABA_F
+2025-11-18 10:07:49,369 - INFO - ✅ Completed AUCell: HPF_Immature_cell_M
+2025-11-18 10:07:49,371 - INFO - Done: HPF_Immature_cell_M
+2025-11-18 10:07:49,375 - INFO - ▶ Running AUCell for: AMY_AMY_Rorb_Smoc1_Glut_F
+2025-11-18 10:07:57,326 - INFO - ✅ Completed AUCell: TH_TH_Car4_Tspan11_Glut_M
+2025-11-18 10:07:57,329 - INFO - Done: TH_TH_Car4_Tspan11_Glut_M
+2025-11-18 10:07:57,332 - INFO - ▶ Running AUCell for: STR_Endothelial_cell_F
+2025-11-18 10:07:57,953 - INFO - ✅ Completed AUCell: STR_MFOL_F
+2025-11-18 10:07:57,955 - INFO - Done: STR_MFOL_F
+2025-11-18 10:07:57,959 - INFO - ▶ Running AUCell for: iCTX_iCTX_L6_IT_Glut_F
+2025-11-18 10:08:03,210 - INFO - ✅ Completed AUCell: AMY_AMY_Esr2_Gldn_GABA_F
+2025-11-18 10:08:03,213 - INFO - Done: AMY_AMY_Esr2_Gldn_GABA_F
+2025-11-18 10:08:03,216 - INFO - ▶ Running AUCell for: HPF_HPF_Subiculum_NP_Glut_F
+2025-11-18 10:08:07,405 - INFO - ✅ Completed AUCell: AMY_AMY_Rorb_Smoc1_Glut_F
+2025-11-18 10:08:07,407 - INFO - Done: AMY_AMY_Rorb_Smoc1_Glut_F
+2025-11-18 10:08:07,410 - INFO - ▶ Running AUCell for: iCTX_Tanycyte_M
+2025-11-18 10:08:12,156 - INFO - ✅ Completed AUCell: STR_Endothelial_cell_F
+2025-11-18 10:08:12,158 - INFO - Done: STR_Endothelial_cell_F
+2025-11-18 10:08:12,162 - INFO - ▶ Running AUCell for: TH_COP_F
+2025-11-18 10:08:17,662 - INFO - ✅ Completed AUCell: iCTX_iCTX_L6_IT_Glut_F
+2025-11-18 10:08:17,665 - INFO - Done: iCTX_iCTX_L6_IT_Glut_F
+2025-11-18 10:08:17,685 - INFO - ▶ Running AUCell for: TH_TH_Egflam_Fbn2_Glut_M
+2025-11-18 10:08:18,241 - INFO - ✅ Completed AUCell: HPF_HPF_Subiculum_NP_Glut_F
+2025-11-18 10:08:18,244 - INFO - Done: HPF_HPF_Subiculum_NP_Glut_F
+2025-11-18 10:08:18,248 - INFO - ▶ Running AUCell for: TH_VSMC_F
+2025-11-18 10:08:21,322 - INFO - ✅ Completed AUCell: iCTX_Tanycyte_M
+2025-11-18 10:08:21,324 - INFO - Done: iCTX_Tanycyte_M
+2025-11-18 10:08:21,328 - INFO - ▶ Running AUCell for: MB_NFOL_F
+2025-11-18 10:08:27,215 - INFO - ✅ Completed AUCell: TH_COP_F
+2025-11-18 10:08:27,217 - INFO - Done: TH_COP_F
+2025-11-18 10:08:27,220 - INFO - ▶ Running AUCell for: MB_Arachnoid_Barrier_cell_M
+2025-11-18 10:08:31,815 - INFO - ✅ Completed AUCell: TH_VSMC_F
+2025-11-18 10:08:31,818 - INFO - Done: TH_VSMC_F
+2025-11-18 10:08:31,821 - INFO - ▶ Running AUCell for: AMY_AMY_Crhbp_Maf_GABA_F
+2025-11-18 10:08:34,161 - INFO - ✅ Completed AUCell: TH_TH_Egflam_Fbn2_Glut_M
+2025-11-18 10:08:34,164 - INFO - Done: TH_TH_Egflam_Fbn2_Glut_M
+2025-11-18 10:08:34,194 - INFO - ▶ Running AUCell for: AMY_AMY_Rai14_Six3_GABA_M
+2025-11-18 10:08:35,667 - INFO - ✅ Completed AUCell: MB_NFOL_F
+2025-11-18 10:08:35,717 - INFO - Done: MB_NFOL_F
+2025-11-18 10:08:35,745 - INFO - ▶ Running AUCell for: MB_Ependymal_cell_M
+2025-11-18 10:08:41,327 - INFO - ✅ Completed AUCell: MB_Arachnoid_Barrier_cell_M
+2025-11-18 10:08:41,329 - INFO - Done: MB_Arachnoid_Barrier_cell_M
+2025-11-18 10:08:41,332 - INFO - ▶ Running AUCell for: HY_HY_Sst_Agrp_GABA_M
+2025-11-18 10:08:49,561 - INFO - ✅ Completed AUCell: AMY_AMY_Crhbp_Maf_GABA_F
+2025-11-18 10:08:49,563 - INFO - Done: AMY_AMY_Crhbp_Maf_GABA_F
+2025-11-18 10:08:49,567 - INFO - ▶ Running AUCell for: HY_Microglia-2_F
+2025-11-18 10:08:50,580 - INFO - ✅ Completed AUCell: MB_Ependymal_cell_M
+2025-11-18 10:08:50,582 - INFO - Done: MB_Ependymal_cell_M
+2025-11-18 10:08:50,598 - INFO - ▶ Running AUCell for: iCTX_iCTX_L2-3_IT_Glut_F
+2025-11-18 10:08:51,563 - INFO - ✅ Completed AUCell: AMY_AMY_Rai14_Six3_GABA_M
+2025-11-18 10:08:51,565 - INFO - Done: AMY_AMY_Rai14_Six3_GABA_M
+2025-11-18 10:08:51,569 - INFO - ▶ Running AUCell for: TH_TH_Ccdc192_Ctxn3_Glut_M
+2025-11-18 10:08:58,292 - INFO - ✅ Completed AUCell: HY_HY_Sst_Agrp_GABA_M
+2025-11-18 10:08:58,294 - INFO - Done: HY_HY_Sst_Agrp_GABA_M
+2025-11-18 10:08:58,299 - INFO - ▶ Running AUCell for: HY_HY_Prr5l_Vipr2_GABA_F
+2025-11-18 10:09:04,689 - INFO - ✅ Completed AUCell: HY_Microglia-2_F
+2025-11-18 10:09:04,691 - INFO - Done: HY_Microglia-2_F
+2025-11-18 10:09:04,696 - INFO - ▶ Running AUCell for: PFC_PFC_Vip_GABA_M
+2025-11-18 10:09:09,169 - INFO - ✅ Completed AUCell: TH_TH_Ccdc192_Ctxn3_Glut_M
+2025-11-18 10:09:09,184 - INFO - Done: TH_TH_Ccdc192_Ctxn3_Glut_M
+2025-11-18 10:09:09,222 - INFO - ▶ Running AUCell for: TH_TH_Car4_Tspan11_Glut_F
+2025-11-18 10:09:14,976 - INFO - ✅ Completed AUCell: HY_HY_Prr5l_Vipr2_GABA_F
+2025-11-18 10:09:14,978 - INFO - Done: HY_HY_Prr5l_Vipr2_GABA_F
+2025-11-18 10:09:15,018 - INFO - ▶ Running AUCell for: TH_VSMC_M
+2025-11-18 10:09:20,508 - INFO - ✅ Completed AUCell: iCTX_iCTX_L2-3_IT_Glut_F
+2025-11-18 10:09:20,510 - INFO - Done: iCTX_iCTX_L2-3_IT_Glut_F
+2025-11-18 10:09:20,513 - INFO - ▶ Running AUCell for: HY_Microglia-2_M
+2025-11-18 10:09:20,961 - INFO - ✅ Completed AUCell: PFC_PFC_Vip_GABA_M
+2025-11-18 10:09:20,964 - INFO - Done: PFC_PFC_Vip_GABA_M
+2025-11-18 10:09:21,022 - INFO - ▶ Running AUCell for: STR_Lymphocyte_F
+2025-11-18 10:09:28,626 - INFO - ✅ Completed AUCell: TH_VSMC_M
+2025-11-18 10:09:28,628 - INFO - Done: TH_VSMC_M
+2025-11-18 10:09:28,658 - INFO - ▶ Running AUCell for: iCTX_iCTX_Sst_Chodl_GABA_M
+2025-11-18 10:09:28,828 - INFO - ✅ Completed AUCell: TH_TH_Car4_Tspan11_Glut_F
+2025-11-18 10:09:28,830 - INFO - Done: TH_TH_Car4_Tspan11_Glut_F
+2025-11-18 10:09:28,850 - INFO - ▶ Running AUCell for: MB_MB_Slc17a6_Tmem163_Glut_F
+2025-11-18 10:09:34,182 - INFO - ✅ Completed AUCell: STR_Lymphocyte_F
+2025-11-18 10:09:34,202 - INFO - Done: STR_Lymphocyte_F
+2025-11-18 10:09:34,242 - INFO - ▶ Running AUCell for: TH_Hypendymal_cell_M
+2025-11-18 10:09:35,588 - INFO - ✅ Completed AUCell: HY_Microglia-2_M
+2025-11-18 10:09:35,591 - INFO - Done: HY_Microglia-2_M
+2025-11-18 10:09:35,594 - INFO - ▶ Running AUCell for: MB_MB_Chol_F
+2025-11-18 10:09:43,853 - INFO - ✅ Completed AUCell: iCTX_iCTX_Sst_Chodl_GABA_M
+2025-11-18 10:09:43,855 - INFO - Done: iCTX_iCTX_Sst_Chodl_GABA_M
+2025-11-18 10:09:43,859 - INFO - ▶ Running AUCell for: MB_OPC_F
+2025-11-18 10:09:48,694 - INFO - ✅ Completed AUCell: TH_Hypendymal_cell_M
+2025-11-18 10:09:48,696 - INFO - Done: TH_Hypendymal_cell_M
+2025-11-18 10:09:48,743 - INFO - ▶ Running AUCell for: PFC_OPC_M
+2025-11-18 10:09:50,489 - INFO - ✅ Completed AUCell: MB_MB_Chol_F
+2025-11-18 10:09:50,492 - INFO - Done: MB_MB_Chol_F
+2025-11-18 10:09:50,523 - INFO - ▶ Running AUCell for: HY_HY_Lef1_Slc16a10_GABA_M
+2025-11-18 10:09:59,823 - INFO - ✅ Completed AUCell: MB_OPC_F
+2025-11-18 10:09:59,826 - INFO - Done: MB_OPC_F
+2025-11-18 10:09:59,860 - INFO - ▶ Running AUCell for: iCTX_COP_F
+2025-11-18 10:10:00,442 - INFO - ✅ Completed AUCell: MB_MB_Slc17a6_Tmem163_Glut_F
+2025-11-18 10:10:00,445 - INFO - Done: MB_MB_Slc17a6_Tmem163_Glut_F
+2025-11-18 10:10:00,471 - INFO - ▶ Running AUCell for: TH_VLMC_F
+2025-11-18 10:10:05,570 - INFO - ✅ Completed AUCell: PFC_OPC_M
+2025-11-18 10:10:05,572 - INFO - Done: PFC_OPC_M
+2025-11-18 10:10:05,596 - INFO - ▶ Running AUCell for: HPF_MFOL_F
+2025-11-18 10:10:07,085 - INFO - ✅ Completed AUCell: HY_HY_Lef1_Slc16a10_GABA_M
+2025-11-18 10:10:07,088 - INFO - Done: HY_HY_Lef1_Slc16a10_GABA_M
+2025-11-18 10:10:07,091 - INFO - ▶ Running AUCell for: HY_HY_Hist_F
+2025-11-18 10:10:14,620 - INFO - ✅ Completed AUCell: iCTX_COP_F
+2025-11-18 10:10:14,639 - INFO - Done: iCTX_COP_F
+2025-11-18 10:10:15,220 - INFO - ✅ Completed AUCell: TH_VLMC_F
+2025-11-18 10:10:15,223 - INFO - Done: TH_VLMC_F
+2025-11-18 10:10:20,402 - INFO - ✅ Completed AUCell: HPF_MFOL_F
+2025-11-18 10:10:20,404 - INFO - Done: HPF_MFOL_F
+2025-11-18 10:10:22,360 - INFO - ✅ Completed AUCell: HY_HY_Hist_F
+2025-11-18 10:10:22,362 - INFO - Done: HY_HY_Hist_F
+2025-11-18 10:10:22,363 - INFO - 🎉 All AUCell tasks completed.
