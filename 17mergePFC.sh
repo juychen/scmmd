@@ -3,13 +3,13 @@ source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 conda activate tobias
 ulimit -n 65534
 
-cd /data2st2/junyi/output/atac0627/tobiasbam
-folder1="/data1st2/junyi/output/atac0627/tobiasbam/MC52E_PFC/"
-folder2="/data1st2/junyi/output/atac0627/tobiasbam/MC50B_PFC/"
-folder3="/data1st2/junyi/output/atac0627/tobiasbam/MC25A_PFC/"
+cd /data2st2/junyi/output/atac1112/tobiasbam/
+folder1="/data2st2/junyi/output/atac1112/tobiasbam/MC52E_PFC/"
+folder2="/data2st2/junyi/output/atac1112/tobiasbam/MC50B_PFC/"
+folder3="/data2st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/"
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac0627/tobiasbam/MC_PFC"
+output_dir="/data2st2/junyi/output/atac1112/tobiasbam/MC_PFC"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 mkdir -p "$output_dir/finish_list"
 
@@ -39,7 +39,7 @@ for bam_file in "$folder1"/*.bam; do
         fi
         # Index the merged file (optional)
         # samtools index "$output_dir/$filename"
-        # If finish the write a text to '/data2st2/junyi/output/atac0627/tobiasbam/MW_AMY/finish_list'
+        # If finish the write a text to '/data2st2/junyi/output/atac1112/tobiasbam//MW_AMY/finish_list'
     else
         echo "Skipping $filename (not found in all folders)"
     fi
