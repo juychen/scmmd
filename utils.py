@@ -92,7 +92,9 @@ def conclude_pycistargets(file_paths:list):
     df_TF = pd.DataFrame({'motif':list_table,'key':list_key,'TFs':list_TFs})
 
     df_merged_motif = df_TF.merge(df_motif_region,left_on=['motif','key'],right_on=['motif','key'])
-    df_score_unique=df_TF_celltype.drop(columns=['TF']).drop_duplicates()
+    #df_score_unique=df_TF_celltype.drop(columns=['TF']).drop_duplicates()
+    df_score_unique=df_TF_celltype.drop(columns=['TF'])
+
     return df_merged_motif.merge(df_score_unique,left_on=['motif','key'],right_on=['motif','key'])
 
 def annotate_region(df_input,bedfile,region_col='region', temp_dir='./tmp') -> pd.DataFrame:
