@@ -817,6 +817,13 @@ if __name__ == "__main__":
                             deg_list = pd.read_csv(deg_path)
                         else:
                             deg_list = pd.read_excel(deg_path)
+                        try:
+                            deg_list['Sex'] = 'M'
+                            deg_list['Direction'] = deg_list['status']
+                            deg_list['Subclass'] = deg_list['celltype.L2']
+                            deg_list['Region'] = deg_list['region']
+                        except Exception as e:
+                            raise ValueError(f"Missing required columns in input: {e}")
 
                         if 'Region subclass' not in deg_list.columns:
                             deg_list['Region subclass'] = deg_list.apply(
