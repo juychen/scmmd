@@ -4,12 +4,12 @@ conda activate tobias
 ulimit -n 65534
 
 cd /data2st2/junyi/output/atac1112/tobiasbam/
-folder1="/data2st2/junyi/output/atac1112/tobiasbam/MC52E_PFC/"
-folder2="/data2st2/junyi/output/atac1112/tobiasbam/MC50B_PFC/"
-folder3="/data2st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/"
+folder1="/data2st2/junyi/output/atac1112/tobiasbam/MW51A_PFC/"
+folder2="/data2st2/junyi/output/atac1112/tobiasbam/MW47A_PFC/"
+folder3="/data2st2/junyi/output/atac1112/tobiasbam/MW26A_PFC/"
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac1112/tobiasbam/MC_PFC"
+output_dir="/data2st2/junyi/output/atac1112/tobiasbam/MW_PFC"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 mkdir -p "$output_dir/finish_list"
 

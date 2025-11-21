@@ -4,7 +4,7 @@ conda activate tobias
 ulimit -n 65534
 
 cd /data2st2/junyi/output/atac1112/tobiasbam
-for folder in /data2st2/junyi/output/atac1112/tobiasbam/MC*_AMY; do
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/MC_AMY; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
@@ -30,7 +30,7 @@ for folder in /data2st2/junyi/output/atac1112/tobiasbam/MC*_AMY; do
           echo "Running TOBIAS ATACorrect for $out_bam"
           TOBIAS ATACorrect --bam $out_bam \
           --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-          --peaks /data2st1/junyi/output/atac1112/cCRE/peak.bed \
+          --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
           --blacklist /data2st1/junyi/ref/mm10-blacklist.v2.bed \
           --outdir $folder/corrected \
           --cores 64
@@ -41,7 +41,7 @@ for folder in /data2st2/junyi/output/atac1112/tobiasbam/MC*_AMY; do
           echo "Output BW file $out_fp not exists. calculating..."
           echo "generating footprints $out_fp"
           TOBIAS FootprintScores --signal $folder/corrected/$ctname\_corrected.bw \
-          --regions /data2st1/junyi/output/atac1112/cCRE/peak.bed \
+          --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
           --output $out_fp \
           --cores 64
         fi
