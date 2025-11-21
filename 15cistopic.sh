@@ -5,9 +5,9 @@ conda activate scenicplus
 # python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/AMY_AMY_GABA.h5ad --output /data2st1/junyi/output/atac1112/cistopic &\
 # python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/AMY_AMY_Glut.h5ad --output /data2st1/junyi/output/atac1112/cistopic ;\
 # python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/HIP_HIP_GABA.h5ad --output /data2st1/junyi/output/atac1112/cistopic &\
-python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/HIP_HIP_Glut.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
+# python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/HIP_HIP_Glut.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
 # python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/PFC_PFC_GABA.h5ad --output /data2st1/junyi/output/atac1112/cistopic &\
 python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/PFC_PFC_Glut.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
-python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/HIP_NN.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
-python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/AMY_NN.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
+# python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/HIP_NN.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
+# python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/AMY_NN.h5ad --output /data2st1/junyi/output/atac1112/cistopic;
 # python 15pycistopic.py --input /data2st1/junyi/output/atac1112/subset/region_nt/PFC_NN.h5ad --output /data2st1/junyi/output/atac1112/cistopic \
