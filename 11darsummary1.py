@@ -636,7 +636,7 @@ if __name__ == "__main__":
         # '/data2st2/junyi/output/stg1028/CSRES_4VN/CSRES_4VN.h5ad':'CSRES',
         # '/data2st2/junyi/output/stg1028/CSRES_3VN/CSRES_3VN.h5ad':'CSRES',
         # '/data2st2/junyi/output/stg1028/CSRES_3VB/CSRES_3VB.h5ad':'CSRES',
-        '/data2st1/junyi/output/atac1112/dar/celltype.L2/MAST1C_dar_annotated.csv':'SUS',
+        '/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated.csv':'SUS',
         # '/data2st2/junyi/output/stg1028/CSDS_3VN/CSDS_3VN.h5ad':'CSDS',
         # '/data2st2/junyi/output/stg1028/CSDS_3VB/CSDS_3VB.h5ad':'CSDS',
         #'/data2st2/junyi/output/stg1028/CUMS_4VN/CUMS_4VN.h5ad':'SUS'
@@ -649,8 +649,8 @@ if __name__ == "__main__":
     memento_region_name = 'company_ngeneson_sample'
     log2fc_cutoff_list = ['annoatated']
     csv_suffix = "" # "" for original csv; "filtered" for filtered csv
-    deg_prefix_list = ['MAST1C_dar']
-    glob_string = "MAST1C*annotated.csv"
+    deg_prefix_list = ['MASTNG_dar']
+    glob_string = "MASTNG*annotated.csv"
 
     df_Class = pd.read_excel(
         '/data2st2/junyi/output/name_form_new.xlsx')
