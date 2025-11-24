@@ -582,7 +582,9 @@ set.seed(2025)
 RNGkind("L'Ecuyer-CMRG")
 
 mclapply(all_csv, function(f) {
-  out_dir0 <- file.path(out_dir, gsub("([/]all.*)|(^.*from_MK[/])","",f))
+#   out_dir0 <- file.path(out_dir, gsub("([/]all.*)|(^.*from_MK[/])","",f))
+    p <- tools::file_path_sans_ext(basename(f))
+    out_dir0 <- file.path(out_dir, p)
   dir.create(out_dir0, showWarnings = FALSE, recursive = TRUE)
   run_one_file(f, pathways, out_dir0)
 }, mc.cores = ncore)
