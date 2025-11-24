@@ -380,6 +380,7 @@ run_one_file <- function(csv_file, pathways, out_dir) {
   gene_sym <- rlang::sym(gene_col)
   
   for (ct in celltypes) {
+
     sub1 <- dt %>% dplyr::filter(Region_Subclass_sex == ct)
     if (nrow(sub1) == 0) next
     
@@ -493,7 +494,8 @@ run_one_file <- function(csv_file, pathways, out_dir) {
     fg <- as.data.frame(fg)
     
     rssd <- paste0(RegionSubclass0, "_", Sex0, "_GSEA")
-    
+    print(rssd)
+
     res <- format_fgsea(
       fg = fg,
       ranks_len = length(ranks_vec),
@@ -504,9 +506,16 @@ run_one_file <- function(csv_file, pathways, out_dir) {
       Neurotransmitter = Neuro0,
       region_Subclass_sex_direction = rssd
     )
-    res$Region_Subclass_sex_direction <- paste0(res$Region.Subclass,"_",res$Sex,"_",res$Direction)
+    if (nrow(res) > 0) {
+        res$Region.Subclass_sex_direction <- paste0(
+            res$Region.Subclass, "_", res$Sex, "_", res$Direction
+        )
+    } else {
+        res$Region.Subclass_sex_direction <- character(0)
+    }
     
     ct_safe <- str_replace_all(ct, "[^A-Za-z0-9_\\-\\.]", "_")
+    print(ct_safe)
     p <- gsub(".csv","",basename(csv_file))
     dir.create(paste0(out_dir,"/",p), showWarnings = FALSE, recursive = TRUE)
     
