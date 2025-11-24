@@ -2,8 +2,8 @@
 source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 conda activate tobias
 ulimit -n 65534
-cd /data2st2/junyi/output/atac0627/tobiasbam
-for folder in /data2st2/junyi/output/atac0627/tobiasbam/*PFC*; do
+cd /data2st2/junyi/output/atac1112/tobiasbam
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/*PFC*; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
@@ -22,7 +22,7 @@ for folder in /data2st2/junyi/output/atac0627/tobiasbam/*PFC*; do
         TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_key_motifs.jaspar \
         --signals $out_fp \
         --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-        --peaks /data2st1/junyi/output/atac0627/cCRE/peak.bed \
+        --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
         --outdir $folder/corrected/$ctname --cores 32 \
         --split 16 --verbosity 4
       fi
@@ -31,6 +31,6 @@ for folder in /data2st2/junyi/output/atac0627/tobiasbam/*PFC*; do
 done
 
 # /home/junyichen/subset-bam_linux --bam /data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/MC25A_PFC/outs/possorted_bam.bam \
-# --cell-barcodes /data1st2/junyi/output/atac0627/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.csv \
-# --out-bam /data1st2/junyi/output/atac0627/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.bam \
+# --cell-barcodes /data1st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.csv \
+# --out-bam /data1st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.bam \
 # --cores 32

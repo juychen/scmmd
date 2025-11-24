@@ -125,7 +125,7 @@ perform_mast_analysis <- function(seurat_obj,
           cat("  Not all batches contain both treatments - batch effect not used\n")
         }
       }
-      use_batch_effect <- FALSE
+      #use_batch_effect <- FALSE
       # 创建MAST对象
       sca <- FromMatrix(as.matrix(dat.tmp), cData = anno.tmp)
       
@@ -142,7 +142,7 @@ perform_mast_analysis <- function(seurat_obj,
 
       if (use_batch_effect) {
         colData(sca)$batch <- factor(colData(sca)[[batch.by]])
-        zlm_model <- zlm(~ compare_group + ngeneson + batch + frac_peak, sca)
+        zlm_model <- zlm(~ compare_group + ngeneson + batch, sca)
         #        zlm_model <- zlm(~ compare_group + ngeneson + batch + frac_peak, sca)
 
       } else {
