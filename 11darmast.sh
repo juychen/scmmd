@@ -12,6 +12,7 @@ conda activate r_env
 
 # Rscript 11darmast_new.R --input /data1st2/junyi/output/atac1112/subset/region_nt/AMY_AMY_GABA.h5ad \
 # --output /data2st1/junyi/output/atac1112/dar/celltype.L2/MAST \
+mkdir -p /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNB
 Rscript 11darmast_new.R --input /data1st2/junyi/output/atac1112/subset/region_nt/AMY_AMY_GABA.h5ad --output /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNB --region "" &\
 Rscript 11darmast_new.R --input /data1st2/junyi/output/atac1112/subset/region_nt/AMY_AMY_Glut.h5ad --output /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNB --region "";
 Rscript 11darmast_new.R --input /data1st2/junyi/output/atac1112/subset/region_nt/HIP_HIP_GABA.h5ad --output /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNB --region ""&\
