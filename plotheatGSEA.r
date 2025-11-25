@@ -2548,9 +2548,9 @@ go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/gsea/MASTNG_dar_annotat
 #     # ---- 预置三套过滤集合 ----
 #     filtered_sets <- list(
 #       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+#                                        n_cells = 3, n_genes = 3, row_col = "GO"), # >10
 #       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 1, row_col = "GO"),
+#                                        n_cells = 3, n_genes = 1, row_col = "GO"),
 #       specific_sup = NULL
 #     )
     
@@ -2743,9 +2743,9 @@ go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/gsea/MASTNG_dar_annotat
 #     # ---- 预置三套过滤集合 ----
 #     filtered_sets <- list(
 #       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+#                                        n_cells = 3, n_genes = 3, row_col = "GO"), # >10
 #       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 1, row_col = "GO"),
+#                                        n_cells = 3, n_genes = 1, row_col = "GO"),
 #       specific_sup = NULL
 #     )
     
@@ -2940,9 +2940,9 @@ go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/gsea/MASTNG_dar_annotat
 #     # ---- 预置三套过滤集合 ----
 #     filtered_sets <- list(
 #       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+#                                        n_cells = 3, n_genes = 3, row_col = "GO"), # >10
 #       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 1, row_col = "GO"),
+#                                        n_cells = 3, n_genes = 1, row_col = "GO"),
 #       specific_sup = NULL
 #     )
     
@@ -3136,9 +3136,9 @@ go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/gsea/MASTNG_dar_annotat
 #     # ---- 预置三套过滤集合 ----
 #     filtered_sets <- list(
 #       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+#                                        n_cells = 3, n_genes = 3, row_col = "GO"), # >10
 #       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-#                                        n_cells = 11, n_genes = 1, row_col = "GO"),
+#                                        n_cells = 3, n_genes = 1, row_col = "GO"),
 #       specific_sup = NULL
 #     )
     
@@ -3337,9 +3337,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -3532,9 +3532,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -3729,9 +3729,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -3925,9 +3925,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -4126,9 +4126,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -4320,9 +4320,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -4513,9 +4513,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -4704,9 +4704,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -4904,9 +4904,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -5099,9 +5099,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -5297,9 +5297,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -5492,9 +5492,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -5684,9 +5684,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
@@ -5875,9 +5875,9 @@ for (go_path in go_paths) {
     # ---- 预置三套过滤集合 ----
     filtered_sets <- list(
       common_main = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 11, row_col = "GO"), # >10
+                                       n_cells = 3, n_genes = 3, row_col = "GO"), # >10
       common_sup  = filter_col_and_row(go_results_subset, go_group_subset,
-                                       n_cells = 11, n_genes = 1, row_col = "GO"),
+                                       n_cells = 3, n_genes = 1, row_col = "GO"),
       specific_sup = NULL
     )
     
