@@ -13,6 +13,6 @@ conda activate r_env
 # Rscript 11darmast_new.R --input /data1st2/junyi/output/atac1112/subset/region_nt/AMY_AMY_GABA.h5ad \
 # --output /data2st1/junyi/output/atac1112/dar/region/MAST \
 mkdir -p /data2st1/junyi/output/atac1112/dar/region/MASTNG  
-Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/3REGIONS_peak.h5ads --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region PFC
-Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/3REGIONS_peak.h5ads --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region AMY
-Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/3REGIONS_peak.h5ads --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region HIP
+Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/subset/PFC_20k.h5ad --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region PFC
+Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/subset/AMY_20k.h5ad --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region AMY
+Rscript 11darmast_region.R --input /data2st1/junyi/output/atac1112/subset/HIP_20k.h5ad --output /data2st1/junyi/output/atac1112/dar/region/MASTNG --region HIP

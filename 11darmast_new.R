@@ -33,6 +33,7 @@ region <- args$region
 # region = brainregion
 
 seo = schard::h5ad2seurat(input)
+seo <- subset(seo, subset = !(sample %in% c("MW26A_PFC", "MC25A_PFC")))
 df_qc <- read.csv('/data2st1/junyi/output/atac0627/frac_qc.csv', row.names = 1)
 df_qc$sample <- rownames(df_qc)
 metadata <- seo@meta.data
@@ -125,7 +126,7 @@ perform_mast_analysis <- function(seurat_obj,
           cat("  Not all batches contain both treatments - batch effect not used\n")
         }
       }
-      #use_batch_effect <- FALSE
+      use_batch_effect <- FALSE
       # 创建MAST对象
       sca <- FromMatrix(as.matrix(dat.tmp), cData = anno.tmp)
       
