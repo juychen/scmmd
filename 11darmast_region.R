@@ -73,8 +73,8 @@ perform_mast_analysis <- function(seurat_obj,
       cat("Analyzing cell group:", cell_group, "\n")
       
 
-      seo_subset = subset(seurat_obj, subset = region == cell_group)
-      
+      #seo_subset = subset(seurat_obj, subset = Region == cell_group)
+      seo_subset = seurat_obj
       if (ncol(seo_subset) > 25000) {
         # Randomly sample 10000 cells
         set.seed(123)

@@ -548,9 +548,8 @@ run_one_file <- function(csv_file, pathways, out_dir) {
 
 # 你的 MAST 结果（按需增减/替换通配符；可放多个模式）
 input_globs <- c(
-  "/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_*_annotated.csv"
+  "/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_*_annotated_avg.csv"
 )
-
 # 输出目录
 out_dir <- "/data2st1/junyi/output/atac1112/dar/gsea/"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
