@@ -2442,7 +2442,7 @@ filter_col_and_row <- function(main_data, row_data,
 }
 
 #########for degGo############
-go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/gsea/MASTNG_dar_annotated_avg/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_up.csv"))
+go_paths=c(Sys.glob("/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_up.csv"))
            
 
 # ##GABA adjP#########################################

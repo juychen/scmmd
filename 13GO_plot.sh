@@ -39,4 +39,4 @@ for go_dir in //data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annota
     --nlogp_threshold "$nlogp_threshold"
 done
 ###step3 GO heatmap plot#############
-/home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/plotheatGSEA.r
+/home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R
