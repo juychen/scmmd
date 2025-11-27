@@ -714,12 +714,15 @@ if __name__ == "__main__":
             # # If csv_suffix is provided, add another DEG path
             # if csv_suffix:
             #     deg_candidates.append(f'{dir_path}/{dir}_{csv_suffix}.csv')
+            deg_candidates = ['/data2st1/junyi/output/atac1112/tobias/tobias_TF_activity_summary_significant_TFs.csv']
             
             for deg_path in deg_candidates:
                 # Define output subfolder depending on which file is used
                 # if deg_path.endswith(f'_{csv_suffix}.csv'):
                 #     current_output_dir = f'{dir_path}/{dir}_{csv_suffix}'
                 # else:
+                # dir = folder name of deg candidates
+                dir = deg_path
                 current_output_dir = f'{dir}dir'
                 os.makedirs(current_output_dir, exist_ok=True)
 
