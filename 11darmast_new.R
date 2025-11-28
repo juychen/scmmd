@@ -33,7 +33,7 @@ region <- args$region
 # region = brainregion
 
 seo = schard::h5ad2seurat(input)
-seo <- subset(seo, subset = !(sample %in% c("MW26A_PFC", "MC25A_PFC")))
+#seo <- subset(seo, subset = !(sample %in% c("MW26A_PFC", "MC25A_PFC")))
 df_qc <- read.csv('/data2st1/junyi/output/atac0627/frac_qc.csv', row.names = 1)
 df_qc$sample <- rownames(df_qc)
 metadata <- seo@meta.data

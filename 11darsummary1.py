@@ -636,7 +636,7 @@ if __name__ == "__main__":
         # '/data2st2/junyi/output/stg1028/CSRES_4VN/CSRES_4VN.h5ad':'CSRES',
         # '/data2st2/junyi/output/stg1028/CSRES_3VN/CSRES_3VN.h5ad':'CSRES',
         # '/data2st2/junyi/output/stg1028/CSRES_3VB/CSRES_3VB.h5ad':'CSRES',
-        '/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNB_dar_annotated.csv':'SUS',
+        '/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNP_dar_annotated.csv':'SUS',
         # '/data2st2/junyi/output/stg1028/CSDS_3VN/CSDS_3VN.h5ad':'CSDS',
         # '/data2st2/junyi/output/stg1028/CSDS_3VB/CSDS_3VB.h5ad':'CSDS',
         #'/data2st2/junyi/output/stg1028/CUMS_4VN/CUMS_4VN.h5ad':'SUS'
@@ -649,8 +649,8 @@ if __name__ == "__main__":
     memento_region_name = 'company_ngeneson_sample'
     log2fc_cutoff_list = ['annoatated']
     csv_suffix = "" # "" for original csv; "filtered" for filtered csv
-    deg_prefix_list = ['MASTNB_dar']
-    glob_string = "MASTNB*annotated.csv"
+    deg_prefix_list = ['MASTNP_dar']
+    glob_string = "MASTNP*annotated.csv"
 
     df_Class = pd.read_excel(
         '/data2st2/junyi/output/name_form_new.xlsx')
@@ -714,7 +714,7 @@ if __name__ == "__main__":
             # # If csv_suffix is provided, add another DEG path
             # if csv_suffix:
             #     deg_candidates.append(f'{dir_path}/{dir}_{csv_suffix}.csv')
-            deg_candidates = ['/data2st1/junyi/output/atac1112/tobias/tobias_TF_activity_summary_significant_TFs.csv']
+            deg_candidates = ['/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNP_dar_annotated.csv']
             
             for deg_path in deg_candidates:
                 # Define output subfolder depending on which file is used
