@@ -119,9 +119,8 @@ perform_mast_celltype_specific <- function(
       next
     }
 
-    fcHurdle[, padjust := p.adjust(`Pr(>Chisq)`, "bonferroni")]
-    fcHurdle$celltype <- ct
-
+      fcHurdle[, padjust := p.adjust(`Pr(>Chisq)`, 'bonferroni')]
+      fcHurdle[[group.by]] <- cell_group
     all_results <- rbind(all_results, fcHurdle)
 
     if (save.as.tmp) {
