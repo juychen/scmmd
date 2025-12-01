@@ -56,13 +56,6 @@ perform_mast_celltype_specific <- function(
   library(MAST)
   library(data.table)
 
-  if (ncol(seurat_obj) > 20000) {
-    set.seed(123)
-    cells_keep <- sample(colnames(seurat_obj), 20000)
-    seo_subset <- subset(seurat_obj, cells = cells_keep)
-  }
-
-
   metadata <- seurat_obj@meta.data
   celltypes <- unique(metadata[[group.by]])
 
@@ -76,15 +69,16 @@ perform_mast_celltype_specific <- function(
     # Define labels
     metadata$compare_group <- ifelse(metadata[[group.by]] == ct, ct, "others")
     metadata$compare_group <- factor(metadata$compare_group, levels=c(ct,"others"))
+    seurat_obj$compare_group <- metadata$compare_group
 
     # Subset only relevant cells (to reduce memory)
-    keep_cells <- rownames(metadata)
-    seo_subset <- subset(seurat_obj, cells = keep_cells)
+    # keep_cells <- rownames(metadata)
+    # seo_subset <- subset(seurat_obj, cells = keep_cells)
 
     # Filter peaks expressed in >=10 cells
-    exprs <- GetAssayData(seo_subset, slot = "counts")
+    exprs <- GetAssayData(seurat_obj, slot = "counts")
     keep <- rowSums(exprs > 0) >= 10
-    seo_subset <- seo_subset[keep, ]
+    seo_subset <- seurat_obj[keep, ]
 
     expr_matrix <- GetAssayData(seo_subset, slot = "data")
     anno <- seo_subset@meta.data
