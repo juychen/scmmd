@@ -45,6 +45,14 @@ seo@meta.data <- meta2
 colnames(seo@meta.data)[colnames(seo@meta.data) == "Fraction.of.high.quality.fragments.overlapping.peaks"] <- "frac_peak"
 setwd(output)
 
+if (ncol(seo) > 10000) {
+  # Randomly sample 10000 cells
+  set.seed(123)
+  cells_keep <- sample(colnames(seo), 10000)
+  seo_subset <- subset(seo, cells = cells_keep)
+}
+
+
 
 perform_mast_celltype_specific <- function(
     seurat_obj,
@@ -65,6 +73,7 @@ perform_mast_celltype_specific <- function(
 
     cat("====================================\n")
     cat("Celltype-specific DAR for:", ct, "\n")
+    tryCatch({
 
     # Define labels
     metadata$compare_group <- ifelse(metadata[[group.by]] == ct, ct, "others")
@@ -119,14 +128,23 @@ perform_mast_celltype_specific <- function(
       next
     }
 
-      fcHurdle[, padjust := p.adjust(`Pr(>Chisq)`, 'bonferroni')]
-      fcHurdle[[group.by]] <- cell_group
+    fcHurdle[, padjust := p.adjust(`Pr(>Chisq)`, "bonferroni")]
+    fcHurdle$celltype <- ct
+
     all_results <- rbind(all_results, fcHurdle)
 
     if (save.as.tmp) {
+      if (region == "") {
+        region_suffix <- ""
+      } else {
+        region_suffix <- paste0(region,"_")
+      }
       write.csv(fcHurdle,
-                paste0("DAR_celltype_specific_", make.names(ct), ".csv"))
+                paste0("DAR_celltype_specific_", region_suffix, make.names(ct), ".csv"))
     }
+    }, error = function(e){
+      cat("  Error in cell type ", ct, " : ", e$message, "\n")
+    })
   }
 
   return(all_results)
