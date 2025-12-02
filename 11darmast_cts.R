@@ -73,6 +73,15 @@ perform_mast_celltype_specific <- function(
 
     cat("====================================\n")
     cat("Celltype-specific DAR for:", ct, "\n")
+    if (region == "") {
+        region_suffix <- ""
+      } else {
+        region_suffix <- paste0(region,"_")
+    }
+    if (file.exists(paste0("DAR_celltype_specific_", region_suffix, make.names(ct), ".csv"))){
+      cat("  Skipping existing result for:", ct, "\n")
+      next
+    }
     tryCatch({
 
     # Define labels
