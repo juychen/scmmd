@@ -142,11 +142,12 @@ perform_mast_analysis <- function(seurat_obj,
 
       if (use_batch_effect) {
         colData(sca)$batch <- factor(colData(sca)[[batch.by]])
-        zlm_model <- zlm(~ compare_group + ngeneson + batch, sca)
+        #zlm_model <- zlm(~ compare_group + ngeneson + batch, sca)
         #        zlm_model <- zlm(~ compare_group + ngeneson + batch + frac_peak, sca)
 
       } else {
-        zlm_model <- zlm(~ compare_group + ngeneson, sca)
+        #zlm_model <- zlm(~ compare_group + ngeneson, sca)
+        zlm_model <- zlm(~ compare_group, sca)
       }
       
       # 差异分析
