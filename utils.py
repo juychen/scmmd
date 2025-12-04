@@ -13,7 +13,11 @@ import concurrent.futures
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
 from snapatac2._snapatac2 import read_motifs, PyDNAMotif
-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import PyComplexHeatmap as pch
+from matplotlib.colors import LinearSegmentedColormap
 
 def conclude_pycistargets(file_paths:list):
 
@@ -245,6 +249,169 @@ def cis_bp_mouse(unique: bool = True , path="data/motifdb/Mus_musculus.meme") ->
     return motifs
 
 
+# ---------------------------------------------------------
+# 你的颜色
+# ---------------------------------------------------------
+region_colors = {
+    "HPF": "#E13127",
+    "AMY": "#6DA1D5",
+    "PFC": "#F57E20",
+}
+
+nt_colors = {
+    "Glut": "#FFC000",
+    "GABA": "#00B050",
+    "NN":   "#8c564b",
+}
+
+
+# ---------------------------------------------------------
+# 主函数：绘制 TF × Region Subclass 热图
+# ---------------------------------------------------------
+def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_order=None,figure_size=(10,20),save_fig=None):
+    df = df.copy()
+    if clipping:
+        df[value_col] = df[value_col].clip(-1*clipping,clipping)  
+
+    if col_order is not None:
+    # Only keep columns that exist
+        col_order_filtered = [c for c in col_order if c in mat.columns]
+        mat = mat[col_order_filtered]
+
+    # Apply custom TF/row order if provided
+    if row_order is not None:
+        row_order_filtered = [r for r in row_order if r in mat.index]
+        mat = mat.loc[row_order_filtered]
+
+    # ============================
+    # 1. 构建矩阵
+    # ============================
+    mat = df.pivot_table(
+        index="TF",
+        columns="Region Subclass",
+        values=value_col,
+        aggfunc="mean"
+    ).fillna(0)
+    print("Checking columns...")
+
+    mat = mat.replace([np.inf, -np.inf], np.nan).fillna(0)
+    mat = mat.astype(float)
+    mat = mat.replace([np.inf, -np.inf], np.nan)
+    mat = mat.fillna(0)
+    mat = mat.apply(pd.to_numeric, errors="coerce").fillna(0)
+
+    mat = df.pivot_table(
+    index="TF",
+    columns="Region Subclass",
+    values=value_col,
+    aggfunc="mean"
+    )   
+
+    mat = mat.apply(pd.to_numeric, errors="coerce").fillna(0)
+
+    # 1. Remove constant columns
+    constant_cols = mat.columns[mat.apply(lambda x: x.nunique() <= 1)]
+    print("Constant columns:", constant_cols.tolist())
+    mat = mat.drop(columns=constant_cols)
+
+    # # 2. Remove duplicate columns
+    # mat_T = mat.T.drop_duplicates().T
+    # removed_duplicates = set(mat.columns) - set(mat_T.columns)
+    # print("Duplicate columns removed:", removed_duplicates)
+    # mat = mat_T
+
+    # 3. Final clean
+    mat = mat.astype(float)
+    assert np.isfinite(mat.values).all()
+    # ============================
+    # 2. 列注释 (Region + Neurotransmitter)
+    # ============================
+    col_meta = (
+        df[["Region Subclass", "Region", "Neurotransmitter"]]
+        .drop_duplicates()
+        .set_index("Region Subclass")
+        .loc[mat.columns]
+    )
+
+    # 按 region 排序列
+    col_meta = col_meta.sort_values("Region")
+    mat = mat[col_meta.index]
+
+    region = col_meta["Region"]
+    nt = col_meta["Neurotransmitter"]
+
+    # ============================
+    # 3. 行注释（可选：也可以不加）
+    # ============================
+    if "Category" in df.columns:
+        row_meta = (
+            df[["TF", "Category"]]
+            .drop_duplicates()
+            .set_index("TF")
+            .loc[mat.index]
+        )
+        category = row_meta["Category"]
+    else:
+        category = None
+
+    # ============================
+    # 4. 创建顶部列注释
+    # ============================
+    col_ha = pch.HeatmapAnnotation(
+        Region=pch.anno_simple(region, colors=region_colors, add_text=True),
+        Neurotransmitter=pch.anno_simple(nt, colors=nt_colors, add_text=False),
+        axis=1
+    )
+
+    # ============================
+    # 5. 如果提供 Category，则加入左侧注释
+    # ============================
+    if category is not None:
+        row_ha = pch.HeatmapAnnotation(
+            Category=pch.anno_simple(category, add_text=False),
+            axis=0
+        )
+    else:
+        row_ha = None
+
+    # ============================
+    # 6. 颜色映射：蓝→白→橙，中心为0
+    # ============================
+    cmap = LinearSegmentedColormap.from_list(
+        "blue_white_orange",
+        ["#3B4CC0", "white", "#EE6A24"]
+    )
+    plt.figure(figsize=figure_size)
+
+    # ============================
+    cm = pch.ClusterMapPlotter(
+        data=mat,
+        top_annotation=col_ha,
+        left_annotation=row_ha,
+        col_split=region,      # 按 Region 分面
+        row_cluster=True,
+        col_cluster=True,
+        row_dendrogram=True,
+        col_dendrogram=True,
+        cmap=cmap,
+        col_split_order = ['AMY','PFC','HPF'],
+        center=0,
+        yticklabels_kws={'labelsize': 5},
+        yticklabels=True,
+        xticklabels_kws={'labelsize': 5},
+        xticklabels=True,
+        show_rownames=True,
+        show_colnames=True,
+        label="# count",
+        rasterized=True
+    )
+
+    if save_fig!=None:
+        plt.savefig(save_fig)
+
+    plt.show()
+    return cm
+#cm = draw_tf_heatmap(results[results.Neurotransmitter!='NN'],value_col="log2FC", clipping=30)
 # flist = glob.glob('/data2st1/junyi/output/atac0416/dar/motif/region_nt/*AMY*_MC_inner.hdf5')
 # df_report = conclude_pycistargets(flist)
 # bed_allpeaks = "/data2st1/junyi/output/atac0416/cCRE/peak.bed"
