@@ -147,7 +147,7 @@ perform_mast_analysis <- function(seurat_obj,
         #        zlm_model <- zlm(~ compare_group + ngeneson + batch + frac_peak, sca)
 
       } else {
-        zlm_model <- zlm(~ compare_group + ngeneson, sca)
+        zlm_model <- zlm(~ compare_group, sca)
       }
       
       # 差异分析
