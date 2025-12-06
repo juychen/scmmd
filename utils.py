@@ -273,15 +273,6 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
     if clipping:
         df[value_col] = df[value_col].clip(-1*clipping,clipping)  
 
-    if col_order is not None:
-    # Only keep columns that exist
-        col_order_filtered = [c for c in col_order if c in mat.columns]
-        mat = mat[col_order_filtered]
-
-    # Apply custom TF/row order if provided
-    if row_order is not None:
-        row_order_filtered = [r for r in row_order if r in mat.index]
-        mat = mat.loc[row_order_filtered]
 
     # ============================
     # 1. 构建矩阵
@@ -323,6 +314,18 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
     # 3. Final clean
     mat = mat.astype(float)
     assert np.isfinite(mat.values).all()
+
+    if col_order is not None:
+    # Only keep columns that exist
+        col_order_filtered = [c for c in col_order if c in mat.columns]
+        mat = mat[col_order_filtered]
+
+    # Apply custom TF/row order if provided
+    if row_order is not None:
+        row_order_filtered = [r for r in row_order if r in mat.index]
+        mat = mat.loc[row_order_filtered]
+  
+
     # ============================
     # 2. 列注释 (Region + Neurotransmitter)
     # ============================
@@ -340,6 +343,7 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
     region = col_meta["Region"]
     nt = col_meta["Neurotransmitter"]
 
+
     # ============================
     # 3. 行注释（可选：也可以不加）
     # ============================
@@ -351,8 +355,21 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
             .loc[mat.index]
         )
         category = row_meta["Category"]
+        nums = []
+        others = []
+        cat = category.unique().tolist()
+
+        for c in cat:
+            try:
+                nums.append((float(c), c))   # (数值, 原始字符串)
+            except:
+                others.append(c)
+
+        # 排序并合并
+        category_order = [x[1] for x in sorted(nums)] + others
     else:
         category = None
+        category_order = None
 
     # ============================
     # 4. 创建顶部列注释
@@ -367,8 +384,11 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
     # 5. 如果提供 Category，则加入左侧注释
     # ============================
     if category is not None:
+        unique_cats = list(set(category))
+        colors = dict(zip(unique_cats, sns.color_palette("tab20", len(unique_cats))))
+
         row_ha = pch.HeatmapAnnotation(
-            Category=pch.anno_simple(category, add_text=False),
+            Category=pch.anno_simple(category, add_text=False,colors=colors),
             axis=0
         )
     else:
@@ -389,12 +409,15 @@ def draw_tf_heatmap(df,value_col="Regulation", clipping=10,row_order=None, col_o
         top_annotation=col_ha,
         left_annotation=row_ha,
         col_split=region,      # 按 Region 分面
+        row_split=category,
         row_cluster=True,
         col_cluster=True,
         row_dendrogram=True,
         col_dendrogram=True,
         cmap=cmap,
         col_split_order = ['AMY','PFC','HPF'],
+        row_split_order = category_order,
+
         center=0,
         yticklabels_kws={'labelsize': 5},
         yticklabels=True,
