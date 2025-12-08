@@ -4,7 +4,7 @@ conda activate tobias
 ulimit -n 65534
 
 cd /data2st2/junyi/output/atac1112/tobiasbam
-folder1="/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/MW65A_AMY/outs/"
+folder1="/data1st2/hannan_25/data/snATAC_process/MW65A_AMY/JZ25099449-MW65A-AMY-ATAC-MW65A-AMY-ATAC-50/outs/"
 folder2="/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/MW51A_AMY/outs/"
 folder3="/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/MW47A_AMY/outs/"
 
