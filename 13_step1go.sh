@@ -1,7 +1,6 @@
 #!/bin/bash
 source /home/junyichen/anaconda3/etc/profile.d/conda.sh
-conda activate scanpy
-
+conda activate snapatac2
 #deg_path1='/data7/mark/STG/dataset/snRNA/merge_SCH/SUS_500_1000gene/merged_mast_wilcox_degs_all_log2fc0.1/merged_mast_wilcox_degs_all_log2fc0.1.csv'
 #output_path1='/data7/mark/STG/dataset/snRNA/merge_SCH/SUS_500_1000gene/merged_mast_wilcox_degs_all_log2fc0.1/GO_enrichment_results2/'
 #
@@ -185,7 +184,7 @@ go_rscript_path="/home/junyichen/code/scmmd/custerprofiler.r"
 python_script="/data2st2/junyi/code/sn/example_go_merge_and_predict3.py"
 
 # Mapping and class info
-go_group_path="/data2st2/junyi/code/sn/2_go_term_mapping_group_20250923.xlsx"
+go_group_path="/data2st2/junyi/code/sn/2 go_term_mapping_group_20250923.xlsx"
 df_class_path="/data2st2/junyi/code/sn/name_form_new.xlsx"
 
 # Duplicate handling strategies
@@ -199,7 +198,7 @@ nlogp_threshold=0.1
 max_jobs=8
 job_count=0
 
-deg_paths=("/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg.csv")
+deg_paths=("/data2st1/junyi/output/atac1112/tobias/tobias_AP-1_gene_summary_cisbp.csv")
 # Step 1: Run R script to generate GO enrichment results
 for deg_path in "${deg_paths[@]}"; do
     parent_dir=$(dirname "$deg_path")
@@ -215,14 +214,12 @@ for deg_path in "${deg_paths[@]}"; do
 #    fi
 
     mkdir -p "$go_output_dir"
-
-    conda activate r_env
     echo "Activated r_env for R script execution, output dir: $go_output_dir"
 
     for region in "${regions[@]}"; do
     
         echo "Running gost_tf.r for $region with input $deg_path"
-        Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
+        /home/junyichen/anaconda3/envs/r_env/bin/Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
 
         ((job_count++))
         if ((job_count % max_jobs == 0)); then
@@ -232,7 +229,7 @@ for deg_path in "${deg_paths[@]}"; do
 done
 wait
 echo "=== All GO enrichment results generated ==="
-
+# conda activate snapatac2
 # Step 2: Run Python merge and predict on generated GO results
 for deg_path in "${deg_paths[@]}"; do
     parent_dir=$(dirname "$deg_path")
