@@ -184,7 +184,7 @@ go_rscript_path="/home/junyichen/code/scmmd/custerprofiler.r"
 python_script="/data2st2/junyi/code/sn/example_go_merge_and_predict3.py"
 
 # Mapping and class info
-go_group_path="/data2st2/junyi/code/sn/2 go_term_mapping_group_20250923.xlsx"
+go_group_path="/data2st1/junyi/output/atac1112/tobias/2_go_term_mapping_group_20251209.xlsx"
 df_class_path="/data2st2/junyi/code/sn/name_form_new.xlsx"
 
 # Duplicate handling strategies
@@ -198,7 +198,20 @@ nlogp_threshold=0.1
 max_jobs=8
 job_count=0
 
-deg_paths=("/data2st1/junyi/output/atac1112/tobias/tobias_AP-1_gene_summary_cisbp.csv")
+deg_paths=(
+'/data2st1/junyi/output/atac1112/tobias/tobias_11_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_10_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_9_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_8_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_7_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_6_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_5_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_4_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_3_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_2_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_1_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/tobias_0_gene_summary_cisbp.csv'
+)
 # Step 1: Run R script to generate GO enrichment results
 for deg_path in "${deg_paths[@]}"; do
     parent_dir=$(dirname "$deg_path")
