@@ -39,6 +39,13 @@ read_GO_DEG <- function(f = 'data/GO_orderT_p0.01_nlogP_noreplication.csv', sex_
   neurotransmitter_order <- c("Glut","GABA","Chol","Dopa","Hist","Sero","NN")
   sex_order           <- c("M","F")
 
+  # If Region Subclass is not present, try add Region Subclass from Region subclass column
+  if (!("Region Subclass" %in% names(go_results)) &
+      ("Region subclass" %in% names(go_results))) {
+
+      go_results$`Region Subclass` <- go_results$`Region subclass`
+  }
+
   # ensure the gender format
   go_results <- go_results %>%
     mutate(across({{ sex_col }}, ~ {
@@ -1920,12 +1927,21 @@ filter_col_and_row <- function(main_data, row_data,
 #     }
 #   }
 # }
+args <- commandArgs(trailingOnly = TRUE)
 
-go_path_list <- c(
-  "/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_up.csv",
-  "/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_down.csv"
+library(argparse)  # or optparse
 
+parser <- ArgumentParser()
+parser$add_argument(
+  "--input",
+  nargs = "+",        # ← accept multiple values
+  help = "a list of input GO paths"
 )
+parsed <- parser$parse_args(args)
+
+print(parsed$input)
+
+go_path_list <- parsed$input
 
 for (path in go_path_list) {
   # if (file.exists(path) && grepl("\\.csv$", path)) {
@@ -1947,8 +1963,11 @@ for (path in go_path_list) {
   # }
 
   # Process each go_path
-  go_paths <- c("/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_up.csv",
-                 "/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated_avg/go_gsea_heatmap/MASTNG_dar_annotated_avg_merged_down.csv")
+  go_paths <- c(
+    Sys.glob(paste0(path,"/*/2_go_merged_with_predictions.csv"))
+    #"/data2st1/junyi/output/atac1112/tobias/tobias_AP-1_gene_summary_cisbp/nlogp_keep_highest/2_go_merged_with_predictions.csv"
+  )
+
   for (go_path in go_paths) {
     message("Processing: ", go_path)
 
@@ -1978,8 +1997,10 @@ for (path in go_path_list) {
     }
 
     subsets <- list(
-      list(tag = "N", filter = function(df) df %>% filter(Neurotransmitter != "NN")),
-      list(tag = "NN",    filter = function(df) df %>% filter(Neurotransmitter == "NN"))
+      #list(tag = "N", filter = function(df) df %>% filter(Neurotransmitter != "NN")),
+      list(tag = "NN",    filter = function(df) df %>% filter(Neurotransmitter == "NN")),
+      list(tag = "GABA",    filter = function(df) df %>% filter(Neurotransmitter == "GABA")),
+      list(tag = "Glut",    filter = function(df) df %>% filter(Neurotransmitter == "Glut"))
     )
 
     group_col <- 'predicted_group' # 'Module.P','predicted_group' or 'final_group'
