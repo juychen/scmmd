@@ -199,49 +199,49 @@ max_jobs=8
 job_count=0
 
 deg_paths=(
-'/data2st1/junyi/output/atac1112/tobias/tobias_11_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_10_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_9_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_8_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_7_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_6_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_5_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_4_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_3_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_2_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_1_gene_summary_cisbp.csv'
-'/data2st1/junyi/output/atac1112/tobias/tobias_0_gene_summary_cisbp.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_0_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_1_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_2_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_3_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_4_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_5_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_6_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_7_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_8_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_9_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_10_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_11_deg_summary_cisbp_AMY.csv'
 )
 # Step 1: Run R script to generate GO enrichment results
-# for deg_path in "${deg_paths[@]}"; do
-#     parent_dir=$(dirname "$deg_path")
-#     deg_filename=$(basename "$deg_path" .csv)
-#     base_output="${parent_dir}/${deg_filename}"
-#     mkdir -p "$base_output"
+for deg_path in "${deg_paths[@]}"; do
+    parent_dir=$(dirname "$deg_path")
+    deg_filename=$(basename "$deg_path" .csv)
+    base_output="${parent_dir}/${deg_filename}"
+    mkdir -p "$base_output"
     
-#     go_output_dir="${base_output}/CP_enrichment_results2"
+    go_output_dir="${base_output}/CP_enrichment_results2"
 
-# #    if [[ -d "$go_output_dir" && -n "$(ls -A "$go_output_dir"/*.csv 2>/dev/null)" ]]; then
-# #        echo "Skipping $go_output_dir (CSV files already exist)"
-# #        continue
-# #    fi
+#    if [[ -d "$go_output_dir" && -n "$(ls -A "$go_output_dir"/*.csv 2>/dev/null)" ]]; then
+#        echo "Skipping $go_output_dir (CSV files already exist)"
+#        continue
+#    fi
 
-#     mkdir -p "$go_output_dir"
-#     echo "Activated r_env for R script execution, output dir: $go_output_dir"
+    mkdir -p "$go_output_dir"
+    echo "Activated r_env for R script execution, output dir: $go_output_dir"
 
-#     for region in "${regions[@]}"; do
+    for region in "${regions[@]}"; do
     
-#         echo "Running gost_tf.r for $region with input $deg_path"
-#         /home/junyichen/anaconda3/envs/r_env/bin/Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
+        echo "Running gost_tf.r for $region with input $deg_path"
+        /home/junyichen/anaconda3/envs/r_env/bin/Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
 
-#         ((job_count++))
-#         if ((job_count % max_jobs == 0)); then
-#             wait
-#         fi
-#     done
-# done
-# wait
-# echo "=== All GO enrichment results generated ==="
+        ((job_count++))
+        if ((job_count % max_jobs == 0)); then
+            wait
+        fi
+    done
+done
+wait
+echo "=== All GO enrichment results generated ==="
 # conda activate snapatac2
 # Step 2: Run Python merge and predict on generated GO results
 for deg_path in "${deg_paths[@]}"; do
