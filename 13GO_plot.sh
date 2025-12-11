@@ -39,5 +39,6 @@ nlogp_threshold=0
 #     --nlogp_threshold "$nlogp_threshold"
 # done
 ###step3 GO heatmap plot#############
+cd /data2st1/junyi/output/atac1112/tobias
 /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
---input /data2st1/junyi/output/atac1112/tobias/tobias_AP-1_gene_summary_cisbp/
+--input tobias_11_gene_summary_cisbp tobias_10_gene_summary_cisbp tobias_9_gene_summary_cisbp tobias_8_gene_summary_cisbp tobias_7_gene_summary_cisbp tobias_6_gene_summary_cisbp tobias_5_gene_summary_cisbp tobias_4_gene_summary_cisbp tobias_3_gene_summary_cisbp tobias_2_gene_summary_cisbp tobias_1_gene_summary_cisbp tobias_0_gene_summary_cisbp

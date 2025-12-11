@@ -1284,16 +1284,43 @@ heatmap_final2 <- function(
   base_sex   <- c(M="#55A0FB", F="#FFA0A0")
   base_type  <- c(N="#4CAF50", NN="#FF9800")  # Type colors (N=green, NN=orange)
 
+  # base_module <- c(
+  #   G1 = '#59F5FD', "G1-1" = "#0080FF", "G1-2" = "#17becf", "G1-3" = '#59F5FD', "G1-4" = '#AFD8E6',
+  #   "G2-1" = '#782170', "G2-2" = '#D86DCD', "G2-3" = '#E49FDD', "G2" = '#782170',
+  #   G4 = '#FFC000', "G3-1" = '#00A050', "G3-2" = '#92D050', "G3-3" = '#83F28E',
+  #   G5 = "red2", G6 = '#7E350E', G7 = "#0080FF", "G7-1" = "#5099FF", "G7-2" = "#0199EE",
+  #   G8='#6868FF', "G8-1"='#A0B0F0', "G8-2"='#B5b0d5', G9="#95516E", G10 = '#2F4F4F',
+  #   G11 = '#BE5014', G12 = "#767F50", G13= '#E49EDD', G14="#FF7F50", G15="#2F4F4F",
+  #   G16="#8194AC", "G17-1"="#F5516E", "G17-2"="#E298A6", G19="#D9E7F5", G18="#5F8BB2",
+  #   other= 'gray40'
+  # )
   base_module <- c(
-    G1 = '#59F5FD', "G1-1" = "#0080FF", "G1-2" = "#17becf", "G1-3" = '#59F5FD', "G1-4" = '#AFD8E6',
-    "G2-1" = '#782170', "G2-2" = '#D86DCD', "G2-3" = '#E49FDD', "G2" = '#782170',
-    G4 = '#FFC000', "G3-1" = '#00A050', "G3-2" = '#92D050', "G3-3" = '#83F28E',
-    G5 = "red2", G6 = '#7E350E', G7 = "#0080FF", "G7-1" = "#5099FF", "G7-2" = "#0199EE",
-    G8='#6868FF', "G8-1"='#A0B0F0', "G8-2"='#B5b0d5', G9="#95516E", G10 = '#2F4F4F',
-    G11 = '#BE5014', G12 = "#767F50", G13= '#E49EDD', G14="#FF7F50", G15="#2F4F4F",
-    G16="#8194AC", "G17-1"="#F5516E", "G17-2"="#E298A6", G19="#D9E7F5", G18="#5F8BB2",
-    other= 'gray40'
-  )
+    G1 = '#59F5FD',
+    "G2-1" = '#782170', 
+    "G2-2" = '#D86DCD', 
+    "G2-3" = '#E49FDD',
+    "G2-4" = '#F2D0EE',  # lighter shade of purple
+    "G2-5" = '#B03FA3',  # medium shade
+    "G2-6" = '#8A2C7A',  # darker shade
+    G2 = '#782170',
+    G3 = '#00A050',      # using the green from your example
+    "G4-1" = '#FFE066',  # lighter yellow
+    "G4-2" = '#FFD43B',  # medium yellow
+    "G4-3" = '#FFC000',  # your G4 color
+    "G4-4" = '#FFB347',  # orange-yellow
+    "G4-5" = '#FFA500',  # classic orange
+    "G4-6" = '#FF8C00',  # darker orange
+    G4 = '#FFC000',
+    G5 = "red2",
+    G6 = '#7E350E',
+    G7 = "#0080FF",
+    G8 = '#6868FF',
+    G9 = "#95516E",
+    G10 = '#2F4F4F',
+    G11 = '#BE5014',
+    G12 = "#767F50",
+    other = 'gray40'
+)
 
   # Enhanced column ordering logic: predefined order vs clustering
   if (!cluster_column_slices) {
@@ -1964,7 +1991,7 @@ for (path in go_path_list) {
 
   # Process each go_path
   go_paths <- c(
-    Sys.glob(paste0(path,"/*/2_go_merged_with_predictions.csv"))
+    Sys.glob(paste0(path,"/*highest/2_go_merged_with_predictions.csv"))
     #"/data2st1/junyi/output/atac1112/tobias/tobias_AP-1_gene_summary_cisbp/nlogp_keep_highest/2_go_merged_with_predictions.csv"
   )
 
@@ -2009,7 +2036,8 @@ for (path in go_path_list) {
     # go_results$Module.P <- gsub("^G", "M", go_results[[group_col]])
     go_results <- go_results %>%
       mutate(!!group_col := ifelse(.data[[group_col]] == "others", "other", .data[[group_col]]))
-    module_levels <- c("G1","G2-1","G2-2","G3-1","G3-2","G3-3","G4","G5","G6","G7","G7-1","G7-2","G8","G8-1","G8-2","G9","G10","G11","G12","other") # c("innate", "overlapped", "adaptive", "inflammatory")
+    module_levels <- c("G1","G2-1", "G2-2", "G2-3", "G2-4", "G2-5", "G2-6", "G2", "G3", "G4-1", "G4-2", "G4-3", "G4-4", "G4-5", "G4-6", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12", "other")
+
 
     if (use_row_category) {
       go_group <- go_results %>%
@@ -2115,7 +2143,9 @@ for (path in go_path_list) {
             cluster_rows = cfg$rows,
             cluster_columns = cfg$cols,
             cluster_column_slices = FALSE,
-            cluster_row_slices = FALSE
+            cluster_row_slices = FALSE,
+            height = 35,
+            width = 50  
           )
         }
       }

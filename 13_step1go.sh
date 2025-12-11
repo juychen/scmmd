@@ -213,35 +213,35 @@ deg_paths=(
 '/data2st1/junyi/output/atac1112/tobias/tobias_0_gene_summary_cisbp.csv'
 )
 # Step 1: Run R script to generate GO enrichment results
-for deg_path in "${deg_paths[@]}"; do
-    parent_dir=$(dirname "$deg_path")
-    deg_filename=$(basename "$deg_path" .csv)
-    base_output="${parent_dir}/${deg_filename}"
-    mkdir -p "$base_output"
+# for deg_path in "${deg_paths[@]}"; do
+#     parent_dir=$(dirname "$deg_path")
+#     deg_filename=$(basename "$deg_path" .csv)
+#     base_output="${parent_dir}/${deg_filename}"
+#     mkdir -p "$base_output"
     
-    go_output_dir="${base_output}/CP_enrichment_results2"
+#     go_output_dir="${base_output}/CP_enrichment_results2"
 
-#    if [[ -d "$go_output_dir" && -n "$(ls -A "$go_output_dir"/*.csv 2>/dev/null)" ]]; then
-#        echo "Skipping $go_output_dir (CSV files already exist)"
-#        continue
-#    fi
+# #    if [[ -d "$go_output_dir" && -n "$(ls -A "$go_output_dir"/*.csv 2>/dev/null)" ]]; then
+# #        echo "Skipping $go_output_dir (CSV files already exist)"
+# #        continue
+# #    fi
 
-    mkdir -p "$go_output_dir"
-    echo "Activated r_env for R script execution, output dir: $go_output_dir"
+#     mkdir -p "$go_output_dir"
+#     echo "Activated r_env for R script execution, output dir: $go_output_dir"
 
-    for region in "${regions[@]}"; do
+#     for region in "${regions[@]}"; do
     
-        echo "Running gost_tf.r for $region with input $deg_path"
-        /home/junyichen/anaconda3/envs/r_env/bin/Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
+#         echo "Running gost_tf.r for $region with input $deg_path"
+#         /home/junyichen/anaconda3/envs/r_env/bin/Rscript "$go_rscript_path" -i "$deg_path" -o "$go_output_dir" -r "$region" &
 
-        ((job_count++))
-        if ((job_count % max_jobs == 0)); then
-            wait
-        fi
-    done
-done
-wait
-echo "=== All GO enrichment results generated ==="
+#         ((job_count++))
+#         if ((job_count % max_jobs == 0)); then
+#             wait
+#         fi
+#     done
+# done
+# wait
+# echo "=== All GO enrichment results generated ==="
 # conda activate snapatac2
 # Step 2: Run Python merge and predict on generated GO results
 for deg_path in "${deg_paths[@]}"; do
