@@ -1,0 +1,64 @@
+#!/bin/bash
+source /home/junyichen/anaconda3/etc/profile.d/conda.sh
+conda activate tobias
+ulimit -n 65534
+
+cd /data2st2/junyi/output/atac1112/tobiasbam
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/BULK; do
+  echo $folder
+  sample_name=$(basename $folder)
+  echo "Processing sample: $sample_name"
+  for file in $folder/*; do
+    echo $file
+    if [[ $file == *.bam ]]; then
+      celltype=$(basename $folder)
+      echo "Processing celltype: $celltype"
+      out_bam="${file%.bam}.bam"
+      ctname=$(basename "${file%.bam}")
+      echo "Output BAM: $out_bam"
+      
+      # if out_bam already exists, skip
+      if [[ -f $out_bam ]]; then
+        echo "Output BAM file $out_bam already exists. processing in  $folder "
+        mkdir -p $folder/correct_5mc
+        #cat "test" > $folder/corrected/$sample_name\_$ctname.txt
+        out_bw=$folder/correctcorrect_5mc_dmr/$ctname\_corrected.bw
+        # if not exists out_bw, run TOBIAS ATAC correct 
+
+        if [[ ! -f $out_bw ]]; then
+          # DRI run echo
+          echo "Running TOBIAS ATACorrect for $out_bam"
+          TOBIAS ATACorrect --bam $out_bam \
+          --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
+          --peaks /data2st1/junyi/output/atac1112/cCRE/5mC_${ctname:0:3}.bed \
+          --blacklist /data2st1/junyi/ref/mm10-blacklist.v2.bed \
+          --outdir $folder/correct_5mc \
+          --cores 64
+        fi
+        # else print exist
+        out_fp=$folder/correct_5mc/$ctname\_footprints.bw
+        if [[ ! -f $out_fp ]]; then
+          echo "Output BW file $out_fp not exists. calculating..."
+          echo "generating footprints $out_fp"
+          TOBIAS FootprintScores --signal $folder/correct_5mc/$ctname\_corrected.bw \
+          --regions /data2st1/junyi/output/atac1112/cCRE/5mC_${ctname:0:3}.bed \
+          --output $out_fp \
+          --cores 64
+        fi
+      fi
+      # Run the subset-bam command
+      #printf "Running subset-bam for %s with cell barcodes from %s\n" "$sample_name" "$file"
+      #/home/junyichen/subset-bam_linux --bam "/data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam" --cell-barcodes "$file" --out-bam "$out_bam" --cores 32
+      # Uncomment the line below if you want to run the command for each file
+    #   /home/junyichen/subset-bam_linux --bam /data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/$sample_name/outs/possorted_bam.bam \
+    #   --cell-barcodes $file \
+    #   --out-bam /data1st2/junyi/output/atac1112/tobiasbam/$celltype/${file%.csv}.bam \
+    #   --cores 32
+    fi
+  done
+done
+
+# /home/junyichen/subset-bam_linux --bam /data1st2/hannan_25/data/snATAC_process/snATAC_01_bam/MC25A_PFC/outs/possorted_bam.bam \
+# --cell-barcodes /data1st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.csv \
+# --out-bam /data1st2/junyi/output/atac1112/tobiasbam/MC25A_PFC/PFC_L2-3_IT_Glut_MC.bam \
+# --cores 32

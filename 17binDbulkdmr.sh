@@ -34,7 +34,7 @@ for bam_file in "$folder1"/*footprints.bw; do
             --signals "$folder1/$filename" "$folder2/$new_name" \
             --outdir "$output_dir/$filename" --cond_names MC MW --cores 64 \
             --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-            --peaks /data2st1/junyi/output/atac1112/iterative/peaks.bed \
+            --peaks /data2st1/junyi/output/atac1112/iterative/${ctname:4:-3}.bed \
             # if samtools finished successfully
             if [[ $? -eq 0 ]]; then
                 touch "$output_dir/finish_list/$filename.txt"
