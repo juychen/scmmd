@@ -4,7 +4,7 @@ conda activate scanpy
 ulimit -n 65534
 
 cd /data2st2/junyi/output/atac1112/tobiasbam
-for folder in /data2st2/junyi/output/atac1112/tobiasbam/MW_AMY; do
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/M*_AMY; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
