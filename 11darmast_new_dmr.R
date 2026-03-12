@@ -193,7 +193,7 @@ perform_mast_analysis <- function(seurat_obj,
 }
 seo <- subset(seo, subset = celltype.L1_ct != "OPC")
 r.deg_M <- perform_mast_analysis(seo,
-                                group.by = "celltype.L2",
+                                group.by = "celltype.L1_ct",
                                 compare.by = "expriment",
                                 group1 = "MW",
                                 group2 = "MC",
