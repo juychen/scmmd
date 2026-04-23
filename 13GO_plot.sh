@@ -39,17 +39,20 @@ nlogp_threshold=0
 #     --nlogp_threshold "$nlogp_threshold"
 # done
 ###step3 GO heatmap plot#############
-cd /data2st1/junyi/output/atac1112/tobias/degfiltererd
+#cd /data2st1/junyi/output/atac1112/tobias/degfiltererd
+cd /data2st1/junyi/output/atac1112/dar/celltype.L2
+# /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
+# --input tobias_11_deg_summary_cisbp_AMY \
+# tobias_10_deg_summary_cisbp_AMY \
+# tobias_9_deg_summary_cisbp_AMY \
+# tobias_8_deg_summary_cisbp_AMY \
+# tobias_7_deg_summary_cisbp_AMY \
+# tobias_6_deg_summary_cisbp_AMY \
+# tobias_5_deg_summary_cisbp_AMY \
+# tobias_4_deg_summary_cisbp_AMY \
+# tobias_3_deg_summary_cisbp_AMY \
+# tobias_2_deg_summary_cisbp_AMY \
+# tobias_1_deg_summary_cisbp_AMY \
+# tobias_0_deg_summary_cisbp_AMY;
 /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
---input tobias_11_deg_summary_cisbp_AMY \
-tobias_10_deg_summary_cisbp_AMY \
-tobias_9_deg_summary_cisbp_AMY \
-tobias_8_deg_summary_cisbp_AMY \
-tobias_7_deg_summary_cisbp_AMY \
-tobias_6_deg_summary_cisbp_AMY \
-tobias_5_deg_summary_cisbp_AMY \
-tobias_4_deg_summary_cisbp_AMY \
-tobias_3_deg_summary_cisbp_AMY \
-tobias_2_deg_summary_cisbp_AMY \
-tobias_1_deg_summary_cisbp_AMY \
-tobias_0_deg_summary_cisbp_AMY;
+--input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated

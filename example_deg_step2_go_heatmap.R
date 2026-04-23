@@ -13,6 +13,117 @@ library(readxl)
 library(grDevices)
 library(grid)
 
+base_module <- c(
+  "G01 behavioral and cognitive processes" = "#59F5FD",
+  "G01-01 behavioral and cognitive processes" = "#59F5FD",
+  "G02 organism/system development & morphogenesis & process" = "#5FB9C6",
+  "G02-01 organ/system general" = "#00838FFF",
+  "G02-02 nervous system" = "#AFD8E6",
+  "G02-03 morphogenesis" = "#1296A3",
+  "G02-04 vascular" = "#B2EBF2",
+  "G02-05 embryo" = "#1BBecf",
+  "G02-06 other tissue/system" = "#AFE8E6",
+  "G03 neuron cell" = "#685d8f",
+  "G03-01 neuronal/neuron" = "#685d8f",
+  "G04 neuronal dentrite" = "#782170",
+  "G05 neuronal axon" = "#e9a5f5a4",
+  "G04-01 neuronal dentrite" = "#782170",
+  "G05-01 neuronal axon" = "#e9a5f5a4",
+  "G06 neuronal synapse" = "#8B3C9A",
+  "G06-01 synaptic structural constituent" = "#582170",
+  "G06-02 synaptic assembly & mature" = "#A86DCD",
+  "G06-03 synaptic organization & maintenance" = "#982170",
+  "G06-04 receptor & NT binding" = "#E1BEE7",
+  "G06-05 receptor activity" = "#f12aacff",
+  "G06-06 synaptic transmission" = "#5e1545ff",
+  "G06-07 postsynaptic signaling/signal transduction" = "#885d8fff",
+  "G06-08 synaptic modification & modulation" = "#C49FDD",
+  "G06-08 synaptic modification & modulation general" = "#7e1545",
+  "G06-08 synaptic modification & modulation/pruning" = "#C49FDD",
+  "G06-08 synaptic modification & modulation/receptor diffusion trapping & clustering" = "#C86DCD",
+  "G06-08 synaptic modification & modulation/receptor endocytosis & internalization" = "#a9a5f54f",
+  "G06-08 synaptic modification & modulation/receptor localization" = "#B86DCD",
+  "G06-09 plasticity" = "#682170",
+  "G07 potential" = "#7B8F7C",
+  "G07-01 synaptic potential" = "#B7C2B1",
+  "G07-02 action potential" = "#A3B18A",
+  "G07-02 action potential/neuronal" = "#93A78E",
+  "G07-03 membrane depolarization" = "#7A8F7B",
+  "G07-04 membrane repolarization" = "#6B7F6A",
+  "G07-05 membrane potential" = "#556B5F",
+  "G07-06 potential/non-neuronal" = "#3F5147",
+  "G08 transport" = "#43A047",
+  "G08-01 channel" = "#00FF00",
+  "G08-02 ion transport" = "#A1D41E",
+  "G08-03 synaptic vesicle" = "#00E676",
+  "G08-04 vesicle-mediated transport" = "#2E7D32",
+  "G08-05 exocytosis" = "#CCFF90",
+  "G08-06 secretion" = "#66BB6A",
+  "G08-07 transmembrane transport/general" = "#1B5E20",
+  "G08-08 import/export" = "#00C853",
+  "G08-09 axonal transport" = "#BDEFC0",
+  "G08-10 endocytosis/internalization" = "#064E3B",
+  "G08-11 microtubule/actin-based transport" = "#A3B18A",
+  "G08-12 transport/other" = "#ACFF90",
+  "G08-13 other cargo transport" = "#3E540B",
+  "G08-14 ATP-consuming transporter activity" = "#00A65A",
+  "G09 cytosckeleton related" = "#4FA3E3",
+  "G09-01 actin" = "#002BFF",
+  "G09-02 microtubule" = "#22D3EE",
+  "G09-03 cytoskeleton" = "#64B5F6",
+  "G09-04 projection" = "#0D47A1",
+  "G09-05 cell polarity" = "#B2BFFF",
+  "G09-06 cell junction" = "#00B0FF",
+  "G09-07 cell adhension" = "#CFFAFE",
+  "G09-08 cell migration" = "#90CAF9",
+  "G09-09 cell motility" = "#0057FF",
+  "G09-10 cell morphogenesis" = "#BBDEFB",
+  "G10 metabolism & related homeostasis" = "#D24B6A",
+  "G10-01 energy metabolism & homeostasis" = "red",
+  "G10-02 protein metabolism & homeostasis" = "#FF4FA3",
+  "G10-03 phosphate/phosphorus metabolism" = "#C44336",
+  "G10-04 nucleobase-related metabolism" = "#FF005D",
+  "G10-05 macromolecule metabolism" = "#FF7A96",
+  "G10-06 lipid metabolism" = "#F8BBD0",
+  "G10-07 second messenger metabolism (cAMP/cyclic nucleotides)" = "#EECDD2",
+  "G10-08 small molecule metabolism" = "#DF9B9B",
+  "G10-09 general metabolism" = "#C62828",
+  "G11 transcription & translation" = "#BFA34A",
+  "G11-01 transcription" = "#8C6D1F",
+  "G11-02 post-transcription" = "#F0E2B8",
+  "G11-03 translation" = "#D2B55B",
+  "G12 homeostasis" = "#FFE066",
+  "G12-01 homeostasis ion" = "#FFCE00",
+  "G12-02 homeostasis energy" = "#FFFF00",
+  "G12-03 homeostasis cell" = "#FFF0A3",
+  "G12-04 homeostasis tissue" = "#FFF9C4",
+  "G12-05 homeostasis chemical" = "#FFEE80",
+  "G13 cell apoptotic/cell death" = "#584D96",
+  "G13-01 cell apoptotic/cell death" = "#584D96",
+  "G14 cellular state remodeling & cell fate" = "#7F75F0",
+  "G14-01 cell cycle/proliferation" = "#D2D8FF",
+  "G14-02 oxidative response/stress" = "#7068F0",
+  "G14-03 cell communication" = "#B5B0FF",
+  "G14-04 cell differentiation" = "#8868FF",
+  "G14-05 cell growth" = "#9A92D6",
+  "G14-06 cell development" = "#E2D8FF",
+  "G14-other" = "#AFA9F5",
+  "G15 glial cell" = "#F57C00",
+  "G15-01 oligo" = "#F57C00",
+  "G15-02 glial" = "#F79B33",
+  "G16 immune & inflammatory response" = "#FFE0B2",
+  "G17 hormone & peptide" = "#9BB3D8",
+  "G16-01 immune & inflammatory response" = "#FFE0B2",
+  "G17-01 hormone & peptide" = "#9BB3D8",
+  "G18 cellular response" = "#DEE2E6",
+  "G18-01 cellular response" = "#DEE2E6",
+  "G19 signaling" = "#868E96",
+  "G19-01 signaling" = "#868E96",
+  "G20 binding" = "#343A40",
+  "G20-01 binding" = "#343A40",
+  other = "#BDBDBD"
+)
+
 
 read_GO_DEG <- function(f = 'data/GO_orderT_p0.01_nlogP_noreplication.csv', sex_col = sex, sheet = 1){
   # read GO or DEG results from a file
@@ -895,10 +1006,14 @@ heatmap_final <- function(
   }
 
   # Define consistent legend parameters for all legends
-  legend_title_gp <- gpar(fontsize = 16, fontface = "bold")
-  legend_labels_gp <- gpar(fontsize = 14)
-  legend_grid_height <- unit(5, "mm")
-  legend_grid_width <- unit(5, "mm")
+  # legend_title_gp <- gpar(fontsize = 16, fontface = "bold")
+  # legend_labels_gp <- gpar(fontsize = 14)
+    legend_title_gp <- gpar(fontsize = 6, fontface = "bold")
+  legend_labels_gp <- gpar(fontsize = 4)
+  # legend_grid_height <- unit(5, "mm")
+  # legend_grid_width <- unit(5, "mm")
+  legend_grid_height <- unit(3, "mm")
+  legend_grid_width <- unit(3, "mm")
 
   # ---------- 4) Build color scale with consistent styling ----------
   mat_t <- t(mat)
@@ -1284,44 +1399,6 @@ heatmap_final2 <- function(
   base_sex   <- c(M="#55A0FB", F="#FFA0A0")
   base_type  <- c(N="#4CAF50", NN="#FF9800")  # Type colors (N=green, NN=orange)
 
-  # base_module <- c(
-  #   G1 = '#59F5FD', "G1-1" = "#0080FF", "G1-2" = "#17becf", "G1-3" = '#59F5FD', "G1-4" = '#AFD8E6',
-  #   "G2-1" = '#782170', "G2-2" = '#D86DCD', "G2-3" = '#E49FDD', "G2" = '#782170',
-  #   G4 = '#FFC000', "G3-1" = '#00A050', "G3-2" = '#92D050', "G3-3" = '#83F28E',
-  #   G5 = "red2", G6 = '#7E350E', G7 = "#0080FF", "G7-1" = "#5099FF", "G7-2" = "#0199EE",
-  #   G8='#6868FF', "G8-1"='#A0B0F0', "G8-2"='#B5b0d5', G9="#95516E", G10 = '#2F4F4F',
-  #   G11 = '#BE5014', G12 = "#767F50", G13= '#E49EDD', G14="#FF7F50", G15="#2F4F4F",
-  #   G16="#8194AC", "G17-1"="#F5516E", "G17-2"="#E298A6", G19="#D9E7F5", G18="#5F8BB2",
-  #   other= 'gray40'
-  # )
-  base_module <- c(
-    G1 = '#59F5FD',
-    "G2-1" = '#782170', 
-    "G2-2" = '#D86DCD', 
-    "G2-3" = '#E49FDD',
-    "G2-4" = '#F2D0EE',  # lighter shade of purple
-    "G2-5" = '#B03FA3',  # medium shade
-    "G2-6" = '#8A2C7A',  # darker shade
-    G2 = '#782170',
-    G3 = '#00A050',      # using the green from your example
-    "G4-1" = '#FFE066',  # lighter yellow
-    "G4-2" = '#FFD43B',  # medium yellow
-    "G4-3" = '#FFC000',  # your G4 color
-    "G4-4" = '#FFB347',  # orange-yellow
-    "G4-5" = '#FFA500',  # classic orange
-    "G4-6" = '#FF8C00',  # darker orange
-    G4 = '#FFC000',
-    G5 = "red2",
-    G6 = '#7E350E',
-    G7 = "#0080FF",
-    G8 = '#6868FF',
-    G9 = "#95516E",
-    G10 = '#2F4F4F',
-    G11 = '#BE5014',
-    G12 = "#767F50",
-    other = 'gray40'
-)
-
   # Enhanced column ordering logic: predefined order vs clustering
   if (!cluster_column_slices) {
     # Convert to factors with predefined levels (base color order)
@@ -1497,11 +1574,15 @@ heatmap_final2 <- function(
   }
 
   # Define consistent legend parameters for all legends
-  legend_title_gp <- gpar(fontsize = 16, fontface = "bold")
-  legend_labels_gp <- gpar(fontsize = 14)
-  legend_grid_height <- unit(5, "mm")
-  legend_grid_width <- unit(5, "mm")
+  # legend_title_gp <- gpar(fontsize = 16, fontface = "bold")
+  # legend_labels_gp <- gpar(fontsize = 14)
+  # legend_grid_height <- unit(5, "mm")
+  # legend_grid_width <- unit(5, "mm")
 
+  legend_title_gp <- gpar(fontsize = 5, fontface = "bold")
+  legend_labels_gp <- gpar(fontsize = 5)
+  legend_grid_height <- unit(3, "mm")
+  legend_grid_width <- unit(3, "mm")
   # ---------- 4) Build color scale with consistent styling ----------
   mat_t <- t(mat)
 
@@ -1634,7 +1715,7 @@ heatmap_final2 <- function(
     # Default to PDF output
     pdf(title,
         height = nrow(mat_t)/15 + 8,
-        width  = ncol(mat_t)/15 + 8)
+        width  = ncol(mat_t)/5 + 8)
   }
 
   # Create cell function for custom coloring with logfc_cutoff
@@ -2023,22 +2104,25 @@ for (path in go_path_list) {
       dir.create(output_dir_path, recursive = TRUE)
     }
 
+    # subsets <- list(
+    #   #list(tag = "N", filter = function(df) df %>% filter(Neurotransmitter != "NN")),
+    #   list(tag = "NN",    filter = function(df) df %>% filter(Neurotransmitter == "NN")),
+    #   list(tag = "GABA",    filter = function(df) df %>% filter(Neurotransmitter == "GABA")),
+    #   list(tag = "Glut",    filter = function(df) df %>% filter(Neurotransmitter == "Glut"))
+    # )
+
     subsets <- list(
       #list(tag = "N", filter = function(df) df %>% filter(Neurotransmitter != "NN")),
       list(tag = "NN",    filter = function(df) df %>% filter(Neurotransmitter == "NN")),
-      list(tag = "GABA",    filter = function(df) df %>% filter(Neurotransmitter == "GABA")),
-      list(tag = "Glut",    filter = function(df) df %>% filter(Neurotransmitter == "Glut"))
+      list(tag = "N",    filter = function(df) df %>% filter(Neurotransmitter != "NN"))
     )
-
     group_col <- 'predicted_group' # 'Module.P','predicted_group' or 'final_group'
     use_row_category <-TRUE
     class_target <-  NULL # c("Microglia")
     # go_results$Module.P <- gsub("^G", "M", go_results[[group_col]])
     go_results <- go_results %>%
       mutate(!!group_col := ifelse(.data[[group_col]] == "others", "other", .data[[group_col]]))
-    module_levels <- c("G1","G2-1", "G2-2", "G2-3", "G2-4", "G2-5", "G2-6", "G2", "G3", "G4-1", "G4-2", "G4-3", "G4-4", "G4-5", "G4-6", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12", "other")
-
-
+    module_levels <- names(base_module)
     if (use_row_category) {
       go_group <- go_results %>%
         select(GO,Neurotransmitter,all_of(group_col)) %>%
@@ -2137,15 +2221,15 @@ for (path in go_path_list) {
             logfc_cutoff = NULL,
             column_gap = unit(3, "mm"),
             row_gap = unit(3, "mm"),
-            row_names_gp = 6,
-            column_names_gp = 6,
+            row_names_gp = 4,
+            column_names_gp = 4,
             title = output_path,
             cluster_rows = cfg$rows,
             cluster_columns = cfg$cols,
             cluster_column_slices = FALSE,
             cluster_row_slices = FALSE,
             height = 35,
-            width = 50  
+            width = 100  
           )
         }
       }
