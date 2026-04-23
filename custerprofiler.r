@@ -72,6 +72,12 @@ if(!'gene' %in% colnames(df_deg)){
     print("No status column found!")
     stop()
   }
+  if ('gene_name' %in% colnames(df_deg)){
+    df_deg$gene <- df_deg$gene_name
+  }else{
+    print("No status column found!")
+    stop()
+  }
 } 
 
 if(!'sex' %in% colnames(df_deg)){

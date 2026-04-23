@@ -199,7 +199,18 @@ max_jobs=8
 job_count=0
 
 deg_paths=(
-'/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_0_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_1_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_2_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_3_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_4_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_5_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_6_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_7_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_8_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_9_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_10_deg_summary_cisbp_AMY.csv'
+'/data2st1/junyi/output/atac1112/tobias/degfiltererd/tobias_11_deg_summary_cisbp_AMY.csv'
 )
 # Step 1: Run R script to generate GO enrichment results
 for deg_path in "${deg_paths[@]}"; do
@@ -229,36 +240,36 @@ for deg_path in "${deg_paths[@]}"; do
         fi
     done
 done
-# wait
-# echo "=== All GO enrichment results generated ==="
-# # conda activate snapatac2
-# # Step 2: Run Python merge and predict on generated GO results
-# for deg_path in "${deg_paths[@]}"; do
-#     parent_dir=$(dirname "$deg_path")
-#     deg_filename=$(basename "$deg_path" .csv)
-#     base_output="${parent_dir}/${deg_filename}"
-#     go_dir="${base_output}/CP_enrichment_results2"
+wait
+echo "=== All GO enrichment results generated ==="
+# conda activate snapatac2
+# Step 2: Run Python merge and predict on generated GO results
+for deg_path in "${deg_paths[@]}"; do
+    parent_dir=$(dirname "$deg_path")
+    deg_filename=$(basename "$deg_path" .csv)
+    base_output="${parent_dir}/${deg_filename}"
+    go_dir="${base_output}/CP_enrichment_results2"
 
-#     for dh in "${duplicate_handlings[@]}"; do
-#         output_dir="${base_output}/${dh}"
-#         mkdir -p "$output_dir"
-#         output_file="${output_dir}/2_go_merged_with_predictions.csv"
+    for dh in "${duplicate_handlings[@]}"; do
+        output_dir="${base_output}/${dh}"
+        mkdir -p "$output_dir"
+        output_file="${output_dir}/2_go_merged_with_predictions.csv"
 
-#         echo "Running Python merge/predict for GO results in $go_dir with duplicate_handling=$dh"
-#         python "$python_script" \
-#             --go_dir_path "$go_dir" \
-#             --go_group_path "$go_group_path" \
-#             --df_class_path "$df_class_path" \
-#             --output_path "$output_file" \
-#             --duplicate_handling "$dh" \
-#             --input_col "$input_col" \
-#             --output_col "$output_col" \
-#             --neurotransmitter_col "$neurotransmitter_col" \
-#             --nlogp_threshold "$nlogp_threshold"
-#     done
-# done
+        echo "Running Python merge/predict for GO results in $go_dir with duplicate_handling=$dh"
+        python "$python_script" \
+            --go_dir_path "$go_dir" \
+            --go_group_path "$go_group_path" \
+            --df_class_path "$df_class_path" \
+            --output_path "$output_file" \
+            --duplicate_handling "$dh" \
+            --input_col "$input_col" \
+            --output_col "$output_col" \
+            --neurotransmitter_col "$neurotransmitter_col" \
+            --nlogp_threshold "$nlogp_threshold"
+    done
+done
 
-# echo "=== All merge and prediction tasks completed ==="
+echo "=== All merge and prediction tasks completed ==="
 
 
 
