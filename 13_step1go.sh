@@ -178,7 +178,7 @@ conda activate snapatac2
 regions=("AMY" "HPF" "PFC")
 
 # Path to R script
-go_rscript_path="/home/junyichen/code/scmmd/custerprofiler.r"
+go_rscript_path="/home/junyichen/code/scmmd/gost_tfmk.r"
 
 # Python script
 # Python script
@@ -200,7 +200,7 @@ max_jobs=8
 job_count=0
 
 deg_paths=(
-'/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_promoter.csv'
+'/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated.csv'
 )
 # Step 1: Run R script to generate GO enrichment results
 for deg_path in "${deg_paths[@]}"; do
@@ -209,7 +209,7 @@ for deg_path in "${deg_paths[@]}"; do
     base_output="${parent_dir}/${deg_filename}"
     mkdir -p "$base_output"
     
-    go_output_dir="${base_output}/CP_enrichment_results2"
+    go_output_dir="${base_output}/GO_enrichment_results2"
 
 #    if [[ -d "$go_output_dir" && -n "$(ls -A "$go_output_dir"/*.csv 2>/dev/null)" ]]; then
 #        echo "Skipping $go_output_dir (CSV files already exist)"
@@ -238,7 +238,7 @@ for deg_path in "${deg_paths[@]}"; do
     parent_dir=$(dirname "$deg_path")
     deg_filename=$(basename "$deg_path" .csv)
     base_output="${parent_dir}/${deg_filename}"
-    go_dir="${base_output}/CP_enrichment_results2"
+    go_dir="${base_output}/GO_enrichment_results2"
 
     for dh in "${duplicate_handlings[@]}"; do
         output_dir="${base_output}/${dh}"
@@ -260,6 +260,9 @@ for deg_path in "${deg_paths[@]}"; do
 done
 
 echo "=== All merge and prediction tasks completed ==="
+
+/home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
+--input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated
 
 
 
