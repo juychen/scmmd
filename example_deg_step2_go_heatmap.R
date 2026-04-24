@@ -1017,6 +1017,14 @@ heatmap_final <- function(
 
   # ---------- 4) Build color scale with consistent styling ----------
   mat_t <- t(mat)
+  row_info <- data.frame(term_name = rownames(mat_t), stringsAsFactors = FALSE, check.names = FALSE)
+  if (length(row_annotations) > 0) {
+    for (ann_name in names(row_annotations)) {
+      row_info[[ann_name]] <- row_annotations[[ann_name]]
+    }
+  }
+  column_info <- data.frame(sample = rownames(annotation_row), annotation_row,
+                            stringsAsFactors = FALSE, check.names = FALSE)
 
   # Create row_ha with multiple annotations if needed
   if (length(row_annotations) > 0) {
@@ -1585,6 +1593,14 @@ heatmap_final2 <- function(
   legend_grid_width <- unit(3, "mm")
   # ---------- 4) Build color scale with consistent styling ----------
   mat_t <- t(mat)
+  row_ha_df <- data.frame(term_name = rownames(mat_t), stringsAsFactors = FALSE, check.names = FALSE)
+  if (length(row_annotations) > 0) {
+    for (ann_name in names(row_annotations)) {
+      row_ha_df[[ann_name]] <- row_annotations[[ann_name]]
+    }
+  }
+  col_ha_df <- data.frame(sample = rownames(annotation_row), annotation_row,
+                          stringsAsFactors = FALSE, check.names = FALSE)
 
   # Create row_ha with multiple annotations if needed
   if (length(row_annotations) > 0) {
@@ -1799,10 +1815,16 @@ heatmap_final2 <- function(
   co <- unlist(column_order(ht_drawn))
   dev.off()
 
+  out_prefix <- file_path_sans_ext(title)
+  final_row_ha <- row_ha_df[ro, , drop = FALSE]
+  final_col_ha <- col_ha_df[co, , drop = FALSE]
+  write.csv(final_row_ha, paste0(out_prefix, "_row_ha.csv"), row.names = FALSE, quote = FALSE)
+  write.csv(final_col_ha, paste0(out_prefix, "_col_ha.csv"), row.names = FALSE, quote = FALSE)
+
   # save matrix
   if (grepl("nocluster", title, ignore.case = TRUE)) {
     final_mat <- mat_t[ro, co, drop = FALSE]
-    out_file <- paste0(file_path_sans_ext(title), "_data.csv")
+    out_file <- paste0(out_prefix, "_data.csv")
     write.csv(final_mat, out_file, quote = FALSE)
   }
 
@@ -2090,6 +2112,16 @@ for (path in go_path_list) {
     # go_results_tmp <- read_GO_DEG(go_path, sex_col = "Sex", sheet = 1) %>%
     #   filter(Sex %in% sexes)
     go_results <- go_results_tmp_unique
+    if (all(c("Class", "Neurotransmitter") %in% names(go_results))) {
+      go_results <- go_results %>%
+        mutate(
+          Class = ifelse(
+            is.na(Class) | trimws(as.character(Class)) == "",
+            as.character(Neurotransmitter),
+            as.character(Class)
+          )
+        )
+    }
     # go_results <- switch(target_data,
     #                      "SUS" = go_results_tmp_unique
     # )
@@ -2103,6 +2135,8 @@ for (path in go_path_list) {
     if (!dir.exists(output_dir_path)) {
       dir.create(output_dir_path, recursive = TRUE)
     }
+
+    # 
 
     # subsets <- list(
     #   #list(tag = "N", filter = function(df) df %>% filter(Neurotransmitter != "NN")),
@@ -2208,7 +2242,8 @@ for (path in go_path_list) {
             value_name = "-log10(p_val_adj)",
             region_col = "region",
             sex_col = if ("sex" %in% names(data_pair$main_data)) "sex" else NULL,
-            class_col = if ("class" %in% names(data_pair$main_data)) "class" else NULL,
+            class_col = if ("class" %in% names(data_pair$main_data)) "class" else "Neurotransmitter",
+            #class_col = if (subset_tag=='NN') "class" else "Neurotransmitter",
             neurotransmitter_col = NULL,
             row_go_col = "GO",
             row_module_col = if (use_row_category) "module" else NULL,

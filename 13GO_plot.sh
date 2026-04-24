@@ -55,4 +55,4 @@ cd /data2st1/junyi/output/atac1112/dar/celltype.L2
 # tobias_1_deg_summary_cisbp_AMY \
 # tobias_0_deg_summary_cisbp_AMY;
 /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
---input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_promoter
+--input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_annotated
