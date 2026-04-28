@@ -67,7 +67,7 @@ base_module <- c(
   "G08-12 transport/other" = "#ACFF90",
   "G08-13 other cargo transport" = "#3E540B",
   "G08-14 ATP-consuming transporter activity" = "#00A65A",
-  "G09 cytoskeleton related" = "#4FA3E3",
+  "G09 cytosckeleton related" = "#4FA3E3",
   "G09-01 actin" = "#002BFF",
   "G09-02 microtubule" = "#22D3EE",
   "G09-03 cytoskeleton" = "#64B5F6",
