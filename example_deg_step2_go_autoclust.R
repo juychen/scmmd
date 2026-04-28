@@ -1804,8 +1804,8 @@ heatmap_final2 <- function(
     clustering_method_rows      = method,      # Clustering method for rows
     clustering_distance_columns = distance,    # Distance method for column clustering
     clustering_method_columns   = method,      # Clustering method for columns
-    column_split      = col_split,  # Enhanced split logic with within-group clustering
-    row_split         = row_split,
+    # column_split      = col_split,  # Enhanced split logic with within-group clustering
+    # row_split         = row_split,
     column_gap        = column_gap,  # Control column split gap width
     row_gap           = row_gap,     # Control row split gap width
     gap               = unit(1, "cm"),
@@ -2179,6 +2179,8 @@ for (path in go_path_list) {
       go_group <- go_results %>%
         select(GO,Neurotransmitter,all_of(group_col)) %>%
         rename(module = all_of(group_col)) %>%
+        # remove records whose group/module is listed in `excluded`
+        filter(!(module %in% names(excluded))) %>%
         {
           if (!is.null(module_levels)) {
             mutate(., module = factor(module, levels = module_levels))
@@ -2190,6 +2192,15 @@ for (path in go_path_list) {
     } else {
       go_group <- go_results %>%
         select(GO,Neurotransmitter)
+    }
+
+    # Remove any groups listed in `excluded` from the grouping column
+    if (exists("excluded") && length(excluded) > 0) {
+      if ("module" %in% names(go_group)) {
+        go_group <- go_group %>% filter(!(module %in% names(excluded)))
+      } else if (group_col %in% names(go_group)) {
+        go_group <- go_group %>% filter(!(.data[[group_col]] %in% names(excluded)))
+      }
     }
 
 
@@ -2209,6 +2220,10 @@ for (path in go_path_list) {
                region = Region, sex = Sex, class = Class, type)
 
       go_group_subset <- subset_cfg$filter(go_group)
+
+    
+
+      # 
 
        filtered_sets <- list(
          common_main = filter_col_and_row(go_results_subset, go_group_subset,
@@ -2245,7 +2260,7 @@ for (path in go_path_list) {
         }
 
         base_output <- file.path(output_dir_path,
-                                 paste0("heatmap_", file_name, "_", subset_tag, "_", set_name))
+                                 paste0("heatmap_autoclust_", file_name, "_", subset_tag, "_", set_name))
 
         for (cfg in cluster_cfgs) {
           output_path <- paste0(base_output, "_", cfg$tag, ".pdf")
