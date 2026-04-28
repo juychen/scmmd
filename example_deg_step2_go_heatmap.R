@@ -25,7 +25,7 @@ base_module <- c(
   "G02-06 other tissue/system" = "#AFE8E6",
   "G03 neuron cell" = "#685d8f",
   "G03-01 neuronal/neuron" = "#685d8f",
-  "G04 neuronal dendrite" = "#782170",
+  "G04 neuronal dentrite" = "#782170",
   "G05 neuronal axon" = "#e9a5f5a4",
   "G04-01 neuronal dentrite" = "#782170",
   "G05-01 neuronal axon" = "#e9a5f5a4",
