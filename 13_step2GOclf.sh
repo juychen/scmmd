@@ -237,7 +237,7 @@ for deg_path in "${deg_paths[@]}"; do
     parent_dir=$(dirname "$deg_path")
     deg_filename=$(basename "$deg_path" .csv)
     base_output="${parent_dir}/${deg_filename}"
-    go_dir="${base_output}/CP_enrichment_results2"
+    go_dir="${base_output}/GO_enrichment_results2"
 
     for dh in "${duplicate_handlings[@]}"; do
         output_dir="${base_output}/${dh}"
