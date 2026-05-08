@@ -200,7 +200,7 @@ max_jobs=8
 job_count=0
 
 deg_paths=(
-'/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr.csv'
+'/data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr04.csv'
 )
 # Step 1: Run R script to generate GO enrichment results
 for deg_path in "${deg_paths[@]}"; do
@@ -262,7 +262,7 @@ done
 echo "=== All merge and prediction tasks completed ==="
 
 /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_heatmap.R \
---input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr
+--input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr04
 
 /home/junyichen/anaconda3/envs/r_env/bin/Rscript /home/junyichen/code/scmmd/example_deg_step2_go_autoclust.R \
---input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr
+--input /data2st1/junyi/output/atac1112/dar/celltype.L2/MASTNG_dar_corr04
