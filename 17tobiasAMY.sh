@@ -3,7 +3,7 @@ source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 conda activate tobias
 ulimit -n 65534
 cd /data2st2/junyi/output/atac1112/tobiasbam
-for folder in /data2st2/junyi/output/atac1112/tobiasbam/{MC_AMY,MW_AMY}; do
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/*AMY; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
@@ -25,6 +25,7 @@ for folder in /data2st2/junyi/output/atac1112/tobiasbam/{MC_AMY,MW_AMY}; do
         # --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
         # --outdir /data2st2/junyi/output/atac1112/tobiasbam/AMY_Jaspar26/$ctname --cores 32 \
         # --split 16 --verbosity 4
+
       fi
     fi
   done
