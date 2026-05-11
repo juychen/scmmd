@@ -3,7 +3,7 @@ source /home/junyichen/anaconda3/etc/profile.d/conda.sh
 conda activate tobias
 ulimit -n 65534
 cd /data2st2/junyi/output/atac1112/tobiasbam
-for folder in /data2st2/junyi/output/atac1112/tobiasbam/*AMY*; do
+for folder in /data2st2/junyi/output/atac1112/tobiasbam/{MC_AMY,MW_AMY}; do
   echo $folder
   sample_name=$(basename $folder)
   echo "Processing sample: $sample_name"
@@ -15,16 +15,16 @@ for folder in /data2st2/junyi/output/atac1112/tobiasbam/*AMY*; do
       out_bam="${file%.csv}.bam"
       ctname=$(basename "${file%.csv}")
       out_fp=$folder/corrected/$ctname\_footprints.bw
-      mkdir -p $folder/corrected/$ctname
+      mkdir -p /data2st2/junyi/output/atac1112/tobiasbam/AMY_Jaspar26/$ctname
       # if out_bam already exists, skip
       if [[ -f $out_fp ]]; then
         echo "Footprint exist: $out_fp"
-        TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_key_motifs.jaspar \
-        --signals $out_fp \
-        --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-        --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
-        --outdir $folder/corrected/$ctname --cores 32 \
-        --split 16 --verbosity 4
+        # TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/direct_key_motifs.jaspar \
+        # --signals $out_fp \
+        # --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
+        # --peaks /data2st1/junyi/output/atac1112/cCRE/L2peaks/${ctname:4:-3}\_peaks.bed \
+        # --outdir /data2st2/junyi/output/atac1112/tobiasbam/AMY_Jaspar26/$ctname --cores 32 \
+        # --split 16 --verbosity 4
       fi
     fi
   done
