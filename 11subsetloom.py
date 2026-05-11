@@ -33,10 +33,14 @@ region = args.region
 celltype_column = args.celltype_column
 
 covariate_column = args.cov_column
+adata_CSRES = anndata.read_h5ad(os.path.join(folder,'CSRES_4VN','CSRES_4VN.h5ad'))
+adata_CURES = anndata.read_h5ad(os.path.join(folder,'CURES_4VN','CURES_4VN.h5ad'))
 adata_CUMS = anndata.read_h5ad(os.path.join(folder,'CUMS_4VN','CUMS_4VN.h5ad'))
 adata_CSDS = anndata.read_h5ad(os.path.join(folder,'CSDS_4VN','CSDS_4VN.h5ad'))
 adata_CSDS = adata_CSDS[adata_CSDS.obs['status']=='CSDS']
-adata = adata_CUMS.concatenate(adata_CSDS)
+adata_CSRES = adata_CSRES[adata_CSRES.obs['status']=='CSRES']
+adata_CURES = adata_CURES[adata_CURES.obs['status']=='CURES']
+adata = adata_CUMS.concatenate([adata_CSDS, adata_CSRES, adata_CURES])
 adata.obs['celltype.L2.region.sex'] = adata.obs['region'].astype(str) + "_"+adata.obs['celltype.L2'].astype(str) + "_" + adata.obs['sex'].astype(str)
 adata.obs['celltype.L2.region.sex'] = adata.obs['celltype.L2.region.sex'].str.replace('/','-')
 adata.obs['celltype.L2.region.sex'] = adata.obs['celltype.L2.region.sex'].str.replace(' ','_')
@@ -69,3 +73,5 @@ for celltype in adata.obs['celltype.L2.region.sex'].unique():
     except Exception as e:
         print(f"Error processing {celltype}: {e}")
         continue
+# %%
+
