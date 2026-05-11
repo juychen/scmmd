@@ -8,7 +8,7 @@ folder1="/data2st2/junyi/output/atac1112/tobiasbam/MC_PFC/corrected/"
 folder2="/data2st2/junyi/output/atac1112/tobiasbam/MW_PFC/corrected/"
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac1112/tobiasbam/PFCcisbp_BIND"
+output_dir="/data2st2/junyi/output/atac1112/tobiasbam/PFC_Jaspar26/"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 
 # Iterate through all .bam files in the first folder
@@ -31,7 +31,7 @@ for bam_file in "$folder1"/*footprints.bw; do
 
         if [[ ! -f "$output_dir/finish_list/$filename.txt" ]]; then
             mkdir -p "$output_dir/$filename"
-            TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/cisbp_motifs.jaspar \
+            TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/JASPAR2026_CORE_vertebrates_non-redundant_pfms_jaspar.txt \
             --signals "$folder1/$filename" "$folder2/$new_name" \
             --outdir "$output_dir/$filename" --cond_names MC MW --cores 32 \
             --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
@@ -50,4 +50,4 @@ for bam_file in "$folder1"/*footprints.bw; do
     fi
 done
 
-echo "Merging complete. Output saved to $output_dir."
+echo "Bindetect complete. Output saved to $output_dir."
