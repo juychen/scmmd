@@ -3,10 +3,10 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Directory containing the CSV files
-input_directory = "/data2st2/junyi/output/stg1028/subsetsn"
+input_directory = "/data2st2/junyi/output/stg1028/allsn"
 
 # Define the output directory for saving results
-output_directory = "/data2st2/junyi/output/stg1028/scenic_grn"
+output_directory = "/data2st2/junyi/output/stg1028/scenic_grn_all"
 
 # Path to the TFs file
 tfs_file = "/data1st2/yejun/scenic/mouse/mm_mgi_tfs.txt"
