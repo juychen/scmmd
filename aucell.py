@@ -102,9 +102,9 @@ def parallel_aucell(expr_dir, ctx_dir, auc_dir, workers, parallel_jobs=4):
 # 运行入口
 # --------------------------------------------------------
 if __name__ == "__main__":
-    EXPR_DIR = "/data2st2/junyi/output/stg1028/subsetsn/"
-    CTX_DIR = "/data2st2/junyi/output/stg1028/scenic_ctx/"
-    AUC_DIR = "/data2st2/junyi/output/stg1028/scenic_auc/"
+    EXPR_DIR = "/data2st2/junyi/output/stg1028/allsn/"
+    CTX_DIR = "/data2st2/junyi/output/stg1028/scenic_ctx_all/"
+    AUC_DIR = "/data2st2/junyi/output/stg1028/scenic_auc_all/"
 
     workers = min(32, max(1, multiprocessing.cpu_count() - 4))
 
