@@ -1,6 +1,13 @@
 import os
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import logging
+
+# 设置pyscenic模块的日志级别为WARNING或更高
+logging.getLogger('pyscenic').setLevel(logging.WARNING)
+
+# 或者设置所有日志的默认级别
+logging.basicConfig(level=logging.WARNING)
 
 # Directory containing the CSV files
 input_directory = "/data2st2/junyi/output/stg1028/allsn"
