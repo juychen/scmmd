@@ -39,18 +39,18 @@ adata_CUMS = anndata.read_h5ad(os.path.join(folder,'CUMS_4VN','CUMS_4VN.h5ad'))
 adata_CSDS = anndata.read_h5ad(os.path.join(folder,'CSDS_4VN','CSDS_4VN.h5ad'))
 adata_CSDS = adata_CSDS[adata_CSDS.obs['status']=='CSDS']
 adata_CSRES = adata_CSRES[adata_CSRES.obs['status']=='CSRES']
-adata_CURES = adata_CURES[adata_CURES.obs['status']=='CURES']
+adata_CURES = adata_CURES[adata_CURES.obs['status']=='RES']
 adata = adata_CUMS.concatenate([adata_CSDS, adata_CSRES, adata_CURES])
-adata.obs['celltype.L2.region.sex'] = adata.obs['region'].astype(str) + "_"+adata.obs['celltype.L2'].astype(str) + "_" + adata.obs['sex'].astype(str)
-adata.obs['celltype.L2.region.sex'] = adata.obs['celltype.L2.region.sex'].str.replace('/','-')
-adata.obs['celltype.L2.region.sex'] = adata.obs['celltype.L2.region.sex'].str.replace(' ','_')
+adata.obs['celltype.L2.region'] = adata.obs['region'].astype(str) + "_"+adata.obs['celltype.L2'].astype(str)# + "_" + adata.obs['sex'].astype(str)
+adata.obs['celltype.L2.region'] = adata.obs['celltype.L2.region'].str.replace('/','-')
+adata.obs['celltype.L2.region'] = adata.obs['celltype.L2.region'].str.replace(' ','_')
 
-for celltype in adata.obs['celltype.L2.region.sex'].unique():
+for celltype in adata.obs['celltype.L2.region'].unique():
 
     try:
         print(f"Processing {celltype}")
 
-        adata_subset = adata[adata.obs['celltype.L2.region.sex']==celltype]
+        adata_subset = adata[adata.obs['celltype.L2.region']==celltype]
 
         row_attrs = {
         "Gene": np.array(adata_subset.var_names) ,
