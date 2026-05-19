@@ -8,7 +8,7 @@ folder1="/data2st2/junyi/output/atac1112/tobiasbam/BULK/MC/"
 folder2="/data2st2/junyi/output/atac1112/tobiasbam/BULK/MW/"
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND"
+output_dir="/data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMREXT"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 
 # Iterate through all .bam files in the first folder
@@ -30,11 +30,11 @@ for bam_file in "$folder1"/*footprints.bw; do
         mkdir -p "$output_dir/finish_list"
         if [[ ! -f "$output_dir/finish_list/$filename.txt" ]]; then
             mkdir -p "$output_dir/$filename"
-            TOBIAS BINDetect --motifs /data2st1/junyi/scenic/mouse/motif/merged_cluster/cisbp_motifs.jaspar \
+            TOBIAS BINDetect --motifs /data1st2/hannan_25/data/Nanopore_processV1/nanopore_08_differential/summary/dmr_sets/DMR_pycis_pipeline/pycistarget_out/motif_use/v10nr_clust.from_hdf5.meme \
             --signals "$folder1/$filename" "$folder2/$new_name" \
             --outdir "$output_dir/$filename" --cond_names MC MW --cores 64 \
             --genome /data2st1/junyi/ref/GRCm38.p6.genome.fa \
-            --peaks /data2st1/junyi/output/atac1112/iterative/${ctname:4:-3}.bed \
+            --peaks /data2st1/junyi/output/atac1112/cCRE/dmr_3regions_ext.bed \
             # if samtools finished successfully
             if [[ $? -eq 0 ]]; then
                 touch "$output_dir/finish_list/$filename.txt"
