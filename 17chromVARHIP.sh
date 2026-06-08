@@ -4,7 +4,7 @@ conda activate scenicplus
 ulimit -n 65534
 
 script_path="/home/junyichen/code/scmmd/test_chromvar.py"
-output_root="/data1st2/junyi/output/atac1112/chromvar/HIP"
+output_root="/data2st1/junyi/output/atac1112/chromvar/HIP"
 
 input_files=(
     "/data1st2/junyi/output/atac1112/subset/region_nt/HIP_HIP_GABA.h5ad"
