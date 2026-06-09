@@ -7,9 +7,9 @@ script_path="/home/junyichen/code/scmmd/test_chromvar.py"
 output_root="/data2st1/junyi/output/atac1112/chromvar/PFC"
 
 input_files=(
-    "/data1st2/junyi/output/atac1112/subset/region_nt/PFC_PFC_GABA.h5ad"
+    # "/data1st2/junyi/output/atac1112/subset/region_nt/PFC_PFC_GABA.h5ad"
     "/data1st2/junyi/output/atac1112/subset/region_nt/PFC_PFC_Glut.h5ad"
-    "/data1st2/junyi/output/atac1112/subset/region_nt/PFC_NN.h5ad"
+    # "/data1st2/junyi/output/atac1112/subset/region_nt/PFC_NN.h5ad"
 )
 
 mkdir -p "$output_root"
@@ -21,7 +21,7 @@ for input_h5ad in "${input_files[@]}"; do
 
     mkdir -p "$sample_outdir"
     echo "Running chromVAR for $sample_name"
-    python "$script_path" "$input_h5ad" "$output_h5ad"
+    python "$script_path" "$input_h5ad" "$output_h5ad" --downsample-cells 10000
 done
 
 echo "chromVAR complete. Output saved under $output_root."

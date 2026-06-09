@@ -18,6 +18,11 @@ DEFAULT_MIN_TOTAL_COUNTS = 4000
 DEFAULT_DOWNSAMPLE_CELLS = 10000
 
 
+def sanitize_output_name(value: str) -> str:
+    sanitized = "".join(char if char.isalnum() or char in {"-", "_", "."} else "_" for char in str(value))
+    return sanitized.strip("._") or "group"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run chromVAR deviations from an input h5ad file.")
     parser.add_argument("input_h5ad", help="Input h5ad file containing ATAC counts.")
@@ -62,6 +67,10 @@ def parse_args() -> argparse.Namespace:
         help=f"Maximum number of cells to keep when --downsample is enabled. Default: {DEFAULT_DOWNSAMPLE_CELLS}",
     )
     parser.add_argument(
+        "--groupby-obs",
+        help="Optional obs column name. If provided, run chromVAR separately for each value in this column.",
+    )
+    parser.add_argument(
         "--random-state",
         type=int,
         default=0,
@@ -97,6 +106,11 @@ def maybe_downsample_adata(adata: ad.AnnData, args: argparse.Namespace) -> ad.An
     return adata[selected_obs].copy()
 
 
+def build_group_output_path(output_path: Path, group_name: str) -> Path:
+    safe_group = sanitize_output_name(group_name)
+    return output_path.parent / f"{output_path.stem}.{safe_group}{output_path.suffix}"
+
+
 def run_chromvar(adata: ad.AnnData, args: argparse.Namespace, output_path: Path) -> ad.AnnData:
     pc.add_peak_seq(adata, genome_file=args.genome_file)
     pc.add_gc_bias(adata)
@@ -126,19 +140,47 @@ def main() -> None:
     print(f"Reading input AnnData: {input_path}")
     adata = sc.read_h5ad(input_path)
     print(f"Input shape before filtering: {adata.shape}")
+    if args.groupby_obs:
+        if args.groupby_obs not in adata.obs.columns:
+            raise KeyError(f"Obs column '{args.groupby_obs}' not found in input AnnData.")
 
-    adata = prepare_input_adata(adata, args)
-    print(f"Input shape after filtering: {adata.shape}")
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        group_values = adata.obs[args.groupby_obs].dropna().astype(str)
+        unique_groups = sorted(group_values.unique())
+        if not unique_groups:
+            raise ValueError(f"Obs column '{args.groupby_obs}' has no non-null values to split on.")
 
-    adata = maybe_downsample_adata(adata, args)
-    print(f"Input shape for chromVAR: {adata.shape}")
+        print(f"Running chromVAR separately for {len(unique_groups)} groups from obs['{args.groupby_obs}']")
+        for group_name in unique_groups:
+            group_mask = adata.obs[args.groupby_obs].astype(str) == group_name
+            group_adata = adata[group_mask].copy()
+            group_output_path = build_group_output_path(output_path, group_name)
 
-    print("Running chromVAR...")
-    dev = run_chromvar(adata, args, output_path)
+            print(f"Processing group '{group_name}' with shape before downsampling: {group_adata.shape}")
+            group_adata = maybe_downsample_adata(group_adata, args)
+            print(f"Group '{group_name}' shape after downsampling: {group_adata.shape}")
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    print(f"Writing chromVAR output: {output_path}")
-    dev.write_h5ad(output_path)
+            group_adata = prepare_input_adata(group_adata, args)
+            print(f"Group '{group_name}' shape after filtering: {group_adata.shape}")
+
+            print(f"Running chromVAR for group '{group_name}'...")
+            dev = run_chromvar(group_adata, args, group_output_path)
+
+            print(f"Writing chromVAR output: {group_output_path}")
+            dev.write_h5ad(group_output_path)
+    else:
+        adata = maybe_downsample_adata(adata, args)
+        print(f"Input shape after downsampling: {adata.shape}")
+
+        adata = prepare_input_adata(adata, args)
+        print(f"Input shape after filtering: {adata.shape}")
+
+        print("Running chromVAR...")
+        dev = run_chromvar(adata, args, output_path)
+
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        print(f"Writing chromVAR output: {output_path}")
+        dev.write_h5ad(output_path)
     print("Done.")
 
 
