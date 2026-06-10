@@ -129,11 +129,70 @@ def main():
     candidate_pairs = df_pp[keep_cols].drop_duplicates().copy()
     candidate_pairs = candidate_pairs.rename(columns={prom_col: 'promoter'})
 
-    # Filter to peaks/promoters actually present in ATAC data
-    candidate_pairs = candidate_pairs[
-        candidate_pairs['peak_id'].isin(adata_atac.var_names) &
-        candidate_pairs['promoter'].isin(adata_atac.var_names)
-    ].reset_index(drop=True)
+    # ---- Convert underscore IDs (chr1_1_100) to colon-dash (chr1:1-100) ----
+    import bisect
+    import re
+
+    _region_re = re.compile(r'^(chr\w+):(\d+)-(\d+)$')
+
+    def parse_region(s):
+        """'chr1:1-100' -> ('chr1', 1, 100); invalid -> None"""
+        m = _region_re.match(str(s).strip())
+        if m:
+            return (m.group(1), int(m.group(2)), int(m.group(3)))
+        return None
+
+    def underscore_to_region(s):
+        """chr1_1_100 -> chr1:1-100"""
+        parts = str(s).split('_')
+        if len(parts) >= 3 and parts[0].startswith('chr'):
+            return f"{parts[0]}:{parts[1]}-{parts[2]}"
+        return str(s)
+
+    # Build interval index from adata_atac.var_names: chrom -> [(start, end, var_name), ...] sorted by start
+    chrom_intervals = {}
+    for vn in adata_atac.var_names:
+        parsed = parse_region(vn)
+        if parsed is None:
+            continue
+        chrom, start, end = parsed
+        chrom_intervals.setdefault(chrom, []).append((start, end, vn))
+
+    for chrom in chrom_intervals:
+        chrom_intervals[chrom].sort(key=lambda x: x[0])
+
+    def find_overlap_var(chrom, start, end):
+        """Return the var_name of first interval that overlaps (start, end), or None."""
+        ivs = chrom_intervals.get(chrom)
+        if not ivs:
+            return None
+        idx = bisect.bisect_left(ivs, (start, None, None), key=lambda x: x[0])
+        if idx > 0 and ivs[idx - 1][1] > start:
+            return ivs[idx - 1][2]
+        while idx < len(ivs) and ivs[idx][0] <= end:
+            if ivs[idx][1] > start:
+                return ivs[idx][2]
+            idx += 1
+        return None
+
+    # Convert and resolve: map CSV IDs → actual var_names via interval overlap
+    candidate_pairs['promoter_region'] = candidate_pairs['promoter'].map(underscore_to_region)
+    candidate_pairs['peak_region'] = candidate_pairs['peak_id'].map(underscore_to_region)
+
+    resolved_peaks = []
+    resolved_proms = []
+    for _, row in candidate_pairs.iterrows():
+        pp = parse_region(row['promoter_region'])
+        pk = parse_region(row['peak_region'])
+        prom_var = find_overlap_var(*pp) if pp else None
+        peak_var = find_overlap_var(*pk) if pk else None
+        resolved_peaks.append(peak_var)
+        resolved_proms.append(prom_var)
+
+    candidate_pairs['peak_id'] = resolved_peaks
+    candidate_pairs['promoter'] = resolved_proms
+    candidate_pairs = candidate_pairs.drop(columns=['promoter_region', 'peak_region'])
+    candidate_pairs = candidate_pairs.dropna(subset=['peak_id', 'promoter']).reset_index(drop=True)
 
     if candidate_pairs.empty:
         raise SystemExit('No candidate pairs after intersecting with ATAC var_names')
