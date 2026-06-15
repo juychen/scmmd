@@ -10,7 +10,7 @@ folder2="/data2st2/junyi/output/atac1112/tobiasbam/MW_AMY/corrected/"
 folderTF=""
 
 # Define the output folder for merged files
-output_dir="/data2st2/junyi/output/atac1112/tobiasbam/AMYcisbp_BIND/"
+output_dir="/data2st2/junyi/output/atac1112/tobiasbam/AMY_Jaspar26/"
 mkdir -p "$output_dir"  # Create output directory if it doesn't exist
 # Iterate through all .bam files in the first folder
 for bam_file in "$folder1"/*footprints.bw; do
@@ -20,7 +20,7 @@ for bam_file in "$folder1"/*footprints.bw; do
     new_name="${filename//MC/MW}"    # Replace all occurrences of "MW" with "MC"
     correctnameMW="${correctname//MC/MW}"
 
-    for bed_bind in /data2st2/junyi/output/atac1112/tobiasbam/AMYcisbp_BIND/$filename/*/beds/*_all.bed; do
+    for bed_bind in /data2st2/junyi/output/atac1112/tobiasbam/AMY_Jaspar26/$filename/*/beds/*_all.bed; do
         # Check if the same filename exists in the other two folders
         if [[ -f "$folder2/$new_name" ]]; then
             echo "Printagg $filename..."
