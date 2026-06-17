@@ -45,7 +45,7 @@ echo "SUS samples (HPF_MC): ${#sus_bams[@]} BAMs"
 # Merge CON -> HPF_MW.bam
 if [[ ! -f "$output_dir/finish_list/HPF_MW.txt" ]]; then
     echo "Merging CON BAMs into HPF_MW.bam ..."
-    samtools merge -f "$output_dir/HPF_MW.bam" "${con_bams[@]}" --threads 16
+    #samtools merge -f "$output_dir/HPF_MW.bam" "${con_bams[@]}" --threads 16
     if [[ $? -eq 0 ]]; then
         touch "$output_dir/finish_list/HPF_MW.txt"
         echo "  Done: HPF_MW.bam"
@@ -57,7 +57,7 @@ fi
 # Merge SUS -> HPF_MC.bam
 if [[ ! -f "$output_dir/finish_list/HPF_MC.txt" ]]; then
     echo "Merging SUS BAMs into HPF_MC.bam ..."
-    samtools merge -f "$output_dir/HPF_MC.bam" "${sus_bams[@]}" --threads 16
+    #samtools merge -f "$output_dir/HPF_MC.bam" "${sus_bams[@]}" --threads 16
     if [[ $? -eq 0 ]]; then
         touch "$output_dir/finish_list/HPF_MC.txt"
         echo "  Done: HPF_MC.bam"
@@ -76,6 +76,9 @@ for bam in "${pfc_bams[@]}"; do
     flag="${output_dir}/finish_list/${base}_bw.txt"
     if [[ ! -f "$flag" ]]; then
         echo "Converting $bam -> $bw ..."
+        if [[ ! -f "${bam}.bai" ]]; then
+            samtools index "$bam"
+        fi
         bamCoverage \
             -b "$bam" \
             -o "$bw" \

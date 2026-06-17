@@ -75,6 +75,9 @@ for bam in "${pfc_bams[@]}"; do
     flag="${output_dir}/finish_list/${base}_bw.txt"
     if [[ ! -f "$flag" ]]; then
         echo "Converting $bam -> $bw ..."
+        if [[ ! -f "${bam}.bai" ]]; then
+            samtools index "$bam"
+        fi
         bamCoverage \
             -b "$bam" \
             -o "$bw" \
