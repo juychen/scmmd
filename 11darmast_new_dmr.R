@@ -17,12 +17,14 @@ parser$add_argument("--output", type = "character", required = TRUE, help = "Pat
 parser$add_argument("--chunk", type = "integer", default = 30000, help = "Number of regions to process in each chunk")
 parser$add_argument("--ncores", type = "integer", default = 8, help = "Number of cores to use for parallel processing")
 parser$add_argument("--region", type = "character", default = "PFC", help = "Column name for region counts in the input file")
+parser$add_argument("--group_by", type = "character", default = "celltype.L1_ct", help = "Column name in meta.data to group cells by for differential analysis (e.g., celltype.L1_ct, celltype.L2)")
 
 args <- parser$parse_args()
 input <- args$input
 output <- args$output
 n_cores <- args$ncores
 region <- args$region
+group_by <- args$group_by
 
 
 # seo = schard::h5ad2seurat(paste0(folder,'/',brainregion, ".h5ad"))
@@ -138,9 +140,14 @@ perform_mast_analysis <- function(seurat_obj,
       # 设定compare_group factor
       colData(sca)$compare_group <- factor(colData(sca)[[compare.by]], levels = c(group1, group2))
       
-      # add ngenes
-      cdr2 <- colSums(assay(sca) > 0)
-      colData(sca)$ngeneson <- scale(cdr2)
+      # add ngenes: 如果 ngeneson 已经存在就不再重新计算
+      if (!"ngeneson" %in% colnames(colData(sca)) || all(is.na(colData(sca)$ngeneson))) {
+        cat("  Computing ngeneson ...\n")
+        cdr2 <- colSums(assay(sca) > 0)
+        colData(sca)$ngeneson <- scale(cdr2)
+      } else {
+        cat("  Reusing existing ngeneson column\n")
+      }
 
       if (use_batch_effect) {
         colData(sca)$batch <- factor(colData(sca)[[batch.by]])
@@ -193,7 +200,7 @@ perform_mast_analysis <- function(seurat_obj,
 }
 seo <- subset(seo, subset = celltype.L1_ct != "OPC")
 r.deg_M <- perform_mast_analysis(seo,
-                                group.by = "celltype.L1_ct",
+                                group.by = group_by,
                                 compare.by = "expriment",
                                 group1 = "MW",
                                 group2 = "MC",
