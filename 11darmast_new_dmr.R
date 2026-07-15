@@ -99,8 +99,9 @@ perform_mast_analysis <- function(seurat_obj,
       cat("====================================\n")
       cat("Analyzing cell group:", cell_group, "\n")
       
-
-      seo_subset = subset(seurat_obj, subset = celltype.L1_ct == cell_group)
+      # Get cells belonging to this group using the group.by column
+      cells_in_group <- rownames(metadata)[metadata[[group.by]] == cell_group]
+      seo_subset <- subset(seurat_obj, cells = cells_in_group)
       
       if (ncol(seo_subset) > 25000) {
         # Randomly sample 10000 cells
@@ -231,7 +232,9 @@ perform_mast_analysis <- function(seurat_obj,
   
   return(all_results)
 }
-seo <- subset(seo, subset = celltype.L1_ct != "OPC")
+# Exclude OPC (adjust the value if your group_by column uses different labels)
+opc_cells <- colnames(seo)[seo@meta.data[[group_by]] != "OPC"]
+seo <- subset(seo, cells = opc_cells)
 r.deg_M <- perform_mast_analysis(seo,
                                 group.by = group_by,
                                 compare.by = "expriment",
