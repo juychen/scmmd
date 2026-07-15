@@ -16,8 +16,8 @@ parser$add_argument("--input", type = "character", required = TRUE, help = "Path
 parser$add_argument("--output", type = "character", required = TRUE, help = "Path to the output file")
 parser$add_argument("--chunk", type = "integer", default = 30000, help = "Number of regions to process in each chunk")
 parser$add_argument("--ncores", type = "integer", default = 8, help = "Number of cores to use for parallel processing")
-parser$add_argument("--region", type = "character", default = "PFC", help = "Column name for region counts in the input file")
-parser$add_argument("--group_by", type = "character", default = "celltype.L1_ct", help = "Column name in meta.data to group cells by for differential analysis (e.g., celltype.L1_ct, celltype.L2)")
+parser$add_argument("--region", type = "character", default = "", help = "Column name for region counts in the input file")
+parser$add_argument("--group_by", type = "character", default = "celltype.L2", help = "Column name in meta.data to group cells by for differential analysis (e.g., celltype.L1_ct, celltype.L2)")
 
 args <- parser$parse_args()
 input <- args$input
@@ -35,7 +35,30 @@ group_by <- args$group_by
 # region = brainregion
 
 seo = schard::h5ad2seurat(input)
-seo <- NormalizeData(seo, normalization.method = "LogNormalize", scale.factor = 100000)
+
+# ---- Custom normalization using total_counts from obs (full peak matrix) ----
+# The DMR matrix is a subset; total_counts comes from the full peak matrix (saved in obs by 10mkdmrmatrix.ipynb)
+if ("total_counts" %in% colnames(seo@meta.data)) {
+  cat("Using total_counts from meta.data for normalization...\n")
+  counts_mat <- GetAssayData(seo, slot = "counts")
+  total_counts <- seo@meta.data$total_counts
+  
+  # Safety: replace 0/NA with 1 to avoid div/0
+  total_counts[is.na(total_counts) | total_counts == 0] <- 1
+  
+  scale_factor <- 100000  # same as previous scale.factor
+  cpm_mat <- sweep(counts_mat, 2, total_counts, FUN = "/") * scale_factor
+  lognorm_mat <- log1p(cpm_mat)
+  
+  # Store in data slot (log-normalized)
+  seo[["RNA"]]@data <- lognorm_mat
+  cat("Custom CPM + log1p normalization done.\n")
+} else {
+  cat("Warning: total_counts not found in meta.data, falling back to Seurat NormalizeData\n")
+  seo <- NormalizeData(seo, normalization.method = "LogNormalize", scale.factor = 100000)
+}
+# -----------------------------------------------------------------------------
+
 #seo <- subset(seo, subset = !(sample %in% c("MW26A_PFC", "MC25A_PFC")))
 df_qc <- read.csv('/data2st1/junyi/output/atac0627/frac_qc.csv', row.names = 1)
 df_qc$sample <- rownames(df_qc)
@@ -133,6 +156,14 @@ perform_mast_analysis <- function(seurat_obj,
       # 创建MAST对象
       sca <- FromMatrix(as.matrix(dat.tmp), cData = anno.tmp)
       
+      # Add log_total_counts as offset (from meta.data)
+      if ("total_counts" %in% colnames(colData(sca))) {
+        colData(sca)$log_total_counts <- log(colData(sca)$total_counts + 1)
+        cat("  Using log_total_counts as offset in model\n")
+      } else {
+        cat("  Warning: total_counts not in colData, skipping offset\n")
+      }
+      
       # 基因表达频率过滤
       select.genes <- freq(sca) > freq_expressed
       sca <- sca[select.genes, ]
@@ -184,8 +215,10 @@ perform_mast_analysis <- function(seurat_obj,
         } else {
           region_suffix <- paste0(region,"_")
         }
-        save(fcHurdle, file = paste0("tmp.degene.result.",region_suffix, make.names(cell_group), ".rda"))
-        write.csv(fcHurdle, file = paste0("tmp.degene.result.",region_suffix, make.names(cell_group), ".csv"))
+        # 只替换 / -> - 和空格 -> _，不做其它合法化
+        safe_group <- gsub(" ", "_", gsub("/", "-", cell_group, fixed = TRUE))
+        save(fcHurdle, file = paste0("tmp.degene.result.",region_suffix, safe_group, ".rda"))
+        write.csv(fcHurdle, file = paste0("tmp.degene.result.",region_suffix, safe_group, ".csv"))
       }
     }, error = function(e){
       cat("  Error in cell group ", cell_group, " : ", e$message, "\n")
