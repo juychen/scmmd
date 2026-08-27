@@ -115,7 +115,8 @@ try:
                 continue
 
             adata_subset = adata_backed[selected_obs.index, :].to_memory()
-            adata_subset.obs = selected_obs.copy()
+            for col in selected_obs.columns:
+                adata_subset.obs[col] = selected_obs[col].to_numpy()
 
             base_name = celltype.replace(" ", "_").replace("/", "-")
             loom_path = os.path.join(args.output, f"{base_name}.loom")
