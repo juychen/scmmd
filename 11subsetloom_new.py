@@ -101,9 +101,15 @@ try:
         "N",
     )
     obs_frame["celltype.L0"] = obs_frame["celltype.L0"].astype("category")
-    obs_frame["target.celltype"] = build_celltype_region(
-        obs_frame, region_name, args.celltype_column
-    )
+    if args.celltype_column == "celltype.L1":
+        obs_frame["celltype.L1"] = build_celltype_region(
+            obs_frame, region_name, args.celltype_column
+        )
+        obs_frame["target.celltype"] = obs_frame["celltype.L1"]
+    else:
+        obs_frame["target.celltype"] = build_celltype_region(
+            obs_frame, region_name, args.celltype_column
+        )
 
     for celltype in sorted(obs_frame["target.celltype"].unique()):
         try:
