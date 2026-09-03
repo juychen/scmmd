@@ -5,9 +5,9 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # === PATHS ===
-INPUT_DIR = "/data1st1/junyi/output/sn0827/"
-GRN_DIR = "/data1st1/junyi/output/sn0827/scenic_grn"
-OUTPUT_DIR = "/data1st1/junyi/output/sn0827/scenic_ctx"
+INPUT_DIR = "/data1st1/junyi/output/sn0827L1/"
+GRN_DIR = "/data1st1/junyi/output/sn0827L1/scenic_grn"
+OUTPUT_DIR = "/data1st1/junyi/output/sn0827L1/scenic_ctx"
 ANNOTATIONS = "/data1st2/yejun/scenic/mouse/motifs-v9-nr.mgi-m0.001-o0.0.tbl"
 DATABASE = "/data1st2/yejun/scenic/mouse/mm10__refseq-r80__10kb_up_and_down_tss.mc9nr.genes_vs_motifs.rankings.feather"
 

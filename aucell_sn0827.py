@@ -13,7 +13,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler("/data1st1/junyi/output/sn0827/scenic_auc/aucell_processing.log")
+        logging.FileHandler("/data1st1/junyi/output/sn0827L1/scenic_auc/aucell_processing.log")
     ]
 )
 logger = logging.getLogger(__name__)
@@ -115,9 +115,9 @@ def parallel_aucell(expr_dir, ctx_dir, auc_dir, workers, parallel_jobs=4):
 # 运行入口
 # --------------------------------------------------------
 if __name__ == "__main__":
-    EXPR_DIR = "/data1st1/junyi/output/sn0827/"
-    CTX_DIR = "/data1st1/junyi/output/sn0827/scenic_ctx/"
-    AUC_DIR = "/data1st1/junyi/output/sn0827/scenic_auc/"
+    EXPR_DIR = "/data1st1/junyi/output/sn0827L1/"
+    CTX_DIR = "/data1st1/junyi/output/sn0827L1/scenic_ctx/"
+    AUC_DIR = "/data1st1/junyi/output/sn0827L1/scenic_auc/"
 
     workers = min(32, max(1, multiprocessing.cpu_count() - 4))
 
