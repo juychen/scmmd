@@ -8,10 +8,10 @@ logging.getLogger('pyscenic').setLevel(logging.WARNING)
 logging.basicConfig(level=logging.WARNING)
 
 # Directory containing the loom files
-input_directory = "/data1st1/junyi/output/sn0827"
+input_directory = "/data1st1/junyi/output/sn0827L1"
 
 # Define the output directory for saving results
-output_directory = "/data1st1/junyi/output/sn0827/scenic_grn"
+output_directory = "/data1st1/junyi/output/sn0827L1/scenic_grn"
 
 # Path to the TFs file
 tfs_file = "/data1st2/yejun/scenic/mouse/mm_mgi_tfs.txt"
