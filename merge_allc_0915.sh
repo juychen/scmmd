@@ -14,7 +14,7 @@ mkdir -p "$OUT_DIR"
 
 # chrom size 文件由你自己提供（两列：chr 前缀的染色体名 <TAB> 长度）。
 # 脚本不生成它，只检查是否存在；想换个位置就改这一行。
-CHROM_SIZE=$OUT_DIR/mm10.main.chrom.sizes
+CHROM_SIZE=/data2st1/junyi/single_allcs/mm10.main.chrom.sizes
 if [[ ! -f "$CHROM_SIZE" ]]; then
     echo "ERROR: chrom size file not found: $CHROM_SIZE" >&2
     echo "       put your own two-column chrom size file there, or edit CHROM_SIZE in this script." >&2
