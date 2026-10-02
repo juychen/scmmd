@@ -8,3 +8,4 @@ figures/
 *.pyc
 lib/
 .*/
+fig_atac
