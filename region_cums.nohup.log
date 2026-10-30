@@ -1,0 +1,97 @@
+============================================================
+ job      : DAR on DMR / region level / MW(CONTROL) vs MC(CUMS)
+ input    : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads
+ output   : /data2st1/junyi/output/atac1112/dar/dmr_region_cums
+ start    : 2026-10-29 11:12:01
+============================================================
+=================================================
+input      : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads 
+output     : /data2st1/junyi/output/atac1112/dar/dmr_region_cums 
+group_by   : Region 
+compare_by : Condition  ( MW vs MC )
+use_batch  : no on date 
+=================================================
+Reading h5ad ...
+Loaded: 74477 features x 152117 cells
+Merging per-sample QC from /data2st1/junyi/output/atac0627/frac_qc.csv 
+====================================
+Analyzing Region : PFC 
+  subsampled 59138 -> 10000 cells (seed 123)
+  70540 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5183  MC=4817
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  306 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing Region : AMY 
+  subsampled 46587 -> 10000 cells (seed 123)
+  70672 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5339  MC=4661
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  197 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing Region : HIP 
+  subsampled 46392 -> 10000 cells (seed 123)
+  70400 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5884  MC=4116
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  227 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Warning messages:
+1: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead. 
+2: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+3: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+4: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+5: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+6: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.2 GiB
+7: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.2 GiB
+
+Saved combined table: /data2st1/junyi/output/atac1112/dar/dmr_region_cums/MASTNG_region_cums_all_comparisons.csv 
+rows: 730 
+significant (bonferroni padjust < 0.05): 379 
+   Region n_sig  n_up n_down
+   <char> <int> <int>  <int>
+1:    PFC   255    37    218
+2:    AMY    90    76     14
+3:    HIP    34    29      5
+
+Done.
+============================================================
+ done     : 2026-10-29 11:17:01
+ results  : /data2st1/junyi/output/atac1112/dar/dmr_region_cums/MASTNG_region_cums_all_comparisons.csv
+============================================================

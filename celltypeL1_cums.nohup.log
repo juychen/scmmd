@@ -1,0 +1,132 @@
+============================================================
+ job      : DAR on DMR / celltype.L1 level / MW(CONTROL) vs MC(CUMS)
+ input    : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads
+ output   : /data2st1/junyi/output/atac1112/dar/dmr_celltypeL1_cums
+ start    : 2026-10-29 11:12:04
+============================================================
+=================================================
+input      : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads 
+output     : /data2st1/junyi/output/atac1112/dar/dmr_celltypeL1_cums 
+group_by   : celltype.L1 
+compare_by : Condition  ( MW vs MC )
+use_batch  : no on date 
+=================================================
+Reading h5ad ...
+Loaded: 74477 features x 152117 cells
+Merging per-sample QC from /data2st1/junyi/output/atac0627/frac_qc.csv 
+====================================
+Analyzing celltype.L1 : Neuron 
+  subsampled 123590 -> 10000 cells (seed 123)
+  70762 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5437  MC=4563
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  285 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing celltype.L1 : OPC-Oligo 
+  68899 / 74477 DMRs kept (>=10 cells)
+  cells: MW=7080  MC=5769
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  269 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing celltype.L1 : Immune 
+  62553 / 74477 DMRs kept (>=10 cells)
+  cells: MW=4581  MC=4363
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  631 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing celltype.L1 : Astro-Epen 
+  61034 / 74477 DMRs kept (>=10 cells)
+  cells: MW=3300  MC=2837
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  304 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing celltype.L1 : Vascular 
+  4184 / 74477 DMRs kept (>=10 cells)
+  cells: MW=321  MC=276
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  129 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+Warning messages:
+1: The `slot` argument of `GetAssayData()` is deprecated as of SeuratObject 5.0.0.
+ℹ Please use the `layer` argument instead. 
+2: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+3: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 5.3 GiB
+4: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 6.6 GiB
+5: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 6.6 GiB
+6: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.2 GiB
+7: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 4.2 GiB
+8: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+9: In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 2.8 GiB
+
+Saved combined table: /data2st1/junyi/output/atac1112/dar/dmr_celltypeL1_cums/MASTNG_celltypeL1_cums_all_comparisons.csv 
+rows: 1618 
+significant (bonferroni padjust < 0.05): 366 
+   celltype.L1 n_sig  n_up n_down
+        <char> <int> <int>  <int>
+1:      Neuron    33    11     22
+2:   OPC-Oligo    67    18     49
+3:      Immune   248    27    221
+4:  Astro-Epen    18     6     12
+
+Done.
+============================================================
+ done     : 2026-10-29 11:18:06
+ results  : /data2st1/junyi/output/atac1112/dar/dmr_celltypeL1_cums/MASTNG_celltypeL1_cums_all_comparisons.csv
+============================================================

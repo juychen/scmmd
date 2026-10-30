@@ -1,0 +1,356 @@
+============================================================
+ job      : DAR on DMR / Region x L1 (GABA,Glut) / MW(CONTROL) vs MC(CUMS)
+ input    : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads
+ output   : /data2st1/junyi/output/atac1112/dar/dmr_region_l1_cums
+ start    : 2026-10-29 14:55:26
+============================================================
+=================================================
+input      : /data2st1/junyi/output/atac1112/3REGIONS_dmr_filtered.h5ads 
+output     : /data2st1/junyi/output/atac1112/dar/dmr_region_l1_cums 
+group_by   : region_l1 
+compare_by : Condition  ( MW vs MC )
+use_batch  : no on date 
+=================================================
+Reading h5ad ...
+Loaded: 74477 features x 152117 cells
+Merging per-sample QC from /data2st1/junyi/output/atac0627/frac_qc.csv 
+  NT fallback applied to 42 Neuron cells
+Composite grouping 'region_l1' created: 18 groups
+          group n_cells
+ AMY_Astro-Epen    1929
+       AMY_GABA   12704
+       AMY_Glut   26170
+     AMY_Immune    2071
+  AMY_OPC-Oligo    3481
+   AMY_Vascular     232
+ HIP_Astro-Epen    1525
+       HIP_GABA    2028
+       HIP_Glut   35208
+     HIP_Immune    2476
+  HIP_OPC-Oligo    5026
+   HIP_Vascular     129
+ PFC_Astro-Epen    2683
+       PFC_GABA    6016
+       PFC_Glut   41464
+     PFC_Immune    4397
+  PFC_OPC-Oligo    4342
+   PFC_Vascular     236
+====================================
+Analyzing region_l1 : PFC_Glut 
+  subsampled 41464 -> 10000 cells (seed 123)
+  70748 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5204  MC=4796
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  569 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : PFC_OPC-Oligo 
+  49135 / 74477 DMRs kept (>=10 cells)
+  cells: MW=2133  MC=2209
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  266 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : PFC_GABA 
+  66571 / 74477 DMRs kept (>=10 cells)
+  cells: MW=3271  MC=2745
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  200 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : PFC_Immune 
+  39338 / 74477 DMRs kept (>=10 cells)
+  cells: MW=2095  MC=2302
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  652 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : PFC_Astro-Epen 
+  37879 / 74477 DMRs kept (>=10 cells)
+  cells: MW=1387  MC=1296
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  360 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : PFC_Vascular 
+  846 / 74477 DMRs kept (>=10 cells)
+  cells: MW=113  MC=123
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  134 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_Glut 
+  subsampled 26170 -> 10000 cells (seed 123)
+  71239 / 74477 DMRs kept (>=10 cells)
+  cells: MW=5127  MC=4873
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  316 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_GABA 
+  70642 / 74477 DMRs kept (>=10 cells)
+  cells: MW=6898  MC=5806
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  208 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_Immune 
+  22487 / 74477 DMRs kept (>=10 cells)
+  cells: MW=1141  MC=930
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  600 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_Astro-Epen 
+  28262 / 74477 DMRs kept (>=10 cells)
+  cells: MW=1209  MC=720
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  264 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_OPC-Oligo 
+  45766 / 74477 DMRs kept (>=10 cells)
+  cells: MW=2042  MC=1439
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  266 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : AMY_Vascular 
+  939 / 74477 DMRs kept (>=10 cells)
+  cells: MW=131  MC=101
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  157 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_Immune 
+  24971 / 74477 DMRs kept (>=10 cells)
+  cells: MW=1345  MC=1131
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  626 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_OPC-Oligo 
+  52357 / 74477 DMRs kept (>=10 cells)
+  cells: MW=2905  MC=2121
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  278 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_Glut 
+  subsampled 35208 -> 10000 cells (seed 123)
+  70602 / 74477 DMRs kept (>=10 cells)
+  cells: MW=6096  MC=3904
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  342 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_GABA 
+  48635 / 74477 DMRs kept (>=10 cells)
+  cells: MW=1221  MC=807
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  226 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_Astro-Epen 
+  22311 / 74477 DMRs kept (>=10 cells)
+  cells: MW=704  MC=821
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  282 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+====================================
+Analyzing region_l1 : HIP_Vascular 
+  260 / 74477 DMRs kept (>=10 cells)
+  cells: MW=77  MC=52
+`cData` has no wellKey.  I'll make something up.
+Assuming data assay in position 1, with name et is log-transformed.
+  132 DMRs after MAST freq > 0.10
+  reusing ngeneson from obs (full peak matrix)
+
+Done!
+Combining coefficients and standard errors
+Calculating log-fold changes
+Calculating likelihood ratio tests
+Refitting on reduced model...
+
+Done!
+There were 19 warnings (use warnings() to see them)
+
+Saved combined table: /data2st1/junyi/output/atac1112/dar/dmr_region_l1_cums/MASTNG_regionL1_cums_all_comparisons.csv 
+rows: 5878 
+significant (bonferroni padjust < 0.05): 1210 
+         region_l1 n_sig  n_up n_down
+            <char> <int> <int>  <int>
+ 1:       PFC_Glut   524    94    430
+ 2:  PFC_OPC-Oligo    56     3     53
+ 3:       PFC_GABA   175    41    134
+ 4:     PFC_Immune   131     9    122
+ 5: PFC_Astro-Epen    45     6     39
+ 6:       AMY_Glut    68    60      8
+ 7:       AMY_GABA    95    82     13
+ 8:     AMY_Immune     7     7      0
+ 9: AMY_Astro-Epen     5     3      2
+10:  AMY_OPC-Oligo    16    10      6
+11:     HIP_Immune    10     9      1
+12:  HIP_OPC-Oligo    11     5      6
+13:       HIP_Glut    49    48      1
+14:       HIP_GABA     7     7      0
+15: HIP_Astro-Epen    11    10      1
+
+Done.
+============================================================
+ done     : 2026-10-29 15:08:45
+ results  : /data2st1/junyi/output/atac1112/dar/dmr_region_l1_cums/MASTNG_regionL1_cums_all_comparisons.csv
+============================================================
