@@ -1,0 +1,11 @@
+[2026-11-12 11:35:48] building named motif file: /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/motifs/v10nr_clust.from_hdf5_DMRpycisfimoenriched.named.meme
+[2026-11-12 11:35:48] motifs: /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/motifs/v10nr_clust.from_hdf5_DMRpycisfimoenriched.named.meme (1126 motifs)
+[2026-11-12 11:35:48] peaks : /data2st1/junyi/output/atac1112/cCRE/dmr_3regions_ext.bed (75872 regions)
+[2026-11-12 11:35:48] genome: /data2st1/junyi/ref/GRCm38.p6.genome.fa
+[2026-11-12 11:35:48] START AMY : AMY_MC_footprints.bw vs AMY_MW_footprints.bw  (log: /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/logs/AMY_MC_footprints.bw.20261112_113548.log)
+[2026-11-12 11:40:55] DONE  AMY -> /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/AMY_MC_footprints.bw  (motifs scored: 1126)
+[2026-11-12 11:40:55] START HIP : HIP_MC_footprints.bw vs HIP_MW_footprints.bw  (log: /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/logs/HIP_MC_footprints.bw.20261112_114055.log)
+[2026-11-12 11:45:43] DONE  HIP -> /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/HIP_MC_footprints.bw  (motifs scored: 1126)
+[2026-11-12 11:45:43] START PFC : PFC_MC_footprints.bw vs PFC_MW_footprints.bw  (log: /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/logs/PFC_MC_footprints.bw.20261112_114543.log)
+[2026-11-12 11:50:42] DONE  PFC -> /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/PFC_MC_footprints.bw  (motifs scored: 1126)
+[2026-11-12 11:50:42] Bindetect complete. Output saved to /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched.

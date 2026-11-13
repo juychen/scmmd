@@ -1,0 +1,7 @@
+[2026-11-12 14:26:38] START AMY: 1126 motif beds | MC=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/AMY_MC_corrected.bw | MW=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/AMY_MW_corrected.bw
+[2026-11-12 14:30:00] DONE AMY: 1126 / 1126 pdf
+[2026-11-12 14:30:01] START HIP: 1126 motif beds | MC=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/HIP_MC_corrected.bw | MW=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/HIP_MW_corrected.bw
+[2026-11-12 14:34:14] DONE HIP: 1126 / 1126 pdf
+[2026-11-12 14:34:15] START PFC: 1126 motif beds | MC=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/PFC_MC_corrected.bw | MW=/data2st2/junyi/output/atac1112/tobiasbam/BULK/corrected/PFC_MW_corrected.bw
+[2026-11-12 14:38:31] DONE PFC: 1126 / 1126 pdf
+[2026-11-12 14:38:31] PlotAggregate complete. Plots are in /data2st2/junyi/output/atac1112/tobiasbam/BULK/BIND_DMR_enriched/<region>_MC_footprints.bw/*/beds/*.pdf
