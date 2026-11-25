@@ -7,3 +7,11 @@ output
 figures/
 *.pyc
 lib/
+.kilo/
+.zcode/
+.claude/
+logs
+fig1_atac
+.vscode/
+.ipynb_checkpoints/
+__pycache__/
